@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+      
+      body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #FFFFFF;
+        color: #333333;
+        padding: 40px;
+        position: relative;
+      }
+      
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      
+      .title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #0A3161;
+      }
+      
+      .accent-bar {
+        width: 100px;
+        height: 6px;
+        background-color: #FFB612;
+        margin-top: 10px;
+      }
+      
+      .content {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .footer {
+        position: absolute;
+        bottom: 20px;
+        right: 40px;
+        font-size: 16px;
+        color: #666;
+      }
+      
+      .mapping-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      
+      .mapping-table th {
+        background-color: #0A3161;
+        color: white;
+        padding: 10px;
+        text-align: left;
+      }
+      
+      .mapping-table td {
+        padding: 8px 10px;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      
+      .mapping-table tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      
+      .arrow-icon {
+        color: #FFB612;
+        font-size: 20px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="header">
+        <div>
+          <div class="title">Core Entity Mappings</div>
+          <div class="accent-bar"></div>
+        </div>
+      </div>
+      
+      <div class="content">
+        <div class="mb-4">
+          <p class="text-xl">Field-by-field mapping between HyperGNN entities and South African judiciary systems</p>
+        </div>
+        
+        <div class="min-h-[450px]">
+          <table class="mapping-table">
+            <thead>
+              <tr>
+                <th width="25%">HyperGNN Entity</th>
+                <th width="25%">HyperGNN Fields</th>
+                <th width="10%"></th>
+                <th width="40%">ZA Judiciary Equivalent</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-bold">Case</td>
+                <td>
+                  <code>case_id</code><br>
+                  <code>title</code><br>
+                  <code>status</code>
+                </td>
+                <td class="text-center">
+                  <i class="fas fa-arrow-right arrow-icon"></i>
+                </td>
+                <td>
+                  <strong>Court Online:</strong> <code>(GP) 12345/2025</code><br>
+                  <code>case_title</code>, <code>case_status</code>
+                </td>
+              </tr>
+              <tr>
+                <td class="font-bold">Entity</td>
+                <td>
+                  <code>entity_id</code><br>
+                  <code>entity_name</code><br>
+                  <code>entity_type</code>
+                </td>
+                <td class="text-center">
+                  <i class="fas fa-arrow-right arrow-icon"></i>
+                </td>
+                <td>
+                  <strong>Court Online:</strong> <code>party_id</code><br>
+                  <code>party_name</code>, <code>party_type</code>
+                </td>
+              </tr>
+              <tr>
+                <td class="font-bold">Evidence</td>
+                <td>
+                  <code>evidence_id</code><br>
+                  <code>title</code><br>
+                  <code>evidence_type</code>
+                </td>
+                <td class="text-center">
+                  <i class="fas fa-arrow-right arrow-icon"></i>
+                </td>
+                <td>
+                  <strong>CaseLines:</strong> <code>document_id</code><br>
+                  <code>document_name</code>, <code>document_type</code>
+                </td>
+              </tr>
+              <tr>
+                <td class="font-bold">Timeline Event</td>
+                <td>
+                  <code>event_date</code><br>
+                  <code>title</code><br>
+                  <code>participants</code>
+                </td>
+                <td class="text-center">
+                  <i class="fas fa-arrow-right arrow-icon"></i>
+                </td>
+                <td>
+                  <strong>Court Online:</strong> <code>hearing_date</code><br>
+                  <code>hearing_type</code>, <code>parties_required</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="mt-4 grid grid-cols-3 gap-6 justify-evenly">
+          <div class="bg-gray-50 p-3 rounded">
+            <h3 class="font-bold text-[#0A3161] mb-1">Status Mapping</h3>
+            <p class="text-sm"><code>active</code> → <code>filed</code></p>
+            <p class="text-sm"><code>in_progress</code> → <code>served</code></p>
+            <p class="text-sm"><code>completed</code> → <code>judgment</code></p>
+          </div>
+          
+          <div class="bg-gray-50 p-3 rounded">
+            <h3 class="font-bold text-[#0A3161] mb-1">Entity Type Mapping</h3>
+            <p class="text-sm"><code>person</code> → <code>individual</code></p>
+            <p class="text-sm"><code>organization</code> → <code>corporate</code></p>
+            <p class="text-sm"><code>document</code> → <code>evidence</code></p>
+          </div>
+          
+          <div class="bg-gray-50 p-3 rounded">
+            <h3 class="font-bold text-[#0A3161] mb-1">Evidence Type Mapping</h3>
+            <p class="text-sm"><code>document</code> → <code>pleading</code></p>
+            <p class="text-sm"><code>financial</code> → <code>financial_document</code></p>
+            <p class="text-sm"><code>communication</code> → <code>correspondence</code></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer">
+        HyperGNN ↔ ZA Judiciary Systems: Data Mapping Architecture
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+      
+      body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #FFFFFF;
+        color: #333333;
+        padding: 40px;
+        position: relative;
+      }
+      
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+      
+      .title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #0A3161;
+      }
+      
+      .accent-bar {
+        width: 100px;
+        height: 6px;
+        background-color: #FFB612;
+        margin-top: 10px;
+      }
+      
+      .content {
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - 100px);
+      }
+      
+      .footer {
+        position: absolute;
+        bottom: 20px;
+        right: 40px;
+        font-size: 16px;
+        color: #666;
+      }
+      
+      .json-code {
+        background-color: #f8f8f8;
+        border-radius: 6px;
+        padding: 15px;
+        font-family: monospace;
+        font-size: 14px;
+        overflow: hidden;
+      }
+      
+      .arrow-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .arrow {
+        color: #FFB612;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="header">
+        <div>
+          <div class="title">Case Mapping Example</div>
+          <div class="accent-bar"></div>
+        </div>
+      </div>
+      
+      <div class="content">
+        <div class="mb-4">
+          <p class="text-xl">Concrete example of how a HyperGNN case transforms into Court Online format</p>
+        </div>
+        
+        <div class="grid grid-cols-5 gap-4 flex-grow">
+          <!-- HyperGNN Case -->
+          <div class="col-span-2">
+            <h3 class="font-bold text-lg mb-3 text-[#0A3161]">HyperGNN Input</h3>
+            <div class="json-code h-[480px]">
+<pre>{
+  "id": "hypergnn-case-001",
+  "title": "Financial Fraud Investigation",
+  "description": "Investigation into suspicious 
+   financial transactions",
+  "status": "active",
+  "priority": "high",
+  "created_at": "2025-10-08T10:30:00Z",
+  "entities": [
+    {
+      "id": "entity-001",
+      "name": "ABC Corporation",
+      "type": "organization",
+      "properties": {
+        "registration": "2019/123456/07",
+        "address": "123 Business Street, 
+         Sandton, 2196"
+      }
+    },
+    {
+      "id": "entity-002", 
+      "name": "John Smith",
+      "type": "person"
+    }
+  ]
+}</pre>
+            </div>
+          </div>
+          
+          <!-- Transformation Arrow -->
+          <div class="arrow-container">
+            <div class="flex flex-col items-center">
+              <i class="fas fa-arrow-right arrow"></i>
+              <div class="mt-4 p-3 bg-[#0A3161] text-white rounded text-center">
+                <p class="font-bold">ZA Integration Layer</p>
+                <p class="text-sm mt-1">Data Transformation</p>
+              </div>
+              <div class="mt-4">
+                <ul class="text-sm">
+                  <li class="mb-2"><i class="fas fa-check text-[#FFB612] mr-2"></i>Format validation</li>
+                  <li class="mb-2"><i class="fas fa-check text-[#FFB612] mr-2"></i>Field mapping</li>
+                  <li><i class="fas fa-check text-[#FFB612] mr-2"></i>Status conversion</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Court Online Output -->
+          <div class="col-span-2">
+            <h3 class="font-bold text-lg mb-3 text-[#0A3161]">Court Online Output</h3>
+            <div class="json-code h-[480px]">
+<pre>{
+  "case_id": "co-gp-12345-2025",
+  "case_number": "(GP) 12345/2025",
+  "case_title": "Financial Fraud Investigation",
+  "case_description": "Investigation into 
+   suspicious financial transactions",
+  "case_type": "Commercial Court",
+  "court_division": "Gauteng Division, Pretoria",
+  "filing_date": "2025-10-08",
+  "case_status": "filed",
+  "urgency_level": "high",
+  "plaintiff": {
+    "party_id": "plaintiff-001",
+    "party_name": "State vs",
+    "party_type": "prosecution"
+  },
+  "defendant": {
+    "party_id": "defendant-001", 
+    "party_name": "ABC Corporation",
+    "party_type": "corporate",
+    "registration_number": "2019/123456/07"
+  },
+  "e_filing_enabled": true
+}</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer">
+        HyperGNN ↔ ZA Judiciary Systems: Data Mapping Architecture
+      </div>
+    </div>
+  </body>
+</html>

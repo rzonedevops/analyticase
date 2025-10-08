@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+      
+      body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #FFFFFF;
+        color: #333333;
+        padding: 40px;
+        position: relative;
+      }
+      
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+      
+      .title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #0A3161;
+      }
+      
+      .accent-bar {
+        width: 100px;
+        height: 6px;
+        background-color: #FFB612;
+        margin-top: 10px;
+      }
+      
+      .content {
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - 100px);
+      }
+      
+      .footer {
+        position: absolute;
+        bottom: 20px;
+        right: 40px;
+        font-size: 16px;
+        color: #666;
+      }
+      
+      .bundle-box {
+        border: 2px solid #0A3161;
+        border-radius: 8px;
+        padding: 15px;
+      }
+      
+      .bundle-header {
+        background-color: #0A3161;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+      
+      .document-item {
+        border-left: 3px solid #FFB612;
+        padding-left: 10px;
+        margin-bottom: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="header">
+        <div>
+          <div class="title">Evidence & Bundle Mapping</div>
+          <div class="accent-bar"></div>
+        </div>
+      </div>
+      
+      <div class="content">
+        <div class="mb-4">
+          <p class="text-xl">How HyperGNN evidence items are transformed into CaseLines bundles with proper legal classification</p>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-8 mb-6">
+          <div>
+            <h3 class="text-lg font-bold text-[#0A3161] mb-3">HyperGNN Evidence Structure</h3>
+            <div class="bg-gray-50 p-4 rounded mb-4">
+              <pre class="text-sm"><code>{
+  "evidence_id": "evidence-001",
+  "title": "Bank Statement - ABC Corp",
+  "evidence_type": "financial",
+  "file_path": "/evidence/bank_statements.pdf",
+  "file_size": 2048576,
+  "metadata": {
+    "pages": 15,
+    "date_range": "2025-01-01 to 2025-09-30"
+  }
+}</code></pre>
+            </div>
+            <div class="flex items-center justify-center">
+              <div class="text-center p-3 bg-[#0A3161] text-white rounded-lg w-40">
+                <i class="fas fa-file-alt text-2xl mb-2"></i>
+                <div>Individual Evidence</div>
+              </div>
+              <div class="mx-4 text-[#FFB612]">
+                <i class="fas fa-arrow-right text-2xl"></i>
+              </div>
+              <div class="text-center p-3 bg-[#0A3161] text-white rounded-lg w-40">
+                <i class="fas fa-folder-open text-2xl mb-2"></i>
+                <div>Organized Bundles</div>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-lg font-bold text-[#0A3161] mb-3">CaseLines Bundle Structure</h3>
+            <div class="bg-gray-50 p-4 rounded mb-4">
+              <pre class="text-sm"><code>{
+  "bundle_id": "cl-bundle-discovery-001",
+  "bundle_name": "Discovery Bundle",
+  "bundle_type": "discovery",
+  "case_reference": "(GP) 12345/2025",
+  "total_documents": 2,
+  "total_pages": 23,
+  "pagination_complete": false
+}</code></pre>
+            </div>
+            <div class="flex items-center justify-center">
+              <div class="text-center p-3 bg-[#FFB612] text-[#0A3161] rounded-lg w-40 font-bold">
+                <div>Court-Ready</div>
+                <div>Legal Format</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-3 gap-6">
+          <div class="bundle-box">
+            <div class="bundle-header">Pleadings Bundle</div>
+            <div class="document-item">
+              <div class="font-bold">Summons</div>
+              <div class="text-sm">HyperGNN: <code>document</code></div>
+            </div>
+            <div class="document-item">
+              <div class="font-bold">Plea</div>
+              <div class="text-sm">HyperGNN: <code>document</code></div>
+            </div>
+            <div class="document-item">
+              <div class="font-bold">Affidavit</div>
+              <div class="text-sm">HyperGNN: <code>document</code></div>
+            </div>
+          </div>
+          
+          <div class="bundle-box">
+            <div class="bundle-header">Discovery Bundle</div>
+            <div class="document-item">
+              <div class="font-bold">Bank Statements</div>
+              <div class="text-sm">HyperGNN: <code>financial</code></div>
+            </div>
+            <div class="document-item">
+              <div class="font-bold">Contracts</div>
+              <div class="text-sm">HyperGNN: <code>document</code></div>
+            </div>
+            <div class="document-item">
+              <div class="font-bold">Invoices</div>
+              <div class="text-sm">HyperGNN: <code>financial</code></div>
+            </div>
+          </div>
+          
+          <div class="bundle-box">
+            <div class="bundle-header">Correspondence Bundle</div>
+            <div class="document-item">
+              <div class="font-bold">Emails</div>
+              <div class="text-sm">HyperGNN: <code>communication</code></div>
+            </div>
+            <div class="document-item">
+              <div class="font-bold">Letters</div>
+              <div class="text-sm">HyperGNN: <code>communication</code></div>
+            </div>
+            <div class="document-item">
+              <div class="font-bold">Notices</div>
+              <div class="text-sm">HyperGNN: <code>document</code></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer">
+        HyperGNN ↔ ZA Judiciary Systems: Data Mapping Architecture
+      </div>
+    </div>
+  </body>
+</html>

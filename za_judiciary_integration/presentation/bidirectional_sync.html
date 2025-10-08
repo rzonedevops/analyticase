@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+      
+      body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #FFFFFF;
+        color: #333333;
+        padding: 40px;
+        position: relative;
+      }
+      
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      
+      .title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #0A3161;
+      }
+      
+      .accent-bar {
+        width: 100px;
+        height: 6px;
+        background-color: #FFB612;
+        margin-top: 10px;
+      }
+      
+      .content {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .footer {
+        position: absolute;
+        bottom: 20px;
+        right: 40px;
+        font-size: 16px;
+        color: #666;
+      }
+      
+      .sync-arrow {
+        color: #FFB612;
+        font-size: 24px;
+      }
+      
+      .sync-box {
+        border: 2px solid #0A3161;
+        border-radius: 8px;
+        padding: 12px;
+      }
+      
+      .sync-box-title {
+        background-color: #0A3161;
+        color: white;
+        padding: 6px 10px;
+        border-radius: 4px;
+        font-weight: 500;
+        margin-bottom: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="header">
+        <div>
+          <div class="title">Bidirectional Synchronization</div>
+          <div class="accent-bar"></div>
+        </div>
+      </div>
+      
+      <div class="content">
+        <div class="mb-4">
+          <p class="text-xl">How data is kept in sync between HyperGNN and Court Online/CaseLines systems</p>
+        </div>
+        
+        <div class="flex justify-evenly items-center mb-6">
+          <div class="sync-box w-[30%]">
+            <div class="sync-box-title">HyperGNN → Court Online</div>
+            <ul class="text-sm list-disc pl-5">
+              <li class="mb-1">Case creation triggers Court Online filing</li>
+              <li class="mb-1">Entity updates sync to Court Online parties</li>
+              <li class="mb-1">Timeline events create court hearings</li>
+            </ul>
+          </div>
+          
+          <div class="flex flex-col items-center">
+            <i class="fas fa-exchange-alt sync-arrow mb-2"></i>
+            <div class="bg-gray-100 p-2 rounded text-center">
+              <p class="font-bold text-[#0A3161]">ZA Integration Layer</p>
+              <p class="text-sm">Data transformation & validation</p>
+            </div>
+            <i class="fas fa-exchange-alt sync-arrow mt-2"></i>
+          </div>
+          
+          <div class="sync-box w-[30%]">
+            <div class="sync-box-title">Court Online → HyperGNN</div>
+            <ul class="text-sm list-disc pl-5">
+              <li class="mb-1">Court status updates reflect in HyperGNN</li>
+              <li class="mb-1">Hearing schedules update timeline</li>
+              <li class="mb-1">Court orders trigger analysis updates</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="min-h-[250px]">
+          <canvas id="syncChart"></canvas>
+        </div>
+        
+        <div class="grid grid-cols-3 gap-6 mt-4">
+          <div class="bg-gray-50 p-3 rounded">
+            <h3 class="font-bold text-[#0A3161] mb-1">Sync Frequency</h3>
+            <p class="text-sm"><i class="fas fa-bolt text-[#FFB612] mr-2"></i>Real-time: Status changes</p>
+            <p class="text-sm"><i class="fas fa-clock text-[#FFB612] mr-2"></i>Hourly: Document updates</p>
+          </div>
+          
+          <div class="bg-gray-50 p-3 rounded">
+            <h3 class="font-bold text-[#0A3161] mb-1">Error Handling</h3>
+            <p class="text-sm"><i class="fas fa-redo text-[#FFB612] mr-2"></i>Automatic retry mechanism</p>
+            <p class="text-sm"><i class="fas fa-history text-[#FFB612] mr-2"></i>Conflict resolution</p>
+          </div>
+          
+          <div class="bg-gray-50 p-3 rounded">
+            <h3 class="font-bold text-[#0A3161] mb-1">Audit & Compliance</h3>
+            <p class="text-sm"><i class="fas fa-clipboard-check text-[#FFB612] mr-2"></i>Full audit trail</p>
+            <p class="text-sm"><i class="fas fa-shield-alt text-[#FFB612] mr-2"></i>Compliance verification</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer">
+        HyperGNN ↔ ZA Judiciary Systems: Data Mapping Architecture
+      </div>
+    </div>
+    
+    <script>
+      // Data Sync Chart
+      const ctx = document.getElementById('syncChart').getContext('2d');
+      const syncChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Case Data', 'Parties', 'Evidence', 'Hearings', 'Court Orders'],
+          datasets: [
+            {
+              label: 'Push Operations (HyperGNN → Court Online)',
+              data: [95, 85, 90, 70, 50],
+              backgroundColor: '#0A3161',
+              barPercentage: 0.4,
+            },
+            {
+              label: 'Pull Operations (Court Online → HyperGNN)',
+              data: [60, 40, 30, 80, 95],
+              backgroundColor: '#FFB612',
+              barPercentage: 0.4,
+            }
+          ]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: true,
+          plugins: {
+            title: {
+              display: true,
+              text: 'Sync Operations by Data Category',
+              font: {
+                size: 14
+              }
+            },
+            legend: {
+              position: 'bottom'
+            }
+          },
+          scales: {
+            x: {
+              beginAtZero: true,
+              max: 100,
+              title: {
+                display: true,
+                text: 'Percentage of Operations'
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
