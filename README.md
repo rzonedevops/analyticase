@@ -65,17 +65,69 @@ za_judiciary_integration/
 - ✅ CaseLines bundle structure alignment
 - ✅ Basic compliance framework
 - ✅ ZA court registry population
-- 🔄 Full Court Online API integration
-- 🔄 CaseLines document upload integration
-- 🔄 Advanced compliance reporting
-- 🔄 Electronic signature validation
+- ✅ Full Court Online API integration
+- ✅ CaseLines document upload integration
+- ✅ Advanced compliance reporting
+- ✅ Electronic signature validation
+- ✅ Comprehensive test suite
+- ✅ Production deployment configuration
+- ✅ API documentation and examples
 
 ## Getting Started
 
-1. Clone this repository
-2. Set up the database using the schema files in `schema/`
-3. Implement the API endpoints from `api/`
-4. Configure environment variables for Court Online and CaseLines access
+### Prerequisites
+- Python 3.11 or higher
+- PostgreSQL database (or Supabase account)
+- Court Online API credentials (when available)
+- CaseLines API credentials (when available)
+
+### Installation
+
+1. **Clone this repository**
+   ```bash
+   git clone https://github.com/rzonedevops/analyticase.git
+   cd analyticase
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your database and API credentials
+   ```
+
+4. **Initialize the database**
+   ```bash
+   python za_judiciary_integration/scripts/init_database.py
+   ```
+
+5. **Run the API server**
+   ```bash
+   cd za_judiciary_integration/api
+   python main_za_enhanced.py
+   ```
+
+6. **Test the installation**
+   ```bash
+   python test_api.py
+   ```
+
+### Docker Deployment
+
+For production deployment:
+
+```bash
+# Build and run with Docker Compose
+docker-compose up -d
+
+# Or build manually
+docker build -t za-judiciary-api .
+docker run -p 5000:5000 --env-file .env za-judiciary-api
+```
 
 ## Documentation
 

@@ -13,10 +13,17 @@ from typing import Dict, List, Any, Optional
 
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+from flask_jwt_extended import JWTManager
+from dotenv import load_dotenv
 
 # Import ZA judiciary integration
-from za_judiciary_api import za_judiciary_bp, init_za_integration
+try:
+    from .za_judiciary_api import za_judiciary_bp, init_za_integration
+except ImportError:
+    from za_judiciary_api import za_judiciary_bp, init_za_integration
 
+# Load environment variables
+load_dotenv()
 
 # Configure logging
 logging.basicConfig(
@@ -27,6 +34,13 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
+
+# Configuration
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev-secret-key-change-in-production')
+app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY', 'jwt-secret-key-change-in-production')
+
+# Initialize JWT
+jwt = JWTManager(app)
 
 # Register ZA judiciary blueprint
 app.register_blueprint(za_judiciary_bp)
@@ -39,24 +53,64 @@ class DatabaseManager:
         self.supabase_url = os.getenv('SUPABASE_URL')
         self.supabase_key = os.getenv('SUPABASE_KEY')
         self.neon_connection_string = os.getenv('NEON_CONNECTION_STRING')
+        self._supabase_client = None
+        self._neon_connection = None
         
     def get_connection(self, db_type: str = 'supabase'):
         """Get database connection based on type."""
         if db_type == 'supabase' and self.supabase_url and self.supabase_key:
             try:
-                from supabase import create_client
-                return create_client(self.supabase_url, self.supabase_key)
+                if not self._supabase_client:
+                    from supabase import create_client
+                    self._supabase_client = create_client(self.supabase_url, self.supabase_key)
+                return self._supabase_client
             except ImportError:
                 logger.warning("Supabase client not available")
                 return None
+            except Exception as e:
+                logger.error(f"Supabase connection failed: {e}")
+                return None
         elif db_type == 'neon' and self.neon_connection_string:
             try:
-                import psycopg2
-                return psycopg2.connect(self.neon_connection_string)
+                if not self._neon_connection:
+                    import psycopg2
+                    self._neon_connection = psycopg2.connect(self.neon_connection_string)
+                return self._neon_connection
             except ImportError:
                 logger.warning("PostgreSQL client not available")
                 return None
+            except Exception as e:
+                logger.error(f"PostgreSQL connection failed: {e}")
+                return None
         return None
+    
+    def initialize_schema(self):
+        """Initialize the database schema for ZA judiciary integration."""
+        try:
+            # Read and execute schema from SQL file
+            schema_path = os.path.join(os.path.dirname(__file__), '..', 'schema', 'za_judiciary_schema.sql')
+            if os.path.exists(schema_path):
+                with open(schema_path, 'r') as f:
+                    schema_sql = f.read()
+                
+                # Execute with PostgreSQL connection if available
+                neon_conn = self.get_connection('neon')
+                if neon_conn:
+                    cursor = neon_conn.cursor()
+                    cursor.execute(schema_sql)
+                    neon_conn.commit()
+                    cursor.close()
+                    logger.info("Database schema initialized successfully")
+                    return True
+                else:
+                    logger.warning("No PostgreSQL connection available for schema initialization")
+                    return False
+            else:
+                logger.warning("Schema file not found")
+                return False
+        except Exception as e:
+            logger.error(f"Schema initialization failed: {e}")
+            return False
 
 
 db_manager = DatabaseManager()
