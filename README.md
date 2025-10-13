@@ -1,146 +1,102 @@
-# AnalytiCase: ZA Judiciary Integration
+# AnalytiCase: Comprehensive Legal Case Analysis & Simulation Framework
 
 ## Overview
 
-This repository contains the integration between HyperGNN Analysis Framework and South African judiciary systems (Court Online and CaseLines). The integration provides a comprehensive data mapping architecture that enables seamless communication between analytical capabilities and official court systems.
+This repository provides a comprehensive framework for legal case analysis, simulation, and data integration. It combines the HyperGNN Analysis Framework with South African judiciary systems (Court Online and CaseLines) and introduces a powerful suite of simulation models for in-depth case analysis.
 
 ## Repository Structure
 
 ```
-za_judiciary_integration/
-├── api/                    # API implementation files
-│   ├── main_za_enhanced.py # Enhanced main API with ZA judiciary integration
-│   └── za_judiciary_api.py # ZA judiciary specific API endpoints
-├── docs/                   # Documentation
-│   ├── DATA_MAPPING_ZA_JUDICIARY.md  # Comprehensive data mapping documentation
-│   ├── FIELD_MAPPING_EXAMPLES.md     # Field-by-field mapping examples with sample data
-│   ├── ZA_JUDICIARY_INTEGRATION.md   # Integration overview and features
-│   └── images/             # Documentation images
-│       └── data_mapping_diagram.png  # Visual data mapping diagram
-├── presentation/           # Presentation files for ZA judiciary integration
-│   ├── title_slide.html    # Title slide
-│   ├── integration_overview.html
-│   ├── core_entity_mappings.html
-│   └── ...                 # Additional presentation slides
-└── schema/                 # Database schema files
-    └── za_judiciary_schema.sql  # ZA judiciary database schema
+analyticase/
+├── models/                   # Core simulation and analysis models
+│   ├── agent_based/          # Agent-based model for case participant interactions
+│   ├── discrete_event/       # Discrete-event model for case lifecycle simulation
+│   ├── system_dynamics/      # System dynamics model for case flow analysis
+│   ├── hyper_gnn/            # HyperGNN model for complex relationship analysis
+│   └── case_llm/             # Case-LLM for legal document analysis and generation
+├── simulations/              # Unified simulation runner and results
+│   ├── simulation_runner.py  # Main script to run all simulations
+│   └── results/              # Directory for simulation output
+├── za_judiciary_integration/ # South African judiciary integration module
+│   ├── api/                  # API implementation for ZA judiciary integration
+│   ├── docs/                 # Documentation for ZA judiciary integration
+│   └── schema/               # Database schema for ZA judiciary
+├── DEPLOYMENT.md             # Deployment instructions
+├── README.md                 # This file
+└── ...
 ```
 
 ## Key Features
 
-### Court Online Integration
+### Simulation & Analysis Models
 
-- Electronic Filing (E-Filing) capabilities
-- Digital Case Management
-- Automatic Document Routing
-- Real-time Notifications
-- Electronic Service
+- **Agent-Based Model**: Simulates the behavior and interactions of legal case participants (investigators, attorneys, judges) to understand system dynamics from the ground up.
+- **Discrete-Event Model**: Models the legal case lifecycle as a series of discrete events, allowing for analysis of bottlenecks and process optimization.
+- **System Dynamics Model**: Provides a high-level view of case flow through the judicial system using stock-and-flow diagrams to identify systemic issues.
+- **HyperGNN Model**: Utilizes hypergraph neural networks to uncover complex, higher-order relationships between entities in a case that traditional graph models might miss.
+- **Case-LLM**: Leverages large language models for advanced legal document analysis, summarization, entity extraction, and brief generation.
 
-### CaseLines Integration
+### ZA Judiciary Integration
 
-- Digital Bundle Creation
-- Document Management
-- Redaction Tools
-- Electronic Presentation
-- Multi-media Evidence Support
-- Collaboration Tools
-
-### Database Schema Alignment
-
-- ZA-specific tables for court registry, case types, and evidence bundles
-- Case number format compliance
-- Full audit trail and legal compliance features
-
-### API Endpoints
-
-- ZA judiciary specific endpoints
-- Enhanced core endpoints with ZA integration
-- Compliance reporting
-
-## Implementation Status
-
-- ✅ Database schema design and deployment
-- ✅ Core API endpoints implementation
-- ✅ Court Online case format validation
-- ✅ CaseLines bundle structure alignment
-- ✅ Basic compliance framework
-- ✅ ZA court registry population
-- ✅ Full Court Online API integration
-- ✅ CaseLines document upload integration
-- ✅ Advanced compliance reporting
-- ✅ Electronic signature validation
-- ✅ Comprehensive test suite
-- ✅ Production deployment configuration
-- ✅ API documentation and examples
+- **Court Online & CaseLines Integration**: Seamlessly connects with South African judiciary systems for e-filing, digital case management, and evidence handling.
+- **Database Schema Alignment**: ZA-specific database schemas for compliance and efficient data management.
+- **Enhanced API**: Specialized API endpoints for interacting with the ZA judiciary systems.
 
 ## Getting Started
 
 ### Prerequisites
+
 - Python 3.11 or higher
-- PostgreSQL database (or Supabase account)
-- Court Online API credentials (when available)
-- CaseLines API credentials (when available)
+- Docker & Docker Compose
+- PostgreSQL database (or Supabase/Neon account)
+- OpenAI API Key (for Case-LLM)
 
 ### Installation
 
-1. **Clone this repository**
-   ```bash
-   git clone https://github.com/rzonedevops/analyticase.git
-   cd analyticase
-   ```
+1.  **Clone this repository**
+    ```bash
+    git clone https://github.com/rzonedevops/analyticase.git
+    cd analyticase
+    ```
 
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+2.  **Install dependencies**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env
-   # Edit .env with your database and API credentials
-   ```
+3.  **Set up environment variables**
+    Create a `.env` file with your database and API credentials. You can use `.env.example` as a template.
 
-4. **Initialize the database**
-   ```bash
-   python za_judiciary_integration/scripts/init_database.py
-   ```
+4.  **Initialize the database**
+    ```bash
+    python za_judiciary_integration/scripts/init_database.py
+    ```
 
-5. **Run the API server**
-   ```bash
-   cd za_judiciary_integration/api
-   python main_za_enhanced.py
-   ```
+### Running Simulations
 
-6. **Test the installation**
-   ```bash
-   python test_api.py
-   ```
+To run the full suite of simulations:
+
+```bash
+python simulations/simulation_runner.py
+```
+
+Results will be saved in the `simulations/results/` directory.
 
 ### Docker Deployment
 
-For production deployment:
+For production deployment of the API:
 
 ```bash
 # Build and run with Docker Compose
 docker-compose up -d
-
-# Or build manually
-docker build -t za-judiciary-api .
-docker run -p 5000:5000 --env-file .env za-judiciary-api
 ```
 
 ## Documentation
 
-For detailed documentation on the integration architecture, refer to the files in the `docs/` directory:
-
-- [ZA Judiciary Integration Overview](za_judiciary_integration/docs/ZA_JUDICIARY_INTEGRATION.md)
-- [Data Mapping Documentation](za_judiciary_integration/docs/DATA_MAPPING_ZA_JUDICIARY.md)
-- [Field Mapping Examples](za_judiciary_integration/docs/FIELD_MAPPING_EXAMPLES.md)
-
-## Presentation
-
-The `presentation/` directory contains HTML slides that provide a visual overview of the integration architecture. These slides can be viewed in any modern web browser.
+- **Simulation Models**: Detailed documentation for each model can be found in the `README.md` file within each model's directory (e.g., `models/agent_based/README.md`).
+- **ZA Judiciary Integration**: Refer to the `docs/` directory in the `za_judiciary_integration` module for detailed documentation on the integration architecture.
 
 ## Contact
 
-For questions or support regarding this integration, please contact the development team.
+For questions or support, please contact the development team.
+
