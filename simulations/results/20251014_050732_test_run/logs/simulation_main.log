@@ -1,6 +1,0 @@
-2025-10-14 05:07:32 - simulation_main - INFO - Simulation run initialized: /home/ubuntu/analyticase/simulations/results/20251014_050732_test_run
-2025-10-14 05:07:32 - simulation_main - INFO - Timestamp: 20251014_050732
-2025-10-14 05:07:32 - simulation_main - INFO - Testing main logger
-2025-10-14 05:07:32 - simulation_main - INFO - Manifest created: /home/ubuntu/analyticase/simulations/results/20251014_050732_test_run/manifest.json
-2025-10-14 05:07:32 - simulation_main - INFO - Simulation run finalized
-2025-10-14 05:07:32 - simulation_main - INFO - All outputs saved to: /home/ubuntu/analyticase/simulations/results/20251014_050732_test_run
