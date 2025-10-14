@@ -1,0 +1,745 @@
+{
+  "timestamp": "20251014_100402",
+  "results": {
+    "agent_based": {
+      "simulation_type": "agent_based",
+      "time_steps": 100,
+      "metrics": {
+        "total_agents": 16,
+        "total_workload": 87,
+        "average_efficiency": 0.8079750678846264,
+        "total_interactions": 29,
+        "investigators": {
+          "count": 5,
+          "total_evidence": 0,
+          "total_leads": 0
+        },
+        "attorneys": {
+          "count": 8,
+          "total_briefs": 0,
+          "cases_won": 0,
+          "cases_lost": 0
+        },
+        "judges": {
+          "count": 3,
+          "cases_adjudicated": 0,
+          "rulings_made": 0
+        }
+      },
+      "events": [
+        {
+          "timestamp": "2025-10-14T10:04:02.493064",
+          "agent_1": "INV-004",
+          "agent_2": "ATT-001",
+          "type": "case_discussion",
+          "outcome": "success"
+        },
+        {
+          "timestamp": "2025-10-14T10:04:02.493084",
+          "agent_1": "ATT-007",
+          "agent_2": "ATT-004",
+          "type": "case_discussion",
+          "outcome": "success"
+        },
+        {
+          "timestamp": "2025-10-14T10:04:02.493150",
+          "agent_1": "INV-003",
+          "agent_2": "ATT-002",
+          "type": "case_discussion",
+          "outcome": "success"
+        },
+        {
+          "timestamp": "2025-10-14T10:04:02.493168",
+          "agent_1": "ATT-005",
+          "agent_2": "ATT-001",
+          "type": "case_discussion",
+          "outcome": "success"
+        },
+        {
+          "timestamp": "2025-10-14T10:04:02.493185",
+          "agent_1": "INV-002",
+          "agent_2": "ATT-006",
+          "type": "case_discussion",
+          "outcome": "success"
+        },
+        {
+          "timestamp": "2025-10-14T10:04:02.493227",
+          "agent_1": "JDG-002",
+          "agent_2": "ATT-005",
+          "type": "case_discussion",
+          "outcome": "success"
+        },
+        {
+          "timestamp": "2025-10-14T10:04:02.493341",
+          "agent_1": "INV-005",
+          "agent_2": "ATT-003",
+          "type": "case_discussion",
+          "outcome": "success"
+        },
+        {
+          "timestamp": "2025-10-14T10:04:02.493408",
+          "agent_1": "INV-004",
+          "agent_2": "ATT-004",
+          "type": "case_discussion",
+          "outcome": "success"
+        },
+        {
+          "timestamp": "2025-10-14T10:04:02.493462",
+          "agent_1": "INV-005",
+          "agent_2": "ATT-004",
+          "type": "case_discussion",
+          "outcome": "success"
+        },
+        {
+          "timestamp": "2025-10-14T10:04:02.493600",
+          "agent_1": "ATT-005",
+          "agent_2": "INV-005",
+          "type": "case_discussion",
+          "outcome": "success"
+        }
+      ],
+      "agent_summary": [
+        {
+          "id": "INV-001",
+          "type": "investigator",
+          "name": "Investigator 1",
+          "state": "working",
+          "efficiency": 0.9250431491000668,
+          "interactions": 1
+        },
+        {
+          "id": "INV-002",
+          "type": "investigator",
+          "name": "Investigator 2",
+          "state": "working",
+          "efficiency": 0.7413416964306145,
+          "interactions": 5
+        },
+        {
+          "id": "INV-003",
+          "type": "investigator",
+          "name": "Investigator 3",
+          "state": "working",
+          "efficiency": 0.9335029125631638,
+          "interactions": 3
+        },
+        {
+          "id": "INV-004",
+          "type": "investigator",
+          "name": "Investigator 4",
+          "state": "working",
+          "efficiency": 0.9201751532678378,
+          "interactions": 6
+        },
+        {
+          "id": "INV-005",
+          "type": "investigator",
+          "name": "Investigator 5",
+          "state": "working",
+          "efficiency": 0.8352082744251035,
+          "interactions": 8
+        },
+        {
+          "id": "ATT-001",
+          "type": "attorney",
+          "name": "Attorney 1",
+          "state": "working",
+          "efficiency": 0.6326986400166058,
+          "interactions": 9
+        },
+        {
+          "id": "ATT-002",
+          "type": "attorney",
+          "name": "Attorney 2",
+          "state": "working",
+          "efficiency": 0.878103231258436,
+          "interactions": 3
+        },
+        {
+          "id": "ATT-003",
+          "type": "attorney",
+          "name": "Attorney 3",
+          "state": "working",
+          "efficiency": 0.7179064405720782,
+          "interactions": 4
+        },
+        {
+          "id": "ATT-004",
+          "type": "attorney",
+          "name": "Attorney 4",
+          "state": "working",
+          "efficiency": 0.7780116856533641,
+          "interactions": 5
+        },
+        {
+          "id": "ATT-005",
+          "type": "attorney",
+          "name": "Attorney 5",
+          "state": "working",
+          "efficiency": 0.8615663436645155,
+          "interactions": 5
+        },
+        {
+          "id": "ATT-006",
+          "type": "attorney",
+          "name": "Attorney 6",
+          "state": "working",
+          "efficiency": 0.6957826458819413,
+          "interactions": 3
+        },
+        {
+          "id": "ATT-007",
+          "type": "attorney",
+          "name": "Attorney 7",
+          "state": "working",
+          "efficiency": 0.7843899394885117,
+          "interactions": 1
+        },
+        {
+          "id": "ATT-008",
+          "type": "attorney",
+          "name": "Attorney 8",
+          "state": "working",
+          "efficiency": 0.6033823305890137,
+          "interactions": 2
+        },
+        {
+          "id": "JDG-001",
+          "type": "judge",
+          "name": "Judge 1",
+          "state": "working",
+          "efficiency": 0.928321822022712,
+          "interactions": 0
+        },
+        {
+          "id": "JDG-002",
+          "type": "judge",
+          "name": "Judge 2",
+          "state": "working",
+          "efficiency": 0.8389132608119432,
+          "interactions": 2
+        },
+        {
+          "id": "JDG-003",
+          "type": "judge",
+          "name": "Judge 3",
+          "state": "working",
+          "efficiency": 0.8532535604081138,
+          "interactions": 1
+        }
+      ]
+    },
+    "discrete_event": {
+      "simulation_type": "discrete_event",
+      "simulation_duration": 365.0,
+      "final_time": 302.2224441402632,
+      "statistics": {
+        "cases_filed": 50,
+        "cases_closed": 50,
+        "hearings_conducted": 63,
+        "evidence_submitted": 587,
+        "rulings_issued": 63,
+        "total_events": 389
+      },
+      "case_metrics": {
+        "total_cases": 50,
+        "closed_cases": 50,
+        "average_duration": 90.6886813517549,
+        "average_evidence_items": 11.74,
+        "closure_rate": 100.0
+      },
+      "stage_distribution": {
+        "filed": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "discovery": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "pre_trial": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "trial": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "ruling": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "appeal": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "closed": {
+          "count": 50,
+          "percentage": 100.0
+        }
+      },
+      "sample_cases": [
+        {
+          "case_id": "CASE-00021",
+          "case_number": "(GP) 10021/2025",
+          "status": "closed",
+          "evidence_count": 5,
+          "stage_durations": {
+            "filed": 32.582322582238646,
+            "discovery": 26.201366541476,
+            "pre_trial": 14.237872964572446,
+            "trial": 9.867533160578404,
+            "ruling": 3.333700682618826,
+            "appeal": 41.50851333058685
+          }
+        },
+        {
+          "case_id": "CASE-00014",
+          "case_number": "(GP) 10014/2025",
+          "status": "closed",
+          "evidence_count": 8,
+          "stage_durations": {
+            "filed": 20.774375364277844,
+            "discovery": 16.89620744001236,
+            "pre_trial": 11.853655349875787,
+            "trial": 9.243051593577512,
+            "ruling": 3.165529965815118
+          }
+        },
+        {
+          "case_id": "CASE-00043",
+          "case_number": "(GP) 10043/2025",
+          "status": "closed",
+          "evidence_count": 6,
+          "stage_durations": {
+            "filed": 24.905798391347968,
+            "discovery": 19.446774643415207,
+            "pre_trial": 10.960631211909373,
+            "trial": 8.925846159238077,
+            "ruling": 3.629041284189185
+          }
+        },
+        {
+          "case_id": "CASE-00013",
+          "case_number": "(GP) 10013/2025",
+          "status": "closed",
+          "evidence_count": 11,
+          "stage_durations": {
+            "filed": 23.18202607072464,
+            "discovery": 17.043483475207164,
+            "pre_trial": 16.36432656659369,
+            "trial": 6.192051404441969,
+            "ruling": 4.588988424649145
+          }
+        },
+        {
+          "case_id": "CASE-00022",
+          "case_number": "(GP) 10022/2025",
+          "status": "closed",
+          "evidence_count": 11,
+          "stage_durations": {
+            "filed": 31.400537465730984,
+            "discovery": 19.67893676597635,
+            "pre_trial": 10.471840242406898,
+            "trial": 11.24142294525953,
+            "ruling": 3.2809475094122007
+          }
+        }
+      ]
+    },
+    "system_dynamics": {
+      "simulation_type": "system_dynamics",
+      "duration": 365.0,
+      "time_step": 1.0,
+      "final_stocks": {
+        "filed_cases": 30.18580150863624,
+        "discovery_cases": 60.287731037614904,
+        "pretrial_cases": 40.441258199549125,
+        "trial_cases": 20.259061670752736,
+        "ruling_cases": 10.667388544762055,
+        "closed_cases": 680.7713289821567
+      },
+      "average_stocks": {
+        "filed_cases": 30.714719475494995,
+        "discovery_cases": 58.94660888785308,
+        "pretrial_cases": 38.18141213702999,
+        "trial_cases": 18.810508844098194,
+        "ruling_cases": 9.818782467725933,
+        "closed_cases": 320.26869706287323
+      },
+      "metrics": {
+        "total_cases_filed": 727.6125699434716,
+        "total_cases_closed": 680.7713289821567,
+        "average_cycle_time_days": 83.89350311924012,
+        "system_efficiency_percent": 93.56233758235457,
+        "average_work_in_progress": 156.4720318122022
+      },
+      "stock_histories": {
+        "filed_cases": [
+          29.578560728219635,
+          29.617941275533088,
+          29.440037643321386,
+          29.421824844658417,
+          29.60406306687428,
+          29.78379188718133,
+          29.979028263607944,
+          30.158797543600215,
+          30.14187578806859,
+          30.18580150863624
+        ],
+        "discovery_cases": [
+          60.556171913984976,
+          60.50953689873345,
+          60.46708175381121,
+          60.41418153823893,
+          60.36183047660819,
+          60.32337366517954,
+          60.29818066881897,
+          60.286843197432205,
+          60.28786826042448,
+          60.287731037614904
+        ],
+        "pretrial_cases": [
+          40.55256773869973,
+          40.543478415564245,
+          40.533289058077145,
+          40.522193996967,
+          40.50989034839328,
+          40.49645684686055,
+          40.482413126690176,
+          40.46823182598297,
+          40.454381674598224,
+          40.441258199549125
+        ],
+        "trial_cases": [
+          20.274722696420515,
+          20.27487881371345,
+          20.274564853120317,
+          20.273772820712143,
+          20.272505238489277,
+          20.270749232060012,
+          20.26849715119704,
+          20.265768092411843,
+          20.262602874469806,
+          20.259061670752736
+        ],
+        "ruling_cases": [
+          10.665365196285764,
+          10.66641807863352,
+          10.667286525064496,
+          10.667958570614273,
+          10.668423724268775,
+          10.668673740506636,
+          10.668700653016376,
+          10.66849724406297,
+          10.66805957693219,
+          10.667388544762055
+        ],
+        "closed_cases": [
+          662.5295461533735,
+          664.5559655406678,
+          666.5825849756081,
+          668.6093694153705,
+          670.6362815437872,
+          672.6632820513983,
+          674.6903300620945,
+          676.7173831861676,
+          678.7443976625395,
+          680.7713289821567
+        ]
+      },
+      "flow_histories": {
+        "case_filing": [
+          2.033414284058735,
+          2.0112845958614276,
+          1.7966257861571706,
+          1.9444563775584571,
+          2.1436932118597567,
+          2.1533330247653355,
+          2.1808225022387013,
+          2.178371164232802,
+          1.9936647473750542,
+          2.0533841064388905
+        ],
+        "to_discovery": [
+          1.967510460297207,
+          1.9719040485479757,
+          1.9745294183688726,
+          1.9626691762214257,
+          1.9614549896438944,
+          1.9736042044582853,
+          1.9855861258120886,
+          1.9986018842405295,
+          2.010586502906681,
+          2.0094583858712394
+        ],
+        "to_pretrial": [
+          2.02029867081682,
+          2.018539063799499,
+          2.016984563291115,
+          2.015569391793707,
+          2.013806051274631,
+          2.01206101588694,
+          2.0107791221726514,
+          2.009939355627299,
+          2.009561439914407,
+          2.009595608680816
+        ],
+        "to_trial": [
+          2.028014161467522,
+          2.0276283869349863,
+          2.0271739207782122,
+          2.0266644529038573,
+          2.02610969984835,
+          2.0254945174196637,
+          2.0248228423430277,
+          2.024120656334509,
+          2.0234115912991486,
+          2.0227190837299114
+        ],
+        "to_ruling": [
+          2.0274120594392215,
+          2.0274722696420513,
+          2.027487881371345,
+          2.027456485312032,
+          2.0273772820712144,
+          2.027250523848928,
+          2.0270749232060012,
+          2.026849715119704,
+          2.026576809241184,
+          2.0262602874469806
+        ],
+        "to_closure": [
+          2.0261865382726456,
+          2.026419387294295,
+          2.026619434940369,
+          2.0267844397622543,
+          2.0269121284167118,
+          2.0270005076110675,
+          2.0270480106962605,
+          2.0270531240731113,
+          2.027014476371964,
+          2.0269313196171157
+        ]
+      }
+    },
+    "hyper_gnn": {
+      "simulation_type": "hyper_gnn",
+      "hypergraph_stats": {
+        "num_nodes": 35,
+        "num_hyperedges": 30,
+        "avg_node_degree": 3.1142857142857143,
+        "max_node_degree": 11,
+        "avg_edge_size": 3.6333333333333333,
+        "max_edge_size": 5
+      },
+      "communities": {
+        "entity_0": 1,
+        "entity_1": 1,
+        "entity_2": 1,
+        "entity_3": 1,
+        "entity_4": 1,
+        "entity_5": 1,
+        "entity_6": 1,
+        "entity_7": 1,
+        "entity_8": 1,
+        "entity_9": 1,
+        "entity_10": 1,
+        "entity_11": 1,
+        "entity_12": 1,
+        "entity_13": 1,
+        "entity_14": 1,
+        "entity_15": 1,
+        "entity_16": 1,
+        "entity_17": 1,
+        "entity_18": 1,
+        "entity_19": 1,
+        "evidence_0": 1,
+        "evidence_1": 2,
+        "evidence_2": 0,
+        "evidence_3": 0,
+        "evidence_4": 2,
+        "evidence_5": 1,
+        "evidence_6": 2,
+        "evidence_7": 2,
+        "evidence_8": 2,
+        "evidence_9": 0,
+        "evidence_10": 1,
+        "evidence_11": 2,
+        "evidence_12": 0,
+        "evidence_13": 1,
+        "evidence_14": 2
+      },
+      "num_communities": 3,
+      "link_predictions": [
+        {
+          "node1": "entity_3",
+          "node2": "entity_9",
+          "score": 0.9600507146401566
+        },
+        {
+          "node1": "entity_6",
+          "node2": "entity_8",
+          "score": 0.9403021984189027
+        },
+        {
+          "node1": "entity_2",
+          "node2": "entity_4",
+          "score": 0.9391404857414127
+        },
+        {
+          "node1": "entity_0",
+          "node2": "entity_1",
+          "score": 0.9279414754087257
+        },
+        {
+          "node1": "entity_7",
+          "node2": "entity_9",
+          "score": 0.927079600699451
+        },
+        {
+          "node1": "entity_3",
+          "node2": "entity_7",
+          "score": 0.9180897077553807
+        },
+        {
+          "node1": "entity_5",
+          "node2": "entity_6",
+          "score": 0.8846571227100589
+        },
+        {
+          "node1": "entity_8",
+          "node2": "entity_9",
+          "score": 0.8832773135398962
+        },
+        {
+          "node1": "entity_4",
+          "node2": "entity_8",
+          "score": 0.8821325478202036
+        },
+        {
+          "node1": "entity_2",
+          "node2": "entity_8",
+          "score": 0.8566321115319719
+        }
+      ],
+      "sample_embeddings": {
+        "entity_0": [
+          0.01666593018180342,
+          0.00026954718119877834,
+          0.0017527918614360222,
+          -0.009359090362847964,
+          0.003059200877279588
+        ],
+        "entity_1": [
+          0.010304997840148458,
+          0.0058298749984308056,
+          0.006279725905511994,
+          -0.005303329204577129,
+          0.0030327661983333464
+        ],
+        "entity_2": [
+          0.012783834783603563,
+          0.024728668424224446,
+          0.002325040838079599,
+          -1.3145506985681778e-05,
+          0.007883975569421444
+        ],
+        "entity_3": [
+          0.02318655281618154,
+          0.01423786887326752,
+          0.0035320827300531665,
+          -0.011820148404427279,
+          0.0069578280091729325
+        ],
+        "entity_4": [
+          0.010790443057822579,
+          0.023954720455571496,
+          0.005741378992706645,
+          0.007974987274350568,
+          0.006291895592141268
+        ]
+      }
+    },
+    "case_llm": {
+      "simulation_type": "case_llm",
+      "model": "gpt-4.1-mini",
+      "case_id": "CASE-2025-001",
+      "summary": {
+        "case_id": "CASE-2025-001",
+        "summary": "Mock analysis for case CASE-2025-001. The case involves complex legal matters requiring detailed investigation. Key areas of focus include evidence analysis, witness testimony evaluation, and legal precedent research.",
+        "model": "mock",
+        "timestamp": "2025-10-14T10:04:02.541368"
+      },
+      "entities": [
+        {
+          "type": "person",
+          "name": "John Doe",
+          "role": "defendant"
+        },
+        {
+          "type": "person",
+          "name": "Jane Smith",
+          "role": "plaintiff"
+        },
+        {
+          "type": "organization",
+          "name": "ABC Corporation",
+          "role": "third_party"
+        },
+        {
+          "type": "location",
+          "name": "Johannesburg",
+          "role": "jurisdiction"
+        },
+        {
+          "type": "date",
+          "value": "2025-01-15",
+          "role": "incident_date"
+        }
+      ],
+      "strength_assessment": {
+        "overall_strength": 0.7075,
+        "rating": "moderate",
+        "components": {
+          "evidence_quality": 0.75,
+          "legal_merit": 0.7,
+          "precedent_support": 0.65
+        },
+        "recommendations": [
+          "Strengthen evidence collection",
+          "Explore settlement opportunities",
+          "Consider expert witness testimony",
+          "Review legal strategy"
+        ]
+      },
+      "outcome_prediction": {
+        "predicted_outcome": "favorable",
+        "confidence": 0.75375,
+        "case_strength": {
+          "overall_strength": 0.7075,
+          "rating": "moderate",
+          "components": {
+            "evidence_quality": 0.75,
+            "legal_merit": 0.7,
+            "precedent_support": 0.65
+          },
+          "recommendations": [
+            "Strengthen evidence collection",
+            "Explore settlement opportunities",
+            "Consider expert witness testimony",
+            "Review legal strategy"
+          ]
+        },
+        "factors": [
+          "Evidence quality",
+          "Legal precedent",
+          "Jurisdiction considerations",
+          "Witness credibility"
+        ]
+      },
+      "brief": "LEGAL BRIEF - Case CASE-2025-001\n\n1. CASE SUMMARY\nThis matter involves complex legal issues requiring careful analysis and consideration of applicable law.\n\n2. LEGAL ISSUES\n- Issue 1: Determination of liability\n- Issue 2: Assessment of damages\n- Issue 3: Application of relevant statutes\n\n3. ANALYSIS\nThe facts of this case present several key considerations. The evidence suggests multiple parties may bear responsibility. Legal precedent supports a thorough examination of all relevant factors.\n\n4. RECOMMENDATIONS\n- Conduct comprehensive discovery\n- Engage expert witnesses\n- Prepare for potential settlement negotiations\n- Develop robust trial strategy\n\nPrepared by Case-LLM Analysis System\nDate: 2025-10-14\n",
+      "timestamp": "2025-10-14T10:04:02.541445"
+    }
+  }
+}

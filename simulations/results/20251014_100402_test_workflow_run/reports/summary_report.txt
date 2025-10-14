@@ -1,0 +1,30 @@
+================================================================================
+ANALYTICASE SIMULATION SUITE - COMPREHENSIVE REPORT
+================================================================================
+
+Timestamp: 20251014_100402
+Run Directory: /home/runner/work/analyticase/analyticase/simulations/results/20251014_100402_test_workflow_run
+
+Total Simulations: 5
+Successful: 5
+Failed: 0
+
+KEY INSIGHTS:
+--------------------------------------------------------------------------------
+
+Agent-Based:
+  Simulated 16 agents with 29 interactions
+
+Discrete-Event:
+  Processed 50 cases with 100.0% closure rate
+
+System Dynamics:
+  System efficiency: 93.6%, avg cycle time: 83.9 days
+
+HyperGNN:
+  Analyzed hypergraph with 35 nodes and 30 hyperedges
+
+Case-LLM:
+  Predicted outcome: favorable (confidence: 0.75)
+
+================================================================================

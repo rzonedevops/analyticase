@@ -1,0 +1,10 @@
+2025-10-14 10:04:02 - simulation_system_dynamics - INFO - Logger created for model: system_dynamics
+2025-10-14 10:04:02 - simulation_system_dynamics - INFO - ================================================================================
+2025-10-14 10:04:02 - simulation_system_dynamics - INFO - Starting system_dynamics simulation
+2025-10-14 10:04:02 - simulation_system_dynamics - INFO - Configuration: {'duration': 365.0, 'dt': 1.0}
+2025-10-14 10:04:02 - simulation_system_dynamics - INFO - ================================================================================
+2025-10-14 10:04:02 - simulation_system_dynamics - INFO - ================================================================================
+2025-10-14 10:04:02 - simulation_system_dynamics - INFO - Completed system_dynamics simulation
+2025-10-14 10:04:02 - simulation_system_dynamics - INFO - Results summary: {'total_cases_filed': 727.6125699434716, 'total_cases_closed': 680.7713289821567, 'average_cycle_time_days': 83.89350311924012, 'system_efficiency_percent': 93.56233758235457, 'average_work_in_progress': 156.4720318122022}
+2025-10-14 10:04:02 - simulation_system_dynamics - INFO - ================================================================================
+2025-10-14 10:04:02 - simulation_system_dynamics - INFO - Results saved to: /home/runner/work/analyticase/analyticase/simulations/results/20251014_100402_test_workflow_run/data/system_dynamics_results.json

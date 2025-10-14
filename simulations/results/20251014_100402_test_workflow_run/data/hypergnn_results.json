@@ -1,0 +1,138 @@
+{
+  "simulation_type": "hyper_gnn",
+  "hypergraph_stats": {
+    "num_nodes": 35,
+    "num_hyperedges": 30,
+    "avg_node_degree": 3.1142857142857143,
+    "max_node_degree": 11,
+    "avg_edge_size": 3.6333333333333333,
+    "max_edge_size": 5
+  },
+  "communities": {
+    "entity_0": 1,
+    "entity_1": 1,
+    "entity_2": 1,
+    "entity_3": 1,
+    "entity_4": 1,
+    "entity_5": 1,
+    "entity_6": 1,
+    "entity_7": 1,
+    "entity_8": 1,
+    "entity_9": 1,
+    "entity_10": 1,
+    "entity_11": 1,
+    "entity_12": 1,
+    "entity_13": 1,
+    "entity_14": 1,
+    "entity_15": 1,
+    "entity_16": 1,
+    "entity_17": 1,
+    "entity_18": 1,
+    "entity_19": 1,
+    "evidence_0": 1,
+    "evidence_1": 2,
+    "evidence_2": 0,
+    "evidence_3": 0,
+    "evidence_4": 2,
+    "evidence_5": 1,
+    "evidence_6": 2,
+    "evidence_7": 2,
+    "evidence_8": 2,
+    "evidence_9": 0,
+    "evidence_10": 1,
+    "evidence_11": 2,
+    "evidence_12": 0,
+    "evidence_13": 1,
+    "evidence_14": 2
+  },
+  "num_communities": 3,
+  "link_predictions": [
+    {
+      "node1": "entity_3",
+      "node2": "entity_9",
+      "score": 0.9600507146401566
+    },
+    {
+      "node1": "entity_6",
+      "node2": "entity_8",
+      "score": 0.9403021984189027
+    },
+    {
+      "node1": "entity_2",
+      "node2": "entity_4",
+      "score": 0.9391404857414127
+    },
+    {
+      "node1": "entity_0",
+      "node2": "entity_1",
+      "score": 0.9279414754087257
+    },
+    {
+      "node1": "entity_7",
+      "node2": "entity_9",
+      "score": 0.927079600699451
+    },
+    {
+      "node1": "entity_3",
+      "node2": "entity_7",
+      "score": 0.9180897077553807
+    },
+    {
+      "node1": "entity_5",
+      "node2": "entity_6",
+      "score": 0.8846571227100589
+    },
+    {
+      "node1": "entity_8",
+      "node2": "entity_9",
+      "score": 0.8832773135398962
+    },
+    {
+      "node1": "entity_4",
+      "node2": "entity_8",
+      "score": 0.8821325478202036
+    },
+    {
+      "node1": "entity_2",
+      "node2": "entity_8",
+      "score": 0.8566321115319719
+    }
+  ],
+  "sample_embeddings": {
+    "entity_0": [
+      0.01666593018180342,
+      0.00026954718119877834,
+      0.0017527918614360222,
+      -0.009359090362847964,
+      0.003059200877279588
+    ],
+    "entity_1": [
+      0.010304997840148458,
+      0.0058298749984308056,
+      0.006279725905511994,
+      -0.005303329204577129,
+      0.0030327661983333464
+    ],
+    "entity_2": [
+      0.012783834783603563,
+      0.024728668424224446,
+      0.002325040838079599,
+      -1.3145506985681778e-05,
+      0.007883975569421444
+    ],
+    "entity_3": [
+      0.02318655281618154,
+      0.01423786887326752,
+      0.0035320827300531665,
+      -0.011820148404427279,
+      0.0069578280091729325
+    ],
+    "entity_4": [
+      0.010790443057822579,
+      0.023954720455571496,
+      0.005741378992706645,
+      0.007974987274350568,
+      0.006291895592141268
+    ]
+  }
+}

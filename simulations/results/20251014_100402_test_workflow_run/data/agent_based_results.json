@@ -1,0 +1,228 @@
+{
+  "simulation_type": "agent_based",
+  "time_steps": 100,
+  "metrics": {
+    "total_agents": 16,
+    "total_workload": 87,
+    "average_efficiency": 0.8079750678846264,
+    "total_interactions": 29,
+    "investigators": {
+      "count": 5,
+      "total_evidence": 0,
+      "total_leads": 0
+    },
+    "attorneys": {
+      "count": 8,
+      "total_briefs": 0,
+      "cases_won": 0,
+      "cases_lost": 0
+    },
+    "judges": {
+      "count": 3,
+      "cases_adjudicated": 0,
+      "rulings_made": 0
+    }
+  },
+  "events": [
+    {
+      "timestamp": "2025-10-14T10:04:02.493064",
+      "agent_1": "INV-004",
+      "agent_2": "ATT-001",
+      "type": "case_discussion",
+      "outcome": "success"
+    },
+    {
+      "timestamp": "2025-10-14T10:04:02.493084",
+      "agent_1": "ATT-007",
+      "agent_2": "ATT-004",
+      "type": "case_discussion",
+      "outcome": "success"
+    },
+    {
+      "timestamp": "2025-10-14T10:04:02.493150",
+      "agent_1": "INV-003",
+      "agent_2": "ATT-002",
+      "type": "case_discussion",
+      "outcome": "success"
+    },
+    {
+      "timestamp": "2025-10-14T10:04:02.493168",
+      "agent_1": "ATT-005",
+      "agent_2": "ATT-001",
+      "type": "case_discussion",
+      "outcome": "success"
+    },
+    {
+      "timestamp": "2025-10-14T10:04:02.493185",
+      "agent_1": "INV-002",
+      "agent_2": "ATT-006",
+      "type": "case_discussion",
+      "outcome": "success"
+    },
+    {
+      "timestamp": "2025-10-14T10:04:02.493227",
+      "agent_1": "JDG-002",
+      "agent_2": "ATT-005",
+      "type": "case_discussion",
+      "outcome": "success"
+    },
+    {
+      "timestamp": "2025-10-14T10:04:02.493341",
+      "agent_1": "INV-005",
+      "agent_2": "ATT-003",
+      "type": "case_discussion",
+      "outcome": "success"
+    },
+    {
+      "timestamp": "2025-10-14T10:04:02.493408",
+      "agent_1": "INV-004",
+      "agent_2": "ATT-004",
+      "type": "case_discussion",
+      "outcome": "success"
+    },
+    {
+      "timestamp": "2025-10-14T10:04:02.493462",
+      "agent_1": "INV-005",
+      "agent_2": "ATT-004",
+      "type": "case_discussion",
+      "outcome": "success"
+    },
+    {
+      "timestamp": "2025-10-14T10:04:02.493600",
+      "agent_1": "ATT-005",
+      "agent_2": "INV-005",
+      "type": "case_discussion",
+      "outcome": "success"
+    }
+  ],
+  "agent_summary": [
+    {
+      "id": "INV-001",
+      "type": "investigator",
+      "name": "Investigator 1",
+      "state": "working",
+      "efficiency": 0.9250431491000668,
+      "interactions": 1
+    },
+    {
+      "id": "INV-002",
+      "type": "investigator",
+      "name": "Investigator 2",
+      "state": "working",
+      "efficiency": 0.7413416964306145,
+      "interactions": 5
+    },
+    {
+      "id": "INV-003",
+      "type": "investigator",
+      "name": "Investigator 3",
+      "state": "working",
+      "efficiency": 0.9335029125631638,
+      "interactions": 3
+    },
+    {
+      "id": "INV-004",
+      "type": "investigator",
+      "name": "Investigator 4",
+      "state": "working",
+      "efficiency": 0.9201751532678378,
+      "interactions": 6
+    },
+    {
+      "id": "INV-005",
+      "type": "investigator",
+      "name": "Investigator 5",
+      "state": "working",
+      "efficiency": 0.8352082744251035,
+      "interactions": 8
+    },
+    {
+      "id": "ATT-001",
+      "type": "attorney",
+      "name": "Attorney 1",
+      "state": "working",
+      "efficiency": 0.6326986400166058,
+      "interactions": 9
+    },
+    {
+      "id": "ATT-002",
+      "type": "attorney",
+      "name": "Attorney 2",
+      "state": "working",
+      "efficiency": 0.878103231258436,
+      "interactions": 3
+    },
+    {
+      "id": "ATT-003",
+      "type": "attorney",
+      "name": "Attorney 3",
+      "state": "working",
+      "efficiency": 0.7179064405720782,
+      "interactions": 4
+    },
+    {
+      "id": "ATT-004",
+      "type": "attorney",
+      "name": "Attorney 4",
+      "state": "working",
+      "efficiency": 0.7780116856533641,
+      "interactions": 5
+    },
+    {
+      "id": "ATT-005",
+      "type": "attorney",
+      "name": "Attorney 5",
+      "state": "working",
+      "efficiency": 0.8615663436645155,
+      "interactions": 5
+    },
+    {
+      "id": "ATT-006",
+      "type": "attorney",
+      "name": "Attorney 6",
+      "state": "working",
+      "efficiency": 0.6957826458819413,
+      "interactions": 3
+    },
+    {
+      "id": "ATT-007",
+      "type": "attorney",
+      "name": "Attorney 7",
+      "state": "working",
+      "efficiency": 0.7843899394885117,
+      "interactions": 1
+    },
+    {
+      "id": "ATT-008",
+      "type": "attorney",
+      "name": "Attorney 8",
+      "state": "working",
+      "efficiency": 0.6033823305890137,
+      "interactions": 2
+    },
+    {
+      "id": "JDG-001",
+      "type": "judge",
+      "name": "Judge 1",
+      "state": "working",
+      "efficiency": 0.928321822022712,
+      "interactions": 0
+    },
+    {
+      "id": "JDG-002",
+      "type": "judge",
+      "name": "Judge 2",
+      "state": "working",
+      "efficiency": 0.8389132608119432,
+      "interactions": 2
+    },
+    {
+      "id": "JDG-003",
+      "type": "judge",
+      "name": "Judge 3",
+      "state": "working",
+      "efficiency": 0.8532535604081138,
+      "interactions": 1
+    }
+  ]
+}

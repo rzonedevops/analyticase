@@ -1,0 +1,10 @@
+2025-10-14 10:04:02 - simulation_hyper_gnn - INFO - Logger created for model: hyper_gnn
+2025-10-14 10:04:02 - simulation_hyper_gnn - INFO - ================================================================================
+2025-10-14 10:04:02 - simulation_hyper_gnn - INFO - Starting hyper_gnn simulation
+2025-10-14 10:04:02 - simulation_hyper_gnn - INFO - Configuration: {'input_dim': 64, 'hidden_dim': 32, 'num_layers': 2}
+2025-10-14 10:04:02 - simulation_hyper_gnn - INFO - ================================================================================
+2025-10-14 10:04:02 - simulation_hyper_gnn - INFO - ================================================================================
+2025-10-14 10:04:02 - simulation_hyper_gnn - INFO - Completed hyper_gnn simulation
+2025-10-14 10:04:02 - simulation_hyper_gnn - INFO - Results summary: 6 result fields
+2025-10-14 10:04:02 - simulation_hyper_gnn - INFO - ================================================================================
+2025-10-14 10:04:02 - simulation_hyper_gnn - INFO - Results saved to: /home/runner/work/analyticase/analyticase/simulations/results/20251014_100402_test_workflow_run/data/hypergnn_results.json

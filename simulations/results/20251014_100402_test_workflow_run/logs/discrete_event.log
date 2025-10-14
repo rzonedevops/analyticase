@@ -1,0 +1,10 @@
+2025-10-14 10:04:02 - simulation_discrete_event - INFO - Logger created for model: discrete_event
+2025-10-14 10:04:02 - simulation_discrete_event - INFO - ================================================================================
+2025-10-14 10:04:02 - simulation_discrete_event - INFO - Starting discrete_event simulation
+2025-10-14 10:04:02 - simulation_discrete_event - INFO - Configuration: {'num_cases': 50, 'simulation_duration': 365.0}
+2025-10-14 10:04:02 - simulation_discrete_event - INFO - ================================================================================
+2025-10-14 10:04:02 - simulation_discrete_event - INFO - ================================================================================
+2025-10-14 10:04:02 - simulation_discrete_event - INFO - Completed discrete_event simulation
+2025-10-14 10:04:02 - simulation_discrete_event - INFO - Results summary: 7 result fields
+2025-10-14 10:04:02 - simulation_discrete_event - INFO - ================================================================================
+2025-10-14 10:04:02 - simulation_discrete_event - INFO - Results saved to: /home/runner/work/analyticase/analyticase/simulations/results/20251014_100402_test_workflow_run/data/discrete_event_results.json

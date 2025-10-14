@@ -1,0 +1,80 @@
+{
+  "simulation_type": "case_llm",
+  "model": "gpt-4.1-mini",
+  "case_id": "CASE-2025-001",
+  "summary": {
+    "case_id": "CASE-2025-001",
+    "summary": "Mock analysis for case CASE-2025-001. The case involves complex legal matters requiring detailed investigation. Key areas of focus include evidence analysis, witness testimony evaluation, and legal precedent research.",
+    "model": "mock",
+    "timestamp": "2025-10-14T10:04:02.541368"
+  },
+  "entities": [
+    {
+      "type": "person",
+      "name": "John Doe",
+      "role": "defendant"
+    },
+    {
+      "type": "person",
+      "name": "Jane Smith",
+      "role": "plaintiff"
+    },
+    {
+      "type": "organization",
+      "name": "ABC Corporation",
+      "role": "third_party"
+    },
+    {
+      "type": "location",
+      "name": "Johannesburg",
+      "role": "jurisdiction"
+    },
+    {
+      "type": "date",
+      "value": "2025-01-15",
+      "role": "incident_date"
+    }
+  ],
+  "strength_assessment": {
+    "overall_strength": 0.7075,
+    "rating": "moderate",
+    "components": {
+      "evidence_quality": 0.75,
+      "legal_merit": 0.7,
+      "precedent_support": 0.65
+    },
+    "recommendations": [
+      "Strengthen evidence collection",
+      "Explore settlement opportunities",
+      "Consider expert witness testimony",
+      "Review legal strategy"
+    ]
+  },
+  "outcome_prediction": {
+    "predicted_outcome": "favorable",
+    "confidence": 0.75375,
+    "case_strength": {
+      "overall_strength": 0.7075,
+      "rating": "moderate",
+      "components": {
+        "evidence_quality": 0.75,
+        "legal_merit": 0.7,
+        "precedent_support": 0.65
+      },
+      "recommendations": [
+        "Strengthen evidence collection",
+        "Explore settlement opportunities",
+        "Consider expert witness testimony",
+        "Review legal strategy"
+      ]
+    },
+    "factors": [
+      "Evidence quality",
+      "Legal precedent",
+      "Jurisdiction considerations",
+      "Witness credibility"
+    ]
+  },
+  "brief": "LEGAL BRIEF - Case CASE-2025-001\n\n1. CASE SUMMARY\nThis matter involves complex legal issues requiring careful analysis and consideration of applicable law.\n\n2. LEGAL ISSUES\n- Issue 1: Determination of liability\n- Issue 2: Assessment of damages\n- Issue 3: Application of relevant statutes\n\n3. ANALYSIS\nThe facts of this case present several key considerations. The evidence suggests multiple parties may bear responsibility. Legal precedent supports a thorough examination of all relevant factors.\n\n4. RECOMMENDATIONS\n- Conduct comprehensive discovery\n- Engage expert witnesses\n- Prepare for potential settlement negotiations\n- Develop robust trial strategy\n\nPrepared by Case-LLM Analysis System\nDate: 2025-10-14\n",
+  "timestamp": "2025-10-14T10:04:02.541445"
+}
