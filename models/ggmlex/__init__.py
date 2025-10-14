@@ -7,9 +7,12 @@ for complex legal relationship querying.
 """
 
 from .ggml import GGMLTensor, GGMLContext
-from .llm import LegalLLM
-from .transformers import LegalTransformer
-from .hypergraphql import HypergraphQLEngine
+from .llm import LegalLLM, LegalLLMConfig, LegalDocument
+from .transformers import LegalTransformer, TransformerConfig
+from .hypergraphql import (
+    HypergraphQLEngine, LegalNode, LegalHyperedge,
+    LegalNodeType, LegalRelationType
+)
 
 __version__ = "0.1.0"
 
@@ -17,6 +20,13 @@ __all__ = [
     'GGMLTensor',
     'GGMLContext',
     'LegalLLM',
+    'LegalLLMConfig',
+    'LegalDocument',
     'LegalTransformer',
+    'TransformerConfig',
     'HypergraphQLEngine',
+    'LegalNode',
+    'LegalHyperedge',
+    'LegalNodeType',
+    'LegalRelationType',
 ]
