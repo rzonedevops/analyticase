@@ -36,7 +36,15 @@ class SimulationLogger:
         # Create timestamped run directory
         timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         if run_name:
-            self.run_dir = self.base_output_dir / f"{timestamp}_{run_name}"
+            # Check if run_name already contains a timestamp pattern (YYYYMMDD_HHMMSS)
+            import re
+            timestamp_pattern = r'^\d{8}_\d{6}'
+            if re.match(timestamp_pattern, run_name):
+                # Use run_name as-is if it already has timestamp
+                self.run_dir = self.base_output_dir / run_name
+            else:
+                # Add timestamp prefix to run_name
+                self.run_dir = self.base_output_dir / f"{timestamp}_{run_name}"
         else:
             self.run_dir = self.base_output_dir / timestamp
         
