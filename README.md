@@ -13,7 +13,10 @@ analyticase/
 │   ├── discrete_event/       # Discrete-event model for case lifecycle simulation
 │   ├── system_dynamics/      # System dynamics model for case flow analysis
 │   ├── hyper_gnn/            # HyperGNN model for complex relationship analysis
-│   └── case_llm/             # Case-LLM for legal document analysis and generation
+│   ├── case_llm/             # Case-LLM for legal document analysis and generation
+│   └── ggmlex/               # GGML-based ML framework with HypergraphQL
+├── lex/                      # Legal framework directory (legislation structure)
+│   └── civ/za/               # South African civil law framework
 ├── simulations/              # Unified simulation runner and results
 │   ├── simulation_runner.py  # Main script to run all simulations
 │   └── results/              # Directory for simulation output
@@ -35,6 +38,7 @@ analyticase/
 - **System Dynamics Model**: Provides a high-level view of case flow through the judicial system using stock-and-flow diagrams to identify systemic issues.
 - **HyperGNN Model**: Utilizes hypergraph neural networks to uncover complex, higher-order relationships between entities in a case that traditional graph models might miss.
 - **Case-LLM**: Leverages large language models for advanced legal document analysis, summarization, entity extraction, and brief generation.
+- **GGMLEX**: GGML-based ML framework with HypergraphQL integration for querying legal frameworks, featuring LlamaLex.cpp inference engine optimized for legal text processing.
 
 ### ZA Judiciary Integration
 
@@ -114,9 +118,43 @@ For production deployment of the API:
 docker-compose up -d
 ```
 
+## Using GGMLEX with HypergraphQL
+
+The GGMLEX framework provides advanced ML capabilities and legal framework querying:
+
+```bash
+# Run HypergraphQL examples
+python models/ggmlex/hypergraphql/hypergraphql_example.py
+
+# Test GGMLEX components
+python -m pytest models/ggmlex/test_ggmlex.py -v
+```
+
+Example usage in Python:
+
+```python
+from models.ggmlex import (
+    HypergraphQLEngine, LegalNode, LegalNodeType,
+    LegalTransformer, LegalLLM
+)
+
+# Query legal framework
+engine = HypergraphQLEngine()
+cases = engine.query_nodes(node_type=LegalNodeType.CASE, jurisdiction="za")
+
+# Analyze legal text
+transformer = LegalTransformer()
+analysis = transformer.analyze_legal_text("The contract was breached...")
+
+# Use Legal LLM
+llm = LegalLLM()
+result = llm.analyze_case("Plaintiff v. Defendant case text...")
+```
+
 ## Documentation
 
 - **Simulation Models**: Detailed documentation for each model can be found in the `README.md` file within each model's directory (e.g., `models/agent_based/README.md`).
+- **GGMLEX Framework**: See `models/ggmlex/README.md` for comprehensive documentation on the GGML-based ML framework, HypergraphQL, and LlamaLex.cpp inference engine.
 - **ZA Judiciary Integration**: Refer to the `docs/` directory in the `za_judiciary_integration` module for detailed documentation on the integration architecture.
 
 ## Contact
