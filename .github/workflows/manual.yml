@@ -102,24 +102,70 @@ jobs:
         fi
         
         echo "Executing: $cmd"
-        eval $cmd
         
-        # Capture run directory
-        RUN_DIR="simulations/results/${{ steps.config.outputs.run_name }}"
-        echo "run_directory=$RUN_DIR" >> $GITHUB_OUTPUT
+        # Run simulation and capture exit code
+        if eval $cmd; then
+          echo "Simulation completed successfully"
+          
+          # Capture run directory
+          RUN_DIR="simulations/results/${{ steps.config.outputs.run_name }}"
+          echo "run_directory=$RUN_DIR" >> $GITHUB_OUTPUT
+          
+          # Verify directory and files exist
+          if [ -d "$RUN_DIR" ]; then
+            echo "✓ Run directory exists: $RUN_DIR"
+            echo "✓ Directory contents:"
+            ls -la "$RUN_DIR/"
+            
+            # Check for required subdirectories
+            for subdir in logs data reports; do
+              if [ -d "$RUN_DIR/$subdir" ]; then
+                file_count=$(find "$RUN_DIR/$subdir" -type f | wc -l)
+                echo "✓ $subdir/ exists with $file_count files"
+              else
+                echo "⚠ $subdir/ directory missing"
+              fi
+            done
+            
+            # Check for manifest
+            if [ -f "$RUN_DIR/manifest.json" ]; then
+              echo "✓ manifest.json exists"
+            else
+              echo "⚠ manifest.json missing"
+            fi
+          else
+            echo "❌ Run directory does not exist: $RUN_DIR"
+            echo "Available directories in simulations/results/:"
+            ls -la simulations/results/ || true
+            exit 1
+          fi
+        else
+          echo "❌ Simulation failed with exit code $?"
+          echo "Available directories in simulations/results/:"
+          ls -la simulations/results/ || true
+          exit 1
+        fi
         
         echo "::endgroup::"
 
     - name: Display Simulation Summary
+      if: ${{ steps.simulations.conclusion == 'success' }}
       run: |
         echo "::group::Simulation Results Summary"
         
         RUN_DIR="${{ steps.simulations.outputs.run_directory }}"
         
+        if [ ! -d "$RUN_DIR" ]; then
+          echo "❌ Run directory not found: $RUN_DIR"
+          exit 1
+        fi
+        
         # Display summary report if it exists
         if [ -f "$RUN_DIR/reports/summary_report.txt" ]; then
           echo "## Simulation Summary Report"
           cat "$RUN_DIR/reports/summary_report.txt"
+        else
+          echo "⚠ Summary report not found"
         fi
         
         # Display manifest info
@@ -129,17 +175,23 @@ jobs:
           echo "Timestamp: $(jq -r '.timestamp' $RUN_DIR/manifest.json)"
           echo "Models: $(jq -r '.metadata.models | join(", ")' $RUN_DIR/manifest.json)"
           echo "Directory: $(jq -r '.run_directory' $RUN_DIR/manifest.json)"
+        else
+          echo "⚠ Manifest file not found"
         fi
         
         # List result files
         echo ""
         echo "## Generated Files"
-        find "$RUN_DIR" -type f -name "*.json" -o -name "*.txt" -o -name "*.log" | sort
+        if [ -d "$RUN_DIR" ]; then
+          find "$RUN_DIR" -type f -name "*.json" -o -name "*.txt" -o -name "*.log" | sort
+        else
+          echo "No files found in $RUN_DIR"
+        fi
         
         echo "::endgroup::"
 
     - name: Upload Simulation Logs
-      if: ${{ inputs.upload_logs }}
+      if: ${{ inputs.upload_logs && steps.simulations.conclusion == 'success' }}
       uses: actions/upload-artifact@v4
       with:
         name: simulation-logs-${{ steps.config.outputs.timestamp }}
@@ -147,9 +199,10 @@ jobs:
           ${{ steps.simulations.outputs.run_directory }}/logs/
           ${{ steps.simulations.outputs.run_directory }}/manifest.json
         retention-days: 30
+        if-no-files-found: warn
 
     - name: Upload Simulation Data
-      if: ${{ inputs.upload_data }}
+      if: ${{ inputs.upload_data && steps.simulations.conclusion == 'success' }}
       uses: actions/upload-artifact@v4
       with:
         name: simulation-data-${{ steps.config.outputs.timestamp }}
@@ -157,10 +210,13 @@ jobs:
           ${{ steps.simulations.outputs.run_directory }}/data/
           ${{ steps.simulations.outputs.run_directory }}/reports/
         retention-days: 30
+        if-no-files-found: warn
 
     - name: Upload Complete Results
+      if: ${{ steps.simulations.conclusion == 'success' }}
       uses: actions/upload-artifact@v4
       with:
         name: complete-simulation-results-${{ steps.config.outputs.timestamp }}
         path: ${{ steps.simulations.outputs.run_directory }}/
         retention-days: 30
+        if-no-files-found: warn
