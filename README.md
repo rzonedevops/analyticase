@@ -74,13 +74,36 @@ analyticase/
 
 ### Running Simulations
 
-To run the full suite of simulations:
+#### Local Execution
+
+To run the full suite of simulations locally:
 
 ```bash
-python simulations/simulation_runner.py
+python simulations/simulation_runner_v2.py
 ```
 
-Results will be saved in the `simulations/results/` directory.
+For advanced usage with custom configurations:
+
+```bash
+# Run with custom configuration
+python simulations/simulation_runner_v2.py --config simulations/example_config.json --name "my_analysis"
+
+# Run with custom output directory
+python simulations/simulation_runner_v2.py --output /path/to/custom/output --name "production_run"
+```
+
+Results will be saved in timestamped directories under `simulations/results/`.
+
+#### GitHub Actions (Recommended)
+
+You can also run simulations directly from GitHub using our manual workflow:
+
+1. Go to the **Actions** tab in this repository
+2. Select **"Run AnalytiCase Simulations"**
+3. Click **"Run workflow"** and configure your simulation parameters
+4. Download results as artifacts when complete
+
+This approach requires no local setup and provides automatic result archiving. See the [GitHub Actions Guide](docs/GITHUB_ACTIONS_GUIDE.md) for detailed instructions.
 
 ### Docker Deployment
 

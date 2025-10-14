@@ -1,5 +1,7 @@
 # Logging System Quick Start Guide
 
+> **New!** You can now run simulations directly from GitHub Actions! See the [GitHub Actions Guide](docs/GITHUB_ACTIONS_GUIDE.md) for a no-setup approach to running simulations.
+
 ## 🚀 Quick Start
 
 ### Run a Simulation with Logging

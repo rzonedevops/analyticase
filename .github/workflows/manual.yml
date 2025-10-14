@@ -1,6 +1,6 @@
-# This is a basic workflow that is manually triggered
+# Manual GitHub Action for Running AnalytiCase Simulations
 
-name: Manual workflow
+name: Run AnalytiCase Simulations
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -8,25 +8,159 @@ on:
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
-        # Default value if no value is explicitly provided
-        default: 'World'
-        # Input has to be provided for the workflow to run
+      simulation_name:
+        description: 'Name for this simulation run (will be part of output folder name)'
+        default: 'github_action_run'
         required: true
-        # The data type of the input
         type: string
+      
+      config_type:
+        description: 'Configuration to use'
+        required: true
+        default: 'default'
+        type: choice
+        options:
+        - default
+        - example_config
+        - custom
+      
+      custom_config:
+        description: 'Custom JSON configuration (only used if config_type is "custom")'
+        required: false
+        type: string
+        default: '{}'
+      
+      timeout_minutes:
+        description: 'Simulation timeout in minutes'
+        required: false
+        default: '30'
+        type: string
+      
+      upload_logs:
+        description: 'Upload detailed logs as artifacts'
+        required: false
+        default: true
+        type: boolean
+      
+      upload_data:
+        description: 'Upload simulation data results as artifacts'
+        required: false
+        default: true
+        type: boolean
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "greet"
-  greet:
+  run-simulations:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    timeout-minutes: ${{ fromJSON(inputs.timeout_minutes) }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Hello ${{ inputs.name }}"
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Prepare configuration
+      id: config
+      run: |
+        if [ "${{ inputs.config_type }}" = "custom" ]; then
+          echo '${{ inputs.custom_config }}' > custom_config.json
+          echo "config_file=custom_config.json" >> $GITHUB_OUTPUT
+        elif [ "${{ inputs.config_type }}" = "example_config" ]; then
+          echo "config_file=simulations/example_config.json" >> $GITHUB_OUTPUT
+        else
+          echo "config_file=" >> $GITHUB_OUTPUT
+        fi
+        
+        # Create timestamped run name
+        TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+        RUN_NAME="${TIMESTAMP}_${{ inputs.simulation_name }}"
+        echo "run_name=$RUN_NAME" >> $GITHUB_OUTPUT
+        echo "timestamp=$TIMESTAMP" >> $GITHUB_OUTPUT
+
+    - name: Run AnalytiCase Simulations
+      id: simulations
+      run: |
+        echo "::group::Running AnalytiCase Simulation Suite"
+        
+        # Prepare command
+        cmd="python3 simulations/simulation_runner_v2.py --name '${{ steps.config.outputs.run_name }}'"
+        
+        if [ -n "${{ steps.config.outputs.config_file }}" ]; then
+          cmd="$cmd --config '${{ steps.config.outputs.config_file }}'"
+        fi
+        
+        echo "Executing: $cmd"
+        eval $cmd
+        
+        # Capture run directory
+        RUN_DIR="simulations/results/${{ steps.config.outputs.run_name }}"
+        echo "run_directory=$RUN_DIR" >> $GITHUB_OUTPUT
+        
+        echo "::endgroup::"
+
+    - name: Display Simulation Summary
+      run: |
+        echo "::group::Simulation Results Summary"
+        
+        RUN_DIR="${{ steps.simulations.outputs.run_directory }}"
+        
+        # Display summary report if it exists
+        if [ -f "$RUN_DIR/reports/summary_report.txt" ]; then
+          echo "## Simulation Summary Report"
+          cat "$RUN_DIR/reports/summary_report.txt"
+        fi
+        
+        # Display manifest info
+        if [ -f "$RUN_DIR/manifest.json" ]; then
+          echo ""
+          echo "## Run Configuration"
+          echo "Timestamp: $(jq -r '.timestamp' $RUN_DIR/manifest.json)"
+          echo "Models: $(jq -r '.metadata.models | join(", ")' $RUN_DIR/manifest.json)"
+          echo "Directory: $(jq -r '.run_directory' $RUN_DIR/manifest.json)"
+        fi
+        
+        # List result files
+        echo ""
+        echo "## Generated Files"
+        find "$RUN_DIR" -type f -name "*.json" -o -name "*.txt" -o -name "*.log" | sort
+        
+        echo "::endgroup::"
+
+    - name: Upload Simulation Logs
+      if: ${{ inputs.upload_logs }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: simulation-logs-${{ steps.config.outputs.timestamp }}
+        path: |
+          ${{ steps.simulations.outputs.run_directory }}/logs/
+          ${{ steps.simulations.outputs.run_directory }}/manifest.json
+        retention-days: 30
+
+    - name: Upload Simulation Data
+      if: ${{ inputs.upload_data }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: simulation-data-${{ steps.config.outputs.timestamp }}
+        path: |
+          ${{ steps.simulations.outputs.run_directory }}/data/
+          ${{ steps.simulations.outputs.run_directory }}/reports/
+        retention-days: 30
+
+    - name: Upload Complete Results
+      uses: actions/upload-artifact@v4
+      with:
+        name: complete-simulation-results-${{ steps.config.outputs.timestamp }}
+        path: ${{ steps.simulations.outputs.run_directory }}/
+        retention-days: 30
