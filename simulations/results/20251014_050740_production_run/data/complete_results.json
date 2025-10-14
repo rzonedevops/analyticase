@@ -1,0 +1,725 @@
+{
+  "timestamp": "20251014_050740",
+  "results": {
+    "agent_based": {
+      "simulation_type": "agent_based",
+      "time_steps": 100,
+      "metrics": {
+        "total_agents": 16,
+        "total_workload": 91,
+        "average_efficiency": 0.838231318092221,
+        "total_interactions": 33,
+        "investigators": {
+          "count": 5,
+          "total_evidence": 0,
+          "total_leads": 0
+        },
+        "attorneys": {
+          "count": 8,
+          "total_briefs": 0,
+          "cases_won": 0,
+          "cases_lost": 0
+        },
+        "judges": {
+          "count": 3,
+          "cases_adjudicated": 0,
+          "rulings_made": 0
+        }
+      },
+      "events": [
+        {
+          "timestamp": "2025-10-14T05:07:40.223090",
+          "agent_1": "ATT-002",
+          "agent_2": "ATT-006",
+          "type": "case_discussion",
+          "outcome": "success"
+        },
+        {
+          "timestamp": "2025-10-14T05:07:40.223113",
+          "agent_1": "ATT-006",
+          "agent_2": "ATT-008",
+          "type": "case_discussion",
+          "outcome": "success"
+        },
+        {
+          "timestamp": "2025-10-14T05:07:40.223135",
+          "agent_1": "INV-002",
+          "agent_2": "JDG-001",
+          "type": "case_discussion",
+          "outcome": "success"
+        },
+        {
+          "timestamp": "2025-10-14T05:07:40.223167",
+          "agent_1": "JDG-003",
+          "agent_2": "ATT-002",
+          "type": "case_discussion",
+          "outcome": "success"
+        },
+        {
+          "timestamp": "2025-10-14T05:07:40.223226",
+          "agent_1": "ATT-006",
+          "agent_2": "ATT-007",
+          "type": "case_discussion",
+          "outcome": "success"
+        },
+        {
+          "timestamp": "2025-10-14T05:07:40.223276",
+          "agent_1": "ATT-005",
+          "agent_2": "JDG-003",
+          "type": "case_discussion",
+          "outcome": "success"
+        },
+        {
+          "timestamp": "2025-10-14T05:07:40.223290",
+          "agent_1": "ATT-003",
+          "agent_2": "INV-002",
+          "type": "case_discussion",
+          "outcome": "success"
+        },
+        {
+          "timestamp": "2025-10-14T05:07:40.223312",
+          "agent_1": "INV-005",
+          "agent_2": "JDG-003",
+          "type": "case_discussion",
+          "outcome": "success"
+        },
+        {
+          "timestamp": "2025-10-14T05:07:40.223362",
+          "agent_1": "ATT-003",
+          "agent_2": "ATT-007",
+          "type": "case_discussion",
+          "outcome": "success"
+        },
+        {
+          "timestamp": "2025-10-14T05:07:40.223467",
+          "agent_1": "ATT-008",
+          "agent_2": "ATT-005",
+          "type": "case_discussion",
+          "outcome": "success"
+        }
+      ],
+      "agent_summary": [
+        {
+          "id": "INV-001",
+          "type": "investigator",
+          "name": "Investigator 1",
+          "state": "working",
+          "efficiency": 0.8491939502614727,
+          "interactions": 1
+        },
+        {
+          "id": "INV-002",
+          "type": "investigator",
+          "name": "Investigator 2",
+          "state": "working",
+          "efficiency": 0.8961170599714336,
+          "interactions": 6
+        },
+        {
+          "id": "INV-003",
+          "type": "investigator",
+          "name": "Investigator 3",
+          "state": "working",
+          "efficiency": 0.9021929799728197,
+          "interactions": 5
+        },
+        {
+          "id": "INV-004",
+          "type": "investigator",
+          "name": "Investigator 4",
+          "state": "working",
+          "efficiency": 0.9193771565889712,
+          "interactions": 2
+        },
+        {
+          "id": "INV-005",
+          "type": "investigator",
+          "name": "Investigator 5",
+          "state": "working",
+          "efficiency": 0.7913042347184961,
+          "interactions": 4
+        },
+        {
+          "id": "ATT-001",
+          "type": "attorney",
+          "name": "Attorney 1",
+          "state": "working",
+          "efficiency": 0.6549445253314117,
+          "interactions": 3
+        },
+        {
+          "id": "ATT-002",
+          "type": "attorney",
+          "name": "Attorney 2",
+          "state": "working",
+          "efficiency": 0.6427750061494036,
+          "interactions": 3
+        },
+        {
+          "id": "ATT-003",
+          "type": "attorney",
+          "name": "Attorney 3",
+          "state": "working",
+          "efficiency": 0.7362867324942219,
+          "interactions": 7
+        },
+        {
+          "id": "ATT-004",
+          "type": "attorney",
+          "name": "Attorney 4",
+          "state": "working",
+          "efficiency": 0.8458419069212764,
+          "interactions": 4
+        },
+        {
+          "id": "ATT-005",
+          "type": "attorney",
+          "name": "Attorney 5",
+          "state": "working",
+          "efficiency": 0.9121414011282368,
+          "interactions": 4
+        },
+        {
+          "id": "ATT-006",
+          "type": "attorney",
+          "name": "Attorney 6",
+          "state": "working",
+          "efficiency": 0.7027694066719659,
+          "interactions": 7
+        },
+        {
+          "id": "ATT-007",
+          "type": "attorney",
+          "name": "Attorney 7",
+          "state": "working",
+          "efficiency": 0.8867205036164902,
+          "interactions": 5
+        },
+        {
+          "id": "ATT-008",
+          "type": "attorney",
+          "name": "Attorney 8",
+          "state": "working",
+          "efficiency": 0.8777198911031898,
+          "interactions": 4
+        },
+        {
+          "id": "JDG-001",
+          "type": "judge",
+          "name": "Judge 1",
+          "state": "working",
+          "efficiency": 0.8522072856966204,
+          "interactions": 4
+        },
+        {
+          "id": "JDG-002",
+          "type": "judge",
+          "name": "Judge 2",
+          "state": "working",
+          "efficiency": 0.9744256630437712,
+          "interactions": 2
+        },
+        {
+          "id": "JDG-003",
+          "type": "judge",
+          "name": "Judge 3",
+          "state": "working",
+          "efficiency": 0.9676833858057536,
+          "interactions": 5
+        }
+      ]
+    },
+    "discrete_event": {
+      "simulation_type": "discrete_event",
+      "simulation_duration": 365.0,
+      "final_time": 294.8806519748576,
+      "statistics": {
+        "cases_filed": 50,
+        "cases_closed": 50,
+        "hearings_conducted": 70,
+        "evidence_submitted": 635,
+        "rulings_issued": 70,
+        "total_events": 410
+      },
+      "case_metrics": {
+        "total_cases": 50,
+        "closed_cases": 50,
+        "average_duration": 99.28812088359929,
+        "average_evidence_items": 12.7,
+        "closure_rate": 100.0
+      },
+      "stage_distribution": {
+        "filed": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "discovery": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "pre_trial": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "trial": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "ruling": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "appeal": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "closed": {
+          "count": 50,
+          "percentage": 100.0
+        }
+      },
+      "sample_cases": [
+        {
+          "case_id": "CASE-00018",
+          "case_number": "(GP) 10018/2025",
+          "status": "closed",
+          "evidence_count": 7,
+          "stage_durations": {
+            "filed": 40.887762967334055,
+            "discovery": 18.61352025112582,
+            "pre_trial": 13.417424949157692,
+            "trial": 13.477400065534596,
+            "ruling": 4.646567799614957
+          }
+        },
+        {
+          "case_id": "CASE-00023",
+          "case_number": "(GP) 10023/2025",
+          "status": "closed",
+          "evidence_count": 18,
+          "stage_durations": {
+            "filed": 38.044487457932696,
+            "discovery": 24.33020774182056,
+            "pre_trial": 10.327009377654178,
+            "trial": 13.223291532834622,
+            "ruling": 4.6993034170590136,
+            "appeal": 41.55518250448429
+          }
+        },
+        {
+          "case_id": "CASE-00021",
+          "case_number": "(GP) 10021/2025",
+          "status": "closed",
+          "evidence_count": 10,
+          "stage_durations": {
+            "filed": 39.17269920243304,
+            "discovery": 24.1353803105335,
+            "pre_trial": 18.039448597826812,
+            "trial": 5.097625070810295,
+            "ruling": 3.7467937547422423,
+            "appeal": 50.97643741265277
+          }
+        },
+        {
+          "case_id": "CASE-00012",
+          "case_number": "(GP) 10012/2025",
+          "status": "closed",
+          "evidence_count": 18,
+          "stage_durations": {
+            "filed": 32.933019146203414,
+            "discovery": 25.80482935211539,
+            "pre_trial": 15.461215403789097,
+            "trial": 6.728587581154301,
+            "ruling": 2.487833280560764
+          }
+        },
+        {
+          "case_id": "CASE-00030",
+          "case_number": "(GP) 10030/2025",
+          "status": "closed",
+          "evidence_count": 7,
+          "stage_durations": {
+            "filed": 35.34139908001448,
+            "discovery": 20.590221128803883,
+            "pre_trial": 11.430924067604806,
+            "trial": 5.952887522811039,
+            "ruling": 3.4490927711910047
+          }
+        }
+      ]
+    },
+    "system_dynamics": {
+      "simulation_type": "system_dynamics",
+      "duration": 365.0,
+      "time_step": 1.0,
+      "final_stocks": {
+        "filed_cases": 30.181930796908738,
+        "discovery_cases": 60.03402607589882,
+        "pretrial_cases": 39.93064154926366,
+        "trial_cases": 19.909633657324708,
+        "ruling_cases": 10.460648141615826,
+        "closed_cases": 682.5309659940416
+      },
+      "average_stocks": {
+        "filed_cases": 30.732706726964725,
+        "discovery_cases": 59.00270684793251,
+        "pretrial_cases": 38.2457803207894,
+        "trial_cases": 18.851982991841275,
+        "ruling_cases": 9.84352155796591,
+        "closed_cases": 323.4108031524846
+      },
+      "metrics": {
+        "total_cases_filed": 728.0478462150537,
+        "total_cases_closed": 682.5309659940416,
+        "average_cycle_time_days": 83.78666724566527,
+        "system_efficiency_percent": 93.74809218135272,
+        "average_work_in_progress": 156.6766984454938
+      },
+      "stock_histories": {
+        "filed_cases": [
+          29.76579691274677,
+          29.96342101261945,
+          29.593765209521845,
+          29.4961131877714,
+          29.745836303524428,
+          29.654163303013075,
+          29.495895545398735,
+          29.842450452400442,
+          30.072890879846717,
+          30.181930796908738
+        ],
+        "discovery_cases": [
+          60.23150166209111,
+          60.208171400871194,
+          60.19879375501679,
+          60.16508497715102,
+          60.12598969043074,
+          60.10484578765134,
+          60.078295148263834,
+          60.04207834634829,
+          60.03017243163004,
+          60.03402607589882
+        ],
+        "pretrial_cases": [
+          39.84202543063244,
+          39.857640881170525,
+          39.871697883807705,
+          39.88473944811788,
+          39.896005308283684,
+          39.90540469921719,
+          39.91362932384471,
+          39.92055769592793,
+          39.92593242267648,
+          39.93064154926366
+        ],
+        "trial_cases": [
+          19.847417458377606,
+          19.854776984071467,
+          19.862181329722848,
+          19.86954809094095,
+          19.87683025425275,
+          19.883947494241657,
+          19.89082297977835,
+          19.89742214799275,
+          19.903707817989872,
+          19.909633657324708
+        ],
+        "ruling_cases": [
+          10.429667735142143,
+          10.432772611302896,
+          10.436023513562493,
+          10.439397178957904,
+          10.442866524049997,
+          10.446404909905773,
+          10.449982726447843,
+          10.453568306400587,
+          10.45713254298375,
+          10.460648141615826
+        ],
+        "closed_cases": [
+          664.6732809447785,
+          666.6549178144555,
+          668.6371446106031,
+          670.61998907818,
+          672.603474542182,
+          674.5876191817515,
+          676.5724361146335,
+          678.5579328326586,
+          680.5441108108747,
+          682.5309659940416
+        ]
+      },
+      "flow_histories": {
+        "case_filing": [
+          1.638426267392712,
+          2.1820105607224662,
+          1.6279055977436911,
+          1.875265658884343,
+          2.2161306616044536,
+          1.8913827530569431,
+          1.8186764625865308,
+          2.3129479433616242,
+          2.2199371242729726,
+          2.113899309051801
+        ],
+        "to_discovery": [
+          2.0090979032395757,
+          1.9843864608497845,
+          1.9975614008412965,
+          1.9729176806347897,
+          1.9664075458514267,
+          1.983055753568295,
+          1.9769442202008716,
+          1.9663930363599156,
+          1.989496696826696,
+          2.0048593919897812
+        ],
+        "to_pretrial": [
+          2.0076690951328113,
+          2.007716722069704,
+          2.0069390466957064,
+          2.0066264585005595,
+          2.005502832571701,
+          2.0041996563476916,
+          2.003494859588378,
+          2.002609838275461,
+          2.001402611544943,
+          2.0010057477210013
+        ],
+        "to_trial": [
+          1.9912819123947174,
+          1.992101271531622,
+          1.9928820440585262,
+          1.9935848941903853,
+          1.994236972405894,
+          1.994800265414184,
+          1.9952702349608598,
+          1.9956814661922355,
+          1.9960278847963966,
+          1.996296621133824
+        ],
+        "to_ruling": [
+          1.9840150606647655,
+          1.9847417458377605,
+          1.9854776984071467,
+          1.9862181329722848,
+          1.986954809094095,
+          1.9876830254252749,
+          1.9883947494241656,
+          1.9890822979778349,
+          1.989742214799275,
+          1.9903707817989873
+        ],
+        "to_closure": [
+          1.9810790224082733,
+          1.981636869677007,
+          1.9822267961475502,
+          1.9828444675768737,
+          1.9834854640020014,
+          1.9841446395694993,
+          1.9848169328820968,
+          1.9854967180250898,
+          1.9861779782161113,
+          1.9868551831669123
+        ]
+      }
+    },
+    "hyper_gnn": {
+      "simulation_type": "hyper_gnn",
+      "hypergraph_stats": {
+        "num_nodes": 35,
+        "num_hyperedges": 30,
+        "avg_node_degree": 3.057142857142857,
+        "max_node_degree": 8,
+        "avg_edge_size": 3.566666666666667,
+        "max_edge_size": 5
+      },
+      "communities": {
+        "entity_0": 2,
+        "entity_1": 2,
+        "entity_2": 2,
+        "entity_3": 2,
+        "entity_4": 2,
+        "entity_5": 2,
+        "entity_6": 2,
+        "entity_7": 2,
+        "entity_8": 2,
+        "entity_9": 2,
+        "entity_10": 2,
+        "entity_11": 2,
+        "entity_12": 2,
+        "entity_13": 2,
+        "entity_14": 2,
+        "entity_15": 2,
+        "entity_16": 2,
+        "entity_17": 2,
+        "entity_18": 2,
+        "entity_19": 2,
+        "evidence_0": 2,
+        "evidence_1": 2,
+        "evidence_2": 2,
+        "evidence_3": 2,
+        "evidence_4": 2,
+        "evidence_5": 2,
+        "evidence_6": 2,
+        "evidence_7": 0,
+        "evidence_8": 2,
+        "evidence_9": 2,
+        "evidence_10": 1,
+        "evidence_11": 2,
+        "evidence_12": 2,
+        "evidence_13": 2,
+        "evidence_14": 2
+      },
+      "num_communities": 3,
+      "link_predictions": [
+        {
+          "node1": "entity_5",
+          "node2": "entity_8",
+          "score": 0.9518530788678972
+        },
+        {
+          "node1": "entity_2",
+          "node2": "entity_9",
+          "score": 0.9404106666564385
+        },
+        {
+          "node1": "entity_5",
+          "node2": "entity_6",
+          "score": 0.9397638662947743
+        },
+        {
+          "node1": "entity_7",
+          "node2": "entity_9",
+          "score": 0.9268495974914269
+        },
+        {
+          "node1": "entity_6",
+          "node2": "entity_8",
+          "score": 0.9120817586124427
+        },
+        {
+          "node1": "entity_0",
+          "node2": "entity_7",
+          "score": 0.9032339682360196
+        },
+        {
+          "node1": "entity_5",
+          "node2": "entity_9",
+          "score": 0.891968468239889
+        },
+        {
+          "node1": "entity_4",
+          "node2": "entity_9",
+          "score": 0.8795937545159392
+        },
+        {
+          "node1": "entity_6",
+          "node2": "entity_9",
+          "score": 0.878137933140324
+        },
+        {
+          "node1": "entity_4",
+          "node2": "entity_6",
+          "score": 0.8775652388209153
+        }
+      ],
+      "sample_embeddings": {
+        "entity_0": [
+          -0.018381357850874358,
+          -0.013749453472797662,
+          -0.002432307498485538,
+          -0.005639125123585819,
+          0.004478822048198251
+        ],
+        "entity_1": [
+          -0.04584717100643556,
+          -0.011576726341182692,
+          0.022286334973386664,
+          -0.017155587987112298,
+          0.021910744701074573
+        ],
+        "entity_2": [
+          -0.023493594528960913,
+          -0.002550350627768085,
+          -0.00040804840374958346,
+          0.0007186160608305678,
+          0.006492817118172421
+        ],
+        "entity_3": [
+          -0.002671151825734807,
+          -0.011821164501970656,
+          -0.004699584078830547,
+          -0.00692990182322195,
+          -0.002359263866322932
+        ],
+        "entity_4": [
+          -0.023693951669934637,
+          -0.004716129203687596,
+          -0.0020987373136599156,
+          -0.0032755133645751408,
+          0.014574454616132592
+        ]
+      }
+    },
+    "case_llm": {
+      "simulation_type": "case_llm",
+      "model": "gpt-4.1-mini",
+      "case_id": "CASE-2025-001",
+      "summary": {
+        "case_id": "CASE-2025-001",
+        "summary": "Case Analysis: Breach of Contract with Force Majeure Defense\n\n1. Parties Involved:\n   - Plaintiff: Claims breach of contract due to non-delivery of goods.\n   - Defendant: Allegedly failed to deliver goods; asserts force majeure defense.\n\n2. Contract Details:\n   - Agreement Date: January 15, 2025.\n   - Subject: Delivery of specified goods.\n\n3. Plaintiff\u2019s Allegations:\n   - Defendant did not deliver goods as per contract terms.\n   - Seeks remedies for breach of contract (e.g., damages, specific performance).\n\n4. Defendant\u2019s Defense:\n   - Claims force majeure event prevented performance.\n   - Force majeure typically excuses non-performance due to unforeseeable, uncontrollable events.\n\n5. Legal Issues:\n   - Whether the defendant\u2019s failure to deliver constitutes breach.\n   - Whether the force majeure clause applies and is valid under the circumstances.\n   - Whether the event claimed qualifies as force majeure under the contract and law.\n   - Whether the defendant took reasonable steps to mitigate the impact.\n\n6. Key Findings:\n   - The existence and wording of the force majeure clause are critical.\n   - Proof of the occurrence of a qualifying force majeure event is necessary.\n   - The defendant must demonstrate that the event directly caused non-performance.\n   - If force majeure is established, defendant may be excused from liability.\n   - If not, defendant liable for breach and damages.\n\n7. Conclusion:\n   - Resolution depends on factual determination of the force majeure event and contractual terms.\n   - Courts will closely examine contract language, evidence of the event, and parties\u2019 conduct.",
+        "model": "gpt-4.1-mini",
+        "timestamp": "2025-10-14T05:07:46.194256"
+      },
+      "entities": [
+        {
+          "entity": "January 15, 2025",
+          "type": "Date"
+        }
+      ],
+      "strength_assessment": {
+        "overall_strength": 0.7075,
+        "rating": "moderate",
+        "components": {
+          "evidence_quality": 0.75,
+          "legal_merit": 0.7,
+          "precedent_support": 0.65
+        },
+        "recommendations": [
+          "Strengthen evidence collection",
+          "Explore settlement opportunities",
+          "Consider expert witness testimony",
+          "Review legal strategy"
+        ]
+      },
+      "outcome_prediction": {
+        "predicted_outcome": "favorable",
+        "confidence": 0.75375,
+        "case_strength": {
+          "overall_strength": 0.7075,
+          "rating": "moderate",
+          "components": {
+            "evidence_quality": 0.75,
+            "legal_merit": 0.7,
+            "precedent_support": 0.65
+          },
+          "recommendations": [
+            "Strengthen evidence collection",
+            "Explore settlement opportunities",
+            "Consider expert witness testimony",
+            "Review legal strategy"
+          ]
+        },
+        "factors": [
+          "Evidence quality",
+          "Legal precedent",
+          "Jurisdiction considerations",
+          "Witness credibility"
+        ]
+      },
+      "brief": "**Legal Brief**\n\n**Case ID:** CASE-2025-001\n\n---\n\n### 1. Case Summary\n\nOn January 15, 2025, the parties entered into a contract requiring the defendant to deliver specified goods by March 1, 2025. The defendant failed to meet this delivery deadline. As a result, the plaintiff alleges financial losses attributable to the defendant\u2019s non-performance. The defendant contends that the failure to deliver was excused under a force majeure clause contained in the contract. The central issues concern whether the defendant breached the contract, the applicability of the force majeure defense, and the appropriate calculation of damages.\n\n---\n\n### 2. Legal Issues\n\n- Whether the defendant\u2019s failure to deliver by the March 1, 2025 deadline constitutes a breach of contract.\n- Whether the defendant is excused from performance under the contract\u2019s force majeure clause.\n- The method and extent of damages recoverable by the plaintiff due to the alleged breach.\n\n---\n\n### 3. Analysis\n\n**Breach of Contract:**  \nThe contract explicitly required delivery by March 1, 2025. The defendant\u2019s failure to deliver by this date prima facie constitutes a breach. Unless excused, the defendant is liable for damages resulting from the breach.\n\n**Force Majeure Defense:**  \nThe applicability of the force majeure clause depends on the specific language of the contract and the nature of the event causing non-performance. To successfully invoke this defense, the defendant must demonstrate:\n\n- The occurrence of an unforeseeable, extraordinary event beyond their control.\n- That the event directly prevented performance.\n- That reasonable efforts were made to mitigate the impact.\n\nIf the defendant cannot substantiate these elements, the force majeure defense will likely fail.\n\n**Damages Calculation:**  \nDamages aim to place the plaintiff in the position they would have been in had the contract been performed. This includes:\n\n- Direct losses such as the cost difference to procure substitute goods.\n- Consequential losses directly attributable to the breach, if foreseeable.\n  \nThe plaintiff must provide evidence quantifying these losses. Any mitigation efforts by the plaintiff will also be considered in assessing damages.\n\n---\n\n### 4. Recommendations\n\n- **Fact-Finding:** Obtain detailed evidence regarding the cause of non-delivery and the defendant\u2019s efforts to perform or mitigate.\n- **Contract Review:** Analyze the force majeure clause language to determine scope and applicability.\n- **Damages Assessment:** Work with financial experts to quantify the plaintiff\u2019s losses accurately.\n- **Negotiation/Mediation:** Consider alternative dispute resolution to achieve a timely settlement.\n- **Litigation Preparedness:** If settlement is not feasible, prepare to argue breach and damages while anticipating the defendant\u2019s force majeure defense.\n\n---\n\n**Prepared by:** [Your Name]  \n**Date:** [Current Date]",
+      "timestamp": "2025-10-14T05:07:56.030888"
+    }
+  }
+}

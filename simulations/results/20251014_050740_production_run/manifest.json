@@ -1,0 +1,21 @@
+{
+  "timestamp": "20251014_050740",
+  "run_directory": "/home/ubuntu/analyticase/simulations/results/20251014_050740_production_run",
+  "metadata": {
+    "purpose": "Comprehensive legal case analysis",
+    "models": [
+      "agent_based",
+      "discrete_event",
+      "system_dynamics",
+      "hyper_gnn",
+      "case_llm"
+    ],
+    "configuration": {}
+  },
+  "directories": {
+    "logs": "/home/ubuntu/analyticase/simulations/results/20251014_050740_production_run/logs",
+    "data": "/home/ubuntu/analyticase/simulations/results/20251014_050740_production_run/data",
+    "reports": "/home/ubuntu/analyticase/simulations/results/20251014_050740_production_run/reports",
+    "visualizations": "/home/ubuntu/analyticase/simulations/results/20251014_050740_production_run/visualizations"
+  }
+}

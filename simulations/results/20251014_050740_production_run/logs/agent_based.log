@@ -1,0 +1,10 @@
+2025-10-14 05:07:40 - simulation_agent_based - INFO - Logger created for model: agent_based
+2025-10-14 05:07:40 - simulation_agent_based - INFO - ================================================================================
+2025-10-14 05:07:40 - simulation_agent_based - INFO - Starting agent_based simulation
+2025-10-14 05:07:40 - simulation_agent_based - INFO - Configuration: {'num_investigators': 5, 'num_attorneys': 8, 'num_judges': 3, 'num_steps': 100}
+2025-10-14 05:07:40 - simulation_agent_based - INFO - ================================================================================
+2025-10-14 05:07:40 - simulation_agent_based - INFO - ================================================================================
+2025-10-14 05:07:40 - simulation_agent_based - INFO - Completed agent_based simulation
+2025-10-14 05:07:40 - simulation_agent_based - INFO - Results summary: {'total_agents': 16, 'total_workload': 91, 'average_efficiency': 0.838231318092221, 'total_interactions': 33, 'investigators': {'count': 5, 'total_evidence': 0, 'total_leads': 0}, 'attorneys': {'count': 8, 'total_briefs': 0, 'cases_won': 0, 'cases_lost': 0}, 'judges': {'count': 3, 'cases_adjudicated': 0, 'rulings_made': 0}}
+2025-10-14 05:07:40 - simulation_agent_based - INFO - ================================================================================
+2025-10-14 05:07:40 - simulation_agent_based - INFO - Results saved to: /home/ubuntu/analyticase/simulations/results/20251014_050740_production_run/data/agent_based_results.json

@@ -1,0 +1,30 @@
+{
+  "agent_based": {
+    "num_investigators": 10,
+    "num_attorneys": 15,
+    "num_judges": 5,
+    "num_steps": 200,
+    "description": "Scaled up agent simulation with more participants"
+  },
+  "discrete_event": {
+    "num_cases": 100,
+    "simulation_duration": 730.0,
+    "description": "Two-year simulation with 100 cases"
+  },
+  "system_dynamics": {
+    "duration": 730.0,
+    "dt": 0.5,
+    "description": "Two-year system dynamics with finer time resolution"
+  },
+  "hyper_gnn": {
+    "input_dim": 128,
+    "hidden_dim": 64,
+    "num_layers": 3,
+    "description": "Deeper HyperGNN with larger embeddings"
+  },
+  "case_llm": {
+    "model_name": "gpt-4.1-mini",
+    "generate_brief": true,
+    "description": "Full LLM analysis with legal brief generation"
+  }
+}

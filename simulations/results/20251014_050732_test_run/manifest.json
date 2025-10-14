@@ -1,0 +1,17 @@
+{
+  "timestamp": "20251014_050732",
+  "run_directory": "/home/ubuntu/analyticase/simulations/results/20251014_050732_test_run",
+  "metadata": {
+    "purpose": "Test run",
+    "models": [
+      "agent_based",
+      "discrete_event"
+    ]
+  },
+  "directories": {
+    "logs": "/home/ubuntu/analyticase/simulations/results/20251014_050732_test_run/logs",
+    "data": "/home/ubuntu/analyticase/simulations/results/20251014_050732_test_run/data",
+    "reports": "/home/ubuntu/analyticase/simulations/results/20251014_050732_test_run/reports",
+    "visualizations": "/home/ubuntu/analyticase/simulations/results/20251014_050732_test_run/visualizations"
+  }
+}
