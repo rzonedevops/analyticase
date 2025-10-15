@@ -19,7 +19,7 @@ The integration enables multi-dimensional analysis of legal cases, combining str
 - **Enhanced Lex Hypergraph Loading**: Extracts 800+ legal nodes and 70,000+ relationships from South African law
 - **Relationship Extraction**: Automatically detects dependencies between legal definitions
 - **Graph-Level Pooling**: Compute single embeddings for entire hypergraphs
-- **Multi-Feature Link Prediction**: Combines cosine similarity, euclidean distance, and common neighbors
+- **Multi-Feature Link Prediction**: Combines cosine similarity, Euclidean distance, and common neighbors
 - **Temporal Analysis**: Analyzes event sequences and identifies patterns
 - **Mapping Validation**: Validates bidirectional consistency of Lex-AD mappings
 - **Semantic Similarity**: Computes text-based similarity for entity matching
@@ -146,7 +146,7 @@ validation = integration.validate_mappings()
 print(f"Bidirectional mappings: {validation['bidirectional_count']}")
 print(f"Orphaned mappings: {len(validation['orphaned_mappings'])}")
 
-# 2. Analyze temporal patterns
+# 2. Analyze temporal patterns (events should be a List[CaseEvent])
 temporal = integration.analyze_temporal_sequences(events)
 print(f"Avg time between events: {temporal['avg_time_between_events']}")
 print(f"Common sequences: {temporal['common_sequences']}")
@@ -177,7 +177,7 @@ for pred in results['link_predictions']:
 ```python
 from models.integration import LexADIntegration
 from models.agent_based.case_agent_model import Agent, AgentType, AgentState
-from models.discrete_event.case_event_model import Event, EventType
+from models.discrete_event.case_event_model import Event as CaseEvent, EventType
 from models.system_dynamics.case_dynamics_model import Stock
 
 # Initialize integration

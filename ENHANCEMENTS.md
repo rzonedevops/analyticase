@@ -127,7 +127,7 @@ The enhancements focus on three main areas:
 ### Enhanced Link Prediction
 
 **What was added:**
-- Multiple similarity metrics (cosine, euclidean, common neighbors)
+- Multiple similarity metrics (cosine, Euclidean, common neighbors)
 - Combined scoring function with weighted features
 - More comprehensive link prediction features
 
