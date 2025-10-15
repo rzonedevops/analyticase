@@ -104,11 +104,14 @@ celerybeat.pid
 # Environments
 .env
 .venv
-env/
+/env/
 venv/
 ENV/
 env.bak/
 venv.bak/
+
+# But allow lex/env/ directory for environmental law framework
+!lex/env/
 
 # Spyder project settings
 .spyderproject
