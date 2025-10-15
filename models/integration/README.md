@@ -12,6 +12,21 @@ This module provides comprehensive integration between:
 
 The integration enables multi-dimensional analysis of legal cases, combining structural knowledge (legal framework), behavioral dynamics (agents), temporal progression (events), system-level flows (stocks), neural embeddings (HyperGNN), and semantic attention (Case-LLM).
 
+## Recent Enhancements
+
+**New in this version:**
+
+- **Enhanced Lex Hypergraph Loading**: Extracts 800+ legal nodes and 70,000+ relationships from South African law
+- **Relationship Extraction**: Automatically detects dependencies between legal definitions
+- **Graph-Level Pooling**: Compute single embeddings for entire hypergraphs
+- **Multi-Feature Link Prediction**: Combines cosine similarity, euclidean distance, and common neighbors
+- **Temporal Analysis**: Analyzes event sequences and identifies patterns
+- **Mapping Validation**: Validates bidirectional consistency of Lex-AD mappings
+- **Semantic Similarity**: Computes text-based similarity for entity matching
+- **Learned Attention Weights**: Uses node embeddings for attention weight computation
+
+See [ENHANCEMENTS.md](../../ENHANCEMENTS.md) for full details.
+
 ## Architecture
 
 ```
@@ -72,12 +87,18 @@ class IntegratedHypergraph:
 
 Main integration class that orchestrates the entire process:
 
+**Core Methods:**
 - **generate_lex_hypergraph()**: Loads legal framework from `lex/` directory
 - **create_ad_hypergraph_from_agents()**: Builds AD hypergraph from agents, events, and stocks
 - **map_lex_to_ad()**: Creates semantic mappings between Lex and AD entities
 - **integrate_with_hypergnn()**: Applies HyperGNN for embeddings and community detection
 - **map_attention_heads_to_case_llm()**: Maps attention heads to legal components
 - **generate_comprehensive_report()**: Produces complete integration analysis
+
+**New Enhanced Methods:**
+- **validate_mappings()**: Validates bidirectional consistency of Lex-AD mappings
+- **compute_semantic_similarity()**: Computes text-based similarity between entities
+- **analyze_temporal_sequences()**: Analyzes temporal patterns in event sequences
 
 ## Usage
 
@@ -109,6 +130,46 @@ config = {
 }
 
 results = run_lex_ad_integration(config)
+```
+
+### Using Enhanced Features
+
+```python
+from models.integration import LexADIntegration
+
+integration = LexADIntegration()
+
+# ... create hypergraphs ...
+
+# 1. Validate mappings for data integrity
+validation = integration.validate_mappings()
+print(f"Bidirectional mappings: {validation['bidirectional_count']}")
+print(f"Orphaned mappings: {len(validation['orphaned_mappings'])}")
+
+# 2. Analyze temporal patterns
+temporal = integration.analyze_temporal_sequences(events)
+print(f"Avg time between events: {temporal['avg_time_between_events']}")
+print(f"Common sequences: {temporal['common_sequences']}")
+
+# 3. Compute semantic similarity for entity matching
+similarity = integration.compute_semantic_similarity(
+    "contract breach", "breach of contract"
+)
+print(f"Similarity: {similarity:.3f}")
+
+# 4. Use enhanced HyperGNN features
+results = integration.integrate_with_hypergnn(input_dim=64, hidden_dim=32)
+
+# Access graph-level features
+graph_features = results['graph_features']
+print(f"Mean pooling: {graph_features['mean_pooling']}")
+
+# Access multi-feature link predictions
+for pred in results['link_predictions']:
+    print(f"Link: {pred['node1']} ↔ {pred['node2']}")
+    print(f"  Cosine similarity: {pred['cosine_similarity']:.3f}")
+    print(f"  Common neighbors: {pred['common_neighbors']}")
+    print(f"  Combined score: {pred['combined_score']:.3f}")
 ```
 
 ### Advanced Usage
