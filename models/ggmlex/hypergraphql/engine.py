@@ -82,12 +82,29 @@ class HypergraphQLEngine:
             logger.warning(f"Legal framework directory not found: {self.lex_path}")
             return
         
-        # Load South African civil law
-        civil_law_file = lex_dir / "civ" / "za" / "south_african_civil_law.scm"
-        if civil_law_file.exists():
-            self._load_scheme_file(civil_law_file)
+        # Load all South African legal frameworks
+        legal_branches = {
+            "civ": "civil law",
+            "cri": "criminal law",
+            "con": "constitutional law",
+            "const": "construction law",
+            "admin": "administrative law",
+            "lab": "labour law",
+            "env": "environmental law",
+            "intl": "international law"
+        }
         
-        logger.info(f"Loaded legal framework from {self.lex_path}")
+        loaded_count = 0
+        for branch_code, branch_name in legal_branches.items():
+            branch_dir = lex_dir / branch_code / "za"
+            if branch_dir.exists():
+                # Find all .scm files in this branch
+                for scm_file in branch_dir.glob("*.scm"):
+                    self._load_scheme_file(scm_file)
+                    loaded_count += 1
+                    logger.debug(f"Loaded {branch_name} from {scm_file.name}")
+        
+        logger.info(f"Loaded {loaded_count} legal framework(s) from {self.lex_path}")
     
     def _load_scheme_file(self, file_path: Path):
         """
