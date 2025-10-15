@@ -297,6 +297,139 @@ class LexADIntegration:
             'total_ad_to_lex': len(self.integrated.ad_to_lex_mapping)
         }
     
+    def validate_mappings(self) -> Dict[str, Any]:
+        """
+        Validate bidirectional mappings between Lex and AD hypergraphs.
+        
+        Returns:
+            Validation results with statistics
+        """
+        logger.info("Validating Lex-AD mappings...")
+        
+        validation_results = {
+            'total_lex_to_ad': len(self.integrated.lex_to_ad_mapping),
+            'total_ad_to_lex': len(self.integrated.ad_to_lex_mapping),
+            'bidirectional_count': 0,
+            'unidirectional_lex_to_ad': 0,
+            'unidirectional_ad_to_lex': 0,
+            'orphaned_mappings': [],
+            'validation_passed': True
+        }
+        
+        # Check bidirectional consistency
+        for lex_id, ad_id in self.integrated.lex_to_ad_mapping.items():
+            if ad_id in self.integrated.ad_to_lex_mapping:
+                if self.integrated.ad_to_lex_mapping[ad_id] == lex_id:
+                    validation_results['bidirectional_count'] += 1
+                else:
+                    validation_results['orphaned_mappings'].append({
+                        'type': 'inconsistent',
+                        'lex_id': lex_id,
+                        'ad_id': ad_id
+                    })
+            else:
+                validation_results['unidirectional_lex_to_ad'] += 1
+        
+        # Check for AD nodes not mapped back
+        for ad_id, lex_id in self.integrated.ad_to_lex_mapping.items():
+            if lex_id not in self.integrated.lex_to_ad_mapping:
+                validation_results['unidirectional_ad_to_lex'] += 1
+        
+        # Check for nodes that don't exist
+        for lex_id, ad_id in self.integrated.lex_to_ad_mapping.items():
+            if ad_id not in self.ad_hypergraph.nodes:
+                validation_results['orphaned_mappings'].append({
+                    'type': 'missing_ad_node',
+                    'lex_id': lex_id,
+                    'ad_id': ad_id
+                })
+                validation_results['validation_passed'] = False
+        
+        logger.info(f"Mapping validation complete:")
+        logger.info(f"  - Bidirectional mappings: {validation_results['bidirectional_count']}")
+        logger.info(f"  - Orphaned mappings: {len(validation_results['orphaned_mappings'])}")
+        
+        return validation_results
+    
+    def compute_semantic_similarity(self, text1: str, text2: str) -> float:
+        """
+        Compute semantic similarity between two texts using simple heuristics.
+        
+        Args:
+            text1: First text
+            text2: Second text
+            
+        Returns:
+            Similarity score between 0 and 1
+        """
+        # Simple word overlap similarity (Jaccard similarity)
+        words1 = set(text1.lower().split())
+        words2 = set(text2.lower().split())
+        
+        if not words1 or not words2:
+            return 0.0
+        
+        intersection = words1.intersection(words2)
+        union = words1.union(words2)
+        
+        return len(intersection) / len(union) if union else 0.0
+    
+    def analyze_temporal_sequences(self, events: List[CaseEvent]) -> Dict[str, Any]:
+        """
+        Analyze temporal patterns in event sequences.
+        
+        Args:
+            events: List of case events
+            
+        Returns:
+            Temporal analysis results
+        """
+        logger.info("Analyzing temporal event sequences...")
+        
+        if not events:
+            return {
+                'num_events': 0,
+                'event_types': [],
+                'avg_time_between_events': 0.0,
+                'sequences': []
+            }
+        
+        # Sort events by time
+        sorted_events = sorted(events, key=lambda e: e.time)
+        
+        # Compute time differences
+        time_diffs = []
+        for i in range(1, len(sorted_events)):
+            time_diffs.append(sorted_events[i].time - sorted_events[i-1].time)
+        
+        # Extract event type sequences
+        event_type_sequence = [e.event_type.value for e in sorted_events]
+        
+        # Find common patterns (bigrams)
+        bigrams = []
+        for i in range(len(event_type_sequence) - 1):
+            bigram = (event_type_sequence[i], event_type_sequence[i+1])
+            bigrams.append(bigram)
+        
+        # Count bigram frequencies
+        from collections import Counter
+        bigram_counts = Counter(bigrams)
+        
+        # Find event type distribution
+        event_type_counts = Counter(event_type_sequence)
+        
+        return {
+            'num_events': len(events),
+            'event_types': list(event_type_counts.keys()),
+            'event_type_distribution': dict(event_type_counts),
+            'avg_time_between_events': np.mean(time_diffs) if time_diffs else 0.0,
+            'median_time_between_events': np.median(time_diffs) if time_diffs else 0.0,
+            'max_time_gap': max(time_diffs) if time_diffs else 0.0,
+            'min_time_gap': min(time_diffs) if time_diffs else 0.0,
+            'common_sequences': bigram_counts.most_common(5),
+            'event_sequence': event_type_sequence[:20]  # Limit to first 20
+        }
+    
     def integrate_with_hypergnn(
         self,
         input_dim: int = 64,
@@ -304,7 +437,7 @@ class LexADIntegration:
         num_layers: int = 2
     ) -> Dict[str, Any]:
         """
-        Integrate the combined Lex-AD hypergraph with HyperGNN.
+        Integrate the combined Lex-AD hypergraph with HyperGNN with enhanced features.
         
         Args:
             input_dim: Input embedding dimension
@@ -312,7 +445,7 @@ class LexADIntegration:
             num_layers: Number of GNN layers
             
         Returns:
-            HyperGNN analysis results including embeddings and communities
+            HyperGNN analysis results including embeddings, communities, and graph features
         """
         logger.info("Integrating with HyperGNN...")
         
@@ -325,12 +458,15 @@ class LexADIntegration:
         # Detect communities in the integrated graph
         communities = self.hyper_gnn.detect_communities(self.ad_hypergraph, num_communities=5)
         
+        # Compute graph-level features
+        graph_features = self.hyper_gnn.compute_graph_features(self.ad_hypergraph)
+        
         # Update node embeddings in AD hypergraph
         for node_id, embedding in embeddings.items():
             if node_id in self.ad_hypergraph.nodes:
                 self.ad_hypergraph.nodes[node_id].embeddings = embedding
         
-        # Predict potential links
+        # Enhanced link prediction with multiple scores
         predictions = []
         node_ids = list(self.ad_hypergraph.nodes.keys())
         if len(node_ids) >= 2:
@@ -340,38 +476,40 @@ class LexADIntegration:
                     node2_id = node_ids[j]
                     
                     if node1_id in embeddings and node2_id in embeddings:
-                        score = self.hyper_gnn.predict_link(
-                            embeddings[node1_id],
-                            embeddings[node2_id]
+                        scores = self.hyper_gnn.predict_link_with_features(
+                            node1_id, node2_id, self.ad_hypergraph
                         )
                         
-                        if score > 0.7:  # High confidence threshold
+                        if scores['combined_score'] > 0.6:  # Lower threshold for combined score
                             predictions.append({
                                 'node1': node1_id,
                                 'node2': node2_id,
-                                'score': score
+                                **scores
                             })
         
         logger.info(f"HyperGNN integration complete:")
         logger.info(f"  - Nodes embedded: {len(embeddings)}")
         logger.info(f"  - Communities detected: {len(set(communities.values()))}")
         logger.info(f"  - Link predictions: {len(predictions)}")
+        logger.info(f"  - Graph-level features computed: {len(graph_features)}")
         
         return {
             'num_embeddings': len(embeddings),
             'num_communities': len(set(communities.values())),
             'communities': communities,
             'link_predictions': predictions,
-            'embedding_dim': hidden_dim
+            'embedding_dim': hidden_dim,
+            'graph_features': graph_features
         }
     
     def map_attention_heads_to_case_llm(
         self,
         num_attention_heads: int = 8,
-        embedding_dim: int = 64
+        embedding_dim: int = 64,
+        use_learned_weights: bool = True
     ) -> Dict[str, Any]:
         """
-        Map HyperGNN attention heads to Case-LLM components.
+        Map HyperGNN attention heads to Case-LLM components with enhanced weighting.
         
         This creates a mapping between the structural attention in HyperGNN
         (which entities are related) and the semantic attention in Case-LLM
@@ -380,11 +518,12 @@ class LexADIntegration:
         Args:
             num_attention_heads: Number of attention heads to simulate
             embedding_dim: Dimension of embeddings
+            use_learned_weights: Whether to use embedding-based learned weights
             
         Returns:
-            Attention mapping information
+            Attention mapping information with learned weights
         """
-        logger.info("Mapping attention heads to Case-LLM...")
+        logger.info("Mapping attention heads to Case-LLM with learned weights...")
         
         attention_mappings = []
         
@@ -400,7 +539,8 @@ class LexADIntegration:
                 'focus': self._get_attention_focus(head_idx),
                 'lex_nodes': [],
                 'ad_nodes': [],
-                'attention_weights': []
+                'attention_weights': [],
+                'learned_weights': []
             }
             
             # Map head to relevant nodes
@@ -448,6 +588,25 @@ class LexADIntegration:
                             head_mapping['attention_weights'].append(
                                 float(min(1.0, num_connections / 5.0))
                             )
+            
+            # Compute learned weights based on node embeddings if available
+            if use_learned_weights and self.hyper_gnn:
+                learned_weights = []
+                for node_id in head_mapping['ad_nodes']:
+                    node = self.ad_hypergraph.nodes.get(node_id)
+                    if node and node.embeddings is not None:
+                        # Use embedding norm as learned weight
+                        weight = float(np.linalg.norm(node.embeddings))
+                        learned_weights.append(weight)
+                    else:
+                        learned_weights.append(0.5)  # Default weight
+                
+                # Normalize learned weights
+                if learned_weights:
+                    total = sum(learned_weights)
+                    if total > 0:
+                        learned_weights = [w / total for w in learned_weights]
+                    head_mapping['learned_weights'] = learned_weights
             
             attention_mappings.append(head_mapping)
         

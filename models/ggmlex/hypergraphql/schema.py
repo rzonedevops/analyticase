@@ -41,6 +41,7 @@ class LegalRelationType(Enum):
     APPLIES_TO = "applies_to"
     CONFLICTS_WITH = "conflicts_with"
     SUPPORTS = "supports"
+    DEPENDS_ON = "depends_on"  # For dependencies between legal definitions
 
 
 @dataclass
