@@ -109,13 +109,38 @@ class HyperGNNLayer:
         self.W_edge = np.random.randn(input_dim, output_dim) * 0.1
         self.bias = np.zeros(output_dim)
     
-    def aggregate_to_hyperedge(self, node_embeddings: List[np.ndarray]) -> np.ndarray:
-        """Aggregate node embeddings to hyperedge embedding."""
+    def aggregate_to_hyperedge(self, node_embeddings: List[np.ndarray], 
+                              aggregation_type: str = 'mean') -> np.ndarray:
+        """
+        Aggregate node embeddings to hyperedge embedding with multiple strategies.
+        
+        Args:
+            node_embeddings: List of node embeddings
+            aggregation_type: Type of aggregation ('mean', 'sum', 'max', 'attention')
+            
+        Returns:
+            Aggregated hyperedge embedding
+        """
         if not node_embeddings:
             return np.zeros(self.input_dim)
         
-        # Mean aggregation
-        return np.mean(node_embeddings, axis=0)
+        embeddings_array = np.array(node_embeddings)
+        
+        if aggregation_type == 'mean':
+            return np.mean(embeddings_array, axis=0)
+        elif aggregation_type == 'sum':
+            return np.sum(embeddings_array, axis=0)
+        elif aggregation_type == 'max':
+            return np.max(embeddings_array, axis=0)
+        elif aggregation_type == 'attention':
+            # Simple attention mechanism
+            # Compute attention scores as dot product with learnable query
+            scores = np.array([np.sum(emb) for emb in embeddings_array])
+            weights = np.exp(scores) / np.sum(np.exp(scores))
+            return np.sum(embeddings_array * weights[:, np.newaxis], axis=0)
+        else:
+            # Default to mean
+            return np.mean(embeddings_array, axis=0)
     
     def aggregate_to_node(self, edge_embeddings: List[np.ndarray], edge_weights: List[float]) -> np.ndarray:
         """Aggregate hyperedge embeddings to node embedding."""
@@ -213,8 +238,90 @@ class HyperGNN:
         )
         return float(similarity)
     
+    def graph_level_pooling(self, hypergraph: Hypergraph, pooling_type: str = 'mean') -> np.ndarray:
+        """
+        Perform graph-level pooling to get a single embedding for the entire hypergraph.
+        
+        Args:
+            hypergraph: Input hypergraph
+            pooling_type: Type of pooling ('mean', 'sum', 'max', 'attention')
+            
+        Returns:
+            Graph-level embedding vector
+        """
+        embeddings_list = []
+        
+        for node in hypergraph.nodes.values():
+            if node.embeddings is not None:
+                embeddings_list.append(node.embeddings)
+        
+        if not embeddings_list:
+            return np.zeros(self.hidden_dim)
+        
+        embeddings = np.array(embeddings_list)
+        
+        if pooling_type == 'mean':
+            return np.mean(embeddings, axis=0)
+        elif pooling_type == 'sum':
+            return np.sum(embeddings, axis=0)
+        elif pooling_type == 'max':
+            return np.max(embeddings, axis=0)
+        elif pooling_type == 'attention':
+            # Attention-based pooling
+            scores = np.array([np.sum(emb) for emb in embeddings])
+            weights = np.exp(scores) / (np.sum(np.exp(scores)) + 1e-8)
+            return np.sum(embeddings * weights[:, np.newaxis], axis=0)
+        else:
+            return np.mean(embeddings, axis=0)
+    
+    def compute_graph_features(self, hypergraph: Hypergraph) -> Dict[str, Any]:
+        """
+        Compute comprehensive graph-level features.
+        
+        Args:
+            hypergraph: Input hypergraph
+            
+        Returns:
+            Dictionary of graph-level features
+        """
+        # Get graph-level embeddings with different pooling strategies
+        mean_pool = self.graph_level_pooling(hypergraph, 'mean')
+        max_pool = self.graph_level_pooling(hypergraph, 'max')
+        sum_pool = self.graph_level_pooling(hypergraph, 'sum')
+        
+        # Compute statistics
+        embeddings_list = [node.embeddings for node in hypergraph.nodes.values() 
+                          if node.embeddings is not None]
+        
+        if embeddings_list:
+            embeddings = np.array(embeddings_list)
+            embedding_std = np.std(embeddings, axis=0)
+            embedding_variance = np.var(embeddings, axis=0)
+        else:
+            embedding_std = np.zeros(self.hidden_dim)
+            embedding_variance = np.zeros(self.hidden_dim)
+        
+        return {
+            'mean_pooling': mean_pool,
+            'max_pooling': max_pool,
+            'sum_pooling': sum_pool,
+            'embedding_std': embedding_std,
+            'embedding_variance': embedding_variance,
+            'num_nodes': len(hypergraph.nodes),
+            'num_edges': len(hypergraph.hyperedges)
+        }
+    
     def detect_communities(self, hypergraph: Hypergraph, num_communities: int = 3) -> Dict[str, int]:
-        """Detect communities using node embeddings."""
+        """
+        Detect communities using improved k-means clustering on node embeddings.
+        
+        Args:
+            hypergraph: Input hypergraph
+            num_communities: Number of communities to detect
+            
+        Returns:
+            Dictionary mapping node IDs to community IDs
+        """
         # Simple k-means clustering on embeddings
         embeddings_list = []
         node_ids = []
@@ -234,18 +341,27 @@ class HyperGNN:
         # Ensure we don't have more communities than nodes
         num_communities = min(num_communities, len(embeddings))
         
-        # Initialize centroids randomly
-        indices = np.random.choice(len(embeddings), num_communities, replace=False)
-        centroids = embeddings[indices]
+        # Initialize centroids using k-means++
+        centroids = self._kmeans_plus_plus_init(embeddings, num_communities)
         
         # Run k-means for a few iterations
-        for _ in range(10):
+        max_iterations = 20
+        prev_assignments = None
+        
+        for iteration in range(max_iterations):
             # Assign nodes to nearest centroid
             distances = np.array([
                 [np.linalg.norm(emb - centroid) for centroid in centroids]
                 for emb in embeddings
             ])
             assignments = np.argmin(distances, axis=1)
+            
+            # Check for convergence
+            if prev_assignments is not None and np.array_equal(assignments, prev_assignments):
+                logger.debug(f"K-means converged after {iteration + 1} iterations")
+                break
+            
+            prev_assignments = assignments.copy()
             
             # Update centroids
             for k in range(num_communities):
@@ -254,6 +370,92 @@ class HyperGNN:
                     centroids[k] = np.mean(cluster_points, axis=0)
         
         return {node_ids[i]: int(assignments[i]) for i in range(len(node_ids))}
+    
+    def _kmeans_plus_plus_init(self, embeddings: np.ndarray, k: int) -> np.ndarray:
+        """
+        K-means++ initialization for better centroid selection.
+        
+        Args:
+            embeddings: Node embeddings array
+            k: Number of clusters
+            
+        Returns:
+            Initial centroids array
+        """
+        n_samples = len(embeddings)
+        centroids = []
+        
+        # Choose first centroid randomly
+        first_idx = np.random.randint(n_samples)
+        centroids.append(embeddings[first_idx])
+        
+        # Choose remaining centroids
+        for _ in range(1, k):
+            # Compute distances to nearest existing centroid
+            distances = np.array([
+                min([np.linalg.norm(emb - c) for c in centroids])
+                for emb in embeddings
+            ])
+            
+            # Choose next centroid with probability proportional to distance squared
+            probabilities = distances ** 2
+            probabilities /= probabilities.sum()
+            
+            next_idx = np.random.choice(n_samples, p=probabilities)
+            centroids.append(embeddings[next_idx])
+        
+        return np.array(centroids)
+    
+    def predict_link_with_features(self, node1_id: str, node2_id: str, 
+                                   hypergraph: Hypergraph) -> Dict[str, float]:
+        """
+        Predict link between nodes with multiple feature-based scores.
+        
+        Args:
+            node1_id: First node ID
+            node2_id: Second node ID
+            hypergraph: Input hypergraph
+            
+        Returns:
+            Dictionary of different similarity scores
+        """
+        node1 = hypergraph.nodes.get(node1_id)
+        node2 = hypergraph.nodes.get(node2_id)
+        
+        if not node1 or not node2 or node1.embeddings is None or node2.embeddings is None:
+            return {
+                'cosine_similarity': 0.0,
+                'euclidean_distance': float('inf'),
+                'common_neighbors': 0,
+                'combined_score': 0.0
+            }
+        
+        # Cosine similarity
+        cosine_sim = np.dot(node1.embeddings, node2.embeddings) / (
+            np.linalg.norm(node1.embeddings) * np.linalg.norm(node2.embeddings) + 1e-8
+        )
+        
+        # Euclidean distance (inverted and normalized)
+        euclidean_dist = np.linalg.norm(node1.embeddings - node2.embeddings)
+        euclidean_score = 1.0 / (1.0 + euclidean_dist)
+        
+        # Common neighbors count
+        neighbors1 = hypergraph.get_node_neighbors(node1_id)
+        neighbors2 = hypergraph.get_node_neighbors(node2_id)
+        common_neighbors = len(neighbors1.intersection(neighbors2))
+        common_neighbors_score = min(1.0, common_neighbors / 5.0)  # Normalize
+        
+        # Combined score (weighted average)
+        combined = 0.5 * cosine_sim + 0.3 * euclidean_score + 0.2 * common_neighbors_score
+        
+        return {
+            'cosine_similarity': float(cosine_sim),
+            'euclidean_distance': float(euclidean_dist),
+            'euclidean_score': float(euclidean_score),
+            'common_neighbors': common_neighbors,
+            'common_neighbors_score': float(common_neighbors_score),
+            'combined_score': float(combined)
+        }
 
 
 def create_case_hypergraph(case_data: Dict[str, Any], embedding_dim: int = 64) -> Hypergraph:

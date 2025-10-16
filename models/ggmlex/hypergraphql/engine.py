@@ -108,7 +108,7 @@ class HypergraphQLEngine:
     
     def _load_scheme_file(self, file_path: Path):
         """
-        Load legal definitions from Scheme file.
+        Load legal definitions from Scheme file with relationship extraction.
         
         Args:
             file_path: Path to Scheme file
@@ -116,30 +116,122 @@ class HypergraphQLEngine:
         try:
             content = file_path.read_text()
             
-            # Parse Scheme definitions (simplified parsing)
-            # In production, use a proper Scheme parser
+            # Parse Scheme definitions
             definitions = self._extract_scheme_definitions(content)
             
+            # Determine branch from file path
+            branch = "civil"
+            if "cri" in str(file_path):
+                branch = "criminal"
+            elif "con" in str(file_path):
+                branch = "constitutional"
+            elif "admin" in str(file_path):
+                branch = "administrative"
+            elif "lab" in str(file_path):
+                branch = "labour"
+            elif "env" in str(file_path):
+                branch = "environmental"
+            elif "intl" in str(file_path):
+                branch = "international"
+            elif "const" in str(file_path):
+                branch = "construction"
+            
+            # Track created nodes for relationship extraction
+            created_nodes = []
+            
             for def_name, def_content in definitions:
+                # Determine node type based on name patterns
+                node_type = self._infer_node_type(def_name)
+                
                 # Create a node for each legal definition
                 node = LegalNode(
-                    node_id=f"sa_civil_{def_name}",
-                    node_type=LegalNodeType.PRINCIPLE,
+                    node_id=f"sa_{branch}_{def_name}",
+                    node_type=node_type,
                     name=def_name.replace("-", " ").title(),
                     content=def_content,
                     jurisdiction="za",
-                    metadata={"source": str(file_path)}
+                    metadata={
+                        "source": str(file_path),
+                        "branch": branch
+                    }
                 )
                 self.add_node(node)
+                created_nodes.append((def_name, node))
+            
+            # Extract relationships between definitions
+            self._extract_relationships(created_nodes, content, branch)
             
             logger.debug(f"Loaded {len(definitions)} definitions from {file_path.name}")
             
         except Exception as e:
             logger.error(f"Error loading Scheme file {file_path}: {e}")
     
+    def _infer_node_type(self, def_name: str) -> LegalNodeType:
+        """
+        Infer node type from definition name.
+        
+        Args:
+            def_name: Definition name
+            
+        Returns:
+            Inferred legal node type
+        """
+        name_lower = def_name.lower()
+        
+        if any(word in name_lower for word in ['contract', 'agreement', 'obligation']):
+            return LegalNodeType.STATUTE
+        elif any(word in name_lower for word in ['case', 'precedent', 'judgment']):
+            return LegalNodeType.CASE
+        elif any(word in name_lower for word in ['section', 'subsection', 'article']):
+            return LegalNodeType.SECTION
+        elif any(word in name_lower for word in ['principle', 'doctrine', 'test', 'rule']):
+            return LegalNodeType.PRINCIPLE
+        else:
+            return LegalNodeType.CONCEPT
+    
+    def _extract_relationships(self, nodes: List[Tuple[str, LegalNode]], content: str, branch: str):
+        """
+        Extract relationships between legal definitions based on references.
+        
+        Args:
+            nodes: List of (def_name, node) tuples
+            content: Full Scheme file content
+            branch: Legal branch name
+        """
+        # Create a mapping of definition names to node IDs
+        name_to_node = {def_name: node for def_name, node in nodes}
+        
+        for def_name, node in nodes:
+            # Find all references to other definitions in this definition's body
+            for other_name, other_node in nodes:
+                if other_name == def_name:
+                    continue
+                
+                # Check if other definition is referenced
+                # Look for patterns like (other-name ...) or other-name? 
+                pattern = r'\(' + re.escape(other_name) + r'\s|' + re.escape(other_name) + r'\?'
+                
+                if re.search(pattern, content):
+                    # Create a hyperedge representing the relationship
+                    edge_id = f"{branch}_rel_{def_name}_to_{other_name}"
+                    
+                    # Avoid duplicate edges
+                    if edge_id not in self.edges:
+                        edge = LegalHyperedge(
+                            edge_id=edge_id,
+                            nodes={node.node_id, other_node.node_id},
+                            relation_type=LegalRelationType.DEPENDS_ON,
+                            metadata={
+                                "source": def_name,
+                                "target": other_name,
+                                "branch": branch
+                            }
+                        )
+                        self.add_edge(edge)
+    
     def _extract_scheme_definitions(self, content: str) -> List[Tuple[str, str]]:
         """
-        Extract Scheme definitions from content.
+        Extract Scheme definitions from content with enhanced metadata.
         
         Args:
             content: Scheme file content
@@ -149,14 +241,41 @@ class HypergraphQLEngine:
         """
         definitions = []
         
-        # Match (define name ...) patterns
-        pattern = r'\(define\s+([^\s\)]+)\s+\(lambda[^\)]*\)([^)]*(?:\([^)]*\)[^)]*)*)\)'
-        matches = re.finditer(pattern, content, re.MULTILINE | re.DOTALL)
+        # Match (define name ...) patterns with improved regex
+        # Capture both lambda and non-lambda definitions
+        patterns = [
+            # Lambda definitions
+            r'\(define\s+([^\s\)]+)\s+\(lambda\s*\([^)]*\)([^)]*(?:\([^)]*\)[^)]*)*)\)\)',
+            # Simple definitions
+            r'\(define\s+([^\s\)]+)\s+([^\(][^\)]*)\)',
+        ]
         
-        for match in matches:
-            name = match.group(1)
-            body = match.group(2).strip()
-            definitions.append((name, body[:200]))  # Truncate long definitions
+        for pattern in patterns:
+            matches = re.finditer(pattern, content, re.MULTILINE | re.DOTALL)
+            for match in matches:
+                name = match.group(1)
+                body = match.group(2).strip() if len(match.groups()) > 1 else ""
+                
+                # Skip if already defined
+                if any(d[0] == name for d in definitions):
+                    continue
+                
+                # Extract context (comment above definition if present)
+                pos = match.start()
+                lines_before = content[:pos].split('\n')
+                context = ""
+                
+                # Look for comment lines above definition
+                for line in reversed(lines_before[-5:]):
+                    line = line.strip()
+                    if line.startswith(';;'):
+                        context = line[2:].strip() + " " + context
+                    elif line:
+                        break
+                
+                # Combine body and context
+                full_content = context + " " + body if context else body
+                definitions.append((name, full_content[:500]))  # Increased from 200 to 500
         
         return definitions
     
