@@ -1,0 +1,123 @@
+graph TB
+    %% AGENTS WITH CENTRALITY SCORES
+    BANTJIES["`**BANTJIES** 
+    Central Orchestrator
+    Centrality: 1.0`"]:::orchestrator
+    
+    PETER["`**PETER**
+    Manipulated Puppet  
+    Centrality: 0.15`"]:::puppet
+    
+    DANIEL["`**DANIEL**
+    Marginalized Whistleblower
+    Centrality: -0.15`"]:::marginalized
+    
+    RYNETTE["`**RYNETTE**
+    Revenue Coordinator
+    Centrality: 0.46`"]:::coordinator
+    
+    JACQUI["`**JACQUI**
+    Signature Authority
+    Centrality: 0.36`"]:::authority
+    
+    %% KEY EVENTS
+    TRUSTEE[Trustee Appointment<br/>July 2024]:::positioning
+    AUTHORITY[Authority Appointment<br/>October 2024]:::positioning
+    REPORTS[Daniel Fraud Reports<br/>June 6, 2025]:::whistleblowing
+    CARDS[Card Cancellations<br/>June 7, 2025]:::crisis
+    R10M[R10M Identification<br/>June 10, 2025 AM]:::threat
+    HOLIDAY[Holiday Dismissal<br/>June 10, 2025 PM]:::abandonment  
+    MAIN[Main Trustee Appointment<br/>August 11, 2025]:::bypassing
+    INTERDICT[Ex Parte Interdict<br/>August 13, 2025]:::weaponization
+    AFFIDAVIT[Supporting Affidavit<br/>August 2025]:::perjury
+    R18M[R18M Payout Target<br/>May 2026]:::extraction
+    
+    %% HYPERGRAPH EDGES WITH ATTENTION WEIGHTS
+    
+    %% Edge 1: Financial Information Control (0.95)
+    BANTJIES -.->|0.95| TRUSTEE
+    TRUSTEE -.->|0.95| AUTHORITY  
+    AUTHORITY -.->|0.95| R18M
+    BANTJIES -.->|0.95| R18M
+    
+    %% Edge 2: Trust Governance Manipulation (0.92)  
+    BANTJIES -.->|0.92| TRUSTEE
+    TRUSTEE -.->|0.92| MAIN
+    BANTJIES -.->|0.92| MAIN
+    
+    %% Edge 3: Oversight Authority Abuse (0.89)
+    BANTJIES -.->|0.89| AUTHORITY
+    AUTHORITY -.->|0.89| HOLIDAY
+    
+    %% Edge 4: Whistleblower Neutralization (0.87)
+    DANIEL -->|reports| REPORTS
+    REPORTS -->|to| BANTJIES  
+    BANTJIES -.->|0.87| HOLIDAY
+    HOLIDAY -.->|0.87| INTERDICT
+    
+    %% Edge 5: Puppet Orchestration (0.85)
+    BANTJIES -.->|0.85| PETER
+    PETER -->|executes| CARDS
+    PETER -->|executes| INTERDICT
+    BANTJIES -.->|0.85| CARDS
+    
+    %% Edge 6: Timeline Coordination (0.83)
+    MAIN -.->|0.83| INTERDICT
+    INTERDICT -.->|0.83| AFFIDAVIT
+    
+    %% Edge 7: Payout Motivation (1.0) - Universal Driver
+    R18M ==>|1.0| BANTJIES
+    R18M ==>|motivates all| TRUSTEE
+    R18M ==>|motivates all| AUTHORITY
+    R18M ==>|motivates all| HOLIDAY
+    R18M ==>|motivates all| MAIN
+    R18M ==>|motivates all| INTERDICT
+    
+    %% COORDINATION SIGNALS
+    REPORTS -.->|signal| CARDS
+    R10M -.->|signal| HOLIDAY
+    MAIN -.->|signal| INTERDICT
+    
+    %% CAUSAL CHAINS  
+    REPORTS -->|next day| CARDS
+    R10M -->|same day PM| HOLIDAY
+    MAIN -->|2 days later| INTERDICT
+    
+    %% PARALLEL NARRATIVE INDICATORS
+    subgraph NARRATIVE1 ["`**HIDDEN NARRATIVE 1:**
+    Financial Control Architecture`"]
+        TRUSTEE
+        AUTHORITY  
+        R18M
+    end
+    
+    subgraph NARRATIVE2 ["`**HIDDEN NARRATIVE 2:**
+    Whistleblower Neutralization`"]
+        REPORTS
+        HOLIDAY
+        INTERDICT
+    end
+    
+    subgraph NARRATIVE3 ["`**HIDDEN NARRATIVE 3:** 
+    Dual-Layer Operations`"]
+        CARDS
+        MAIN
+        AFFIDAVIT
+    end
+    
+    %% STYLING
+    classDef orchestrator fill:#ff6b6b,stroke:#d63447,stroke-width:4px,color:#fff
+    classDef puppet fill:#4ecdc4,stroke:#26d0ce,stroke-width:2px,color:#fff  
+    classDef marginalized fill:#95a5a6,stroke:#7f8c8d,stroke-width:1px,color:#fff
+    classDef coordinator fill:#f39c12,stroke:#e67e22,stroke-width:2px,color:#fff
+    classDef authority fill:#9b59b6,stroke:#8e44ad,stroke-width:2px,color:#fff
+    
+    classDef positioning fill:#3498db,stroke:#2980b9,stroke-width:2px,color:#fff
+    classDef whistleblowing fill:#2ecc71,stroke:#27ae60,stroke-width:2px,color:#fff  
+    classDef crisis fill:#e74c3c,stroke:#c0392b,stroke-width:2px,color:#fff
+    classDef threat fill:#e67e22,stroke:#d35400,stroke-width:2px,color:#fff
+    classDef abandonment fill:#34495e,stroke:#2c3e50,stroke-width:2px,color:#fff
+    classDef bypassing fill:#f1c40f,stroke:#f39c12,stroke-width:2px,color:#fff  
+    classDef weaponization fill:#8e44ad,stroke:#663399,stroke-width:2px,color:#fff
+    classDef perjury fill:#c0392b,stroke:#a93226,stroke-width:2px,color:#fff
+    classDef extraction fill:#d35400,stroke:#ba4a00,stroke-width:4px,color:#fff
