@@ -5,14 +5,14 @@ Get started with the trust fraud case study in 5 minutes!
 ## Prerequisites
 
 ```bash
-# Ensure you have Python 3.11+ and required dependencies
-pip install numpy
+# Ensure you have Python 3.11 or higher and required dependencies
+pip install -r requirements.txt
 ```
 
 ## 1. View the Case Data
 
 ```bash
-cd analyticase
+# From the repository root directory
 python case_studies/trust_fraud_analysis/case_data.py
 ```
 
