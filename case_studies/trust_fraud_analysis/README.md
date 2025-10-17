@@ -4,6 +4,8 @@
 
 This case study demonstrates the application of HyperGNN analysis to a complex trust fraud investigation. The visualization shows a hypergraph representation of agents, events, and their relationships, with centrality scores computed for each agent based on their role and influence in the network.
 
+**New to this case study?** Check out the [Quick Start Guide](QUICKSTART.md) to get started in 5 minutes!
+
 ## Visualization Files
 
 - `agent_centrality_graph.mmd` - Mermaid diagram showing the complete agent centrality graph
