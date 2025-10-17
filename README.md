@@ -15,6 +15,8 @@ analyticase/
 │   ├── hyper_gnn/            # HyperGNN model for complex relationship analysis
 │   ├── case_llm/             # Case-LLM for legal document analysis and generation
 │   └── ggmlex/               # GGML-based ML framework with HypergraphQL
+├── case_studies/             # Real-world and synthetic case studies
+│   └── trust_fraud_analysis/ # Trust fraud case with agent centrality analysis
 ├── lex/                      # Legal framework directory (legislation structure)
 │   └── civ/za/               # South African civil law framework
 ├── simulations/              # Unified simulation runner and results
@@ -45,6 +47,10 @@ analyticase/
 - **Court Online & CaseLines Integration**: Seamlessly connects with South African judiciary systems for e-filing, digital case management, and evidence handling.
 - **Database Schema Alignment**: ZA-specific database schemas for compliance and efficient data management.
 - **Enhanced API**: Specialized API endpoints for interacting with the ZA judiciary systems.
+
+### Case Studies
+
+- **Trust Fraud Analysis**: Comprehensive case study demonstrating HyperGNN analysis with agent centrality scoring, temporal pattern detection, and narrative extraction. Features a sophisticated fraud investigation with 5 agents, 10 key events, and 7 hyperedges with attention weights. Includes interactive Mermaid visualizations and complete analysis pipeline.
 
 ## Getting Started
 
@@ -151,9 +157,41 @@ llm = LegalLLM()
 result = llm.analyze_case("Plaintiff v. Defendant case text...")
 ```
 
+## Running Case Studies
+
+The repository includes comprehensive case studies demonstrating the application of various analysis models:
+
+### Trust Fraud Analysis
+
+Explore the trust fraud case study with agent centrality analysis:
+
+```bash
+# View the case data
+python case_studies/trust_fraud_analysis/case_data.py
+
+# Run the complete analysis
+python case_studies/trust_fraud_analysis/analyze_case.py
+```
+
+The analysis will:
+- Build a hypergraph from the case data (5 agents, 10 events, 7 hyperedges)
+- Compute agent centrality scores and compare with ground truth
+- Detect communities using HyperGNN
+- Analyze temporal patterns and causal chains
+- Extract hidden narratives
+- Generate comprehensive insights
+
+**Visualization**: View the agent centrality graph at `case_studies/trust_fraud_analysis/agent_centrality_graph.mmd` using:
+- GitHub (auto-renders Mermaid diagrams)
+- [Mermaid Live Editor](https://mermaid.live/)
+- VSCode with Mermaid plugin
+
+See the [case study README](case_studies/trust_fraud_analysis/README.md) for detailed documentation.
+
 ## Documentation
 
 - **Simulation Models**: Detailed documentation for each model can be found in the `README.md` file within each model's directory (e.g., `models/agent_based/README.md`).
+- **Case Studies**: See `case_studies/trust_fraud_analysis/README.md` for the trust fraud analysis case study documentation.
 - **GGMLEX Framework**: See `models/ggmlex/README.md` for comprehensive documentation on the GGML-based ML framework, HypergraphQL, and LlamaLex.cpp inference engine.
 - **ZA Judiciary Integration**: Refer to the `docs/` directory in the `za_judiciary_integration` module for detailed documentation on the integration architecture.
 

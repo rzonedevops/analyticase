@@ -135,6 +135,9 @@ dmypy.json
 # Simulation results directory
 simulations/results/
 
+# Case study analysis results (generated files)
+case_studies/**/analysis_results.json
+
 # Database files
 *.db
 *.sqlite
