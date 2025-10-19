@@ -24,6 +24,8 @@ analyticase/
 │   ├── api/                  # API implementation for ZA judiciary integration
 │   ├── docs/                 # Documentation for ZA judiciary integration
 │   └── schema/               # Database schema for ZA judiciary
+├── Revenue_Stream_Hijacking_by_Rynette/ # Case documentation for revenue stream hijacking
+│   └── Comprehensive legal documentation demonstrating system transparency
 ├── DEPLOYMENT.md             # Deployment instructions
 ├── README.md                 # This file
 └── ...
@@ -156,6 +158,7 @@ result = llm.analyze_case("Plaintiff v. Defendant case text...")
 - **Simulation Models**: Detailed documentation for each model can be found in the `README.md` file within each model's directory (e.g., `models/agent_based/README.md`).
 - **GGMLEX Framework**: See `models/ggmlex/README.md` for comprehensive documentation on the GGML-based ML framework, HypergraphQL, and LlamaLex.cpp inference engine.
 - **ZA Judiciary Integration**: Refer to the `docs/` directory in the `za_judiciary_integration` module for detailed documentation on the integration architecture.
+- **Revenue Stream Hijacking Case**: See `Revenue_Stream_Hijacking_by_Rynette/README.md` for comprehensive case documentation demonstrating the viability and transparency of POPIA-compliant systems with clear audit trails, secure portals, and proper oversight mechanisms.
 
 ## Contact
 
