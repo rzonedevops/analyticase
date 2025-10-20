@@ -41,8 +41,9 @@ analyticase/
 - **Discrete-Event Model**: Models the legal case lifecycle as a series of discrete events, allowing for analysis of bottlenecks and process optimization.
 - **System Dynamics Model**: Provides a high-level view of case flow through the judicial system using stock-and-flow diagrams to identify systemic issues.
 - **HyperGNN Model**: Utilizes hypergraph neural networks to uncover complex, higher-order relationships between entities in a case that traditional graph models might miss.
-- **Case-LLM**: Leverages large language models for advanced legal document analysis, summarization, entity extraction, and brief generation.
+- **Case-LLM**: Leverages large language models for advanced legal document analysis, summarization, entity extraction, and brief generation. Now features a Retrieval-Augmented Generation (RAG) implementation for more context-aware analysis.
 - **GGMLEX**: GGML-based ML framework with HypergraphQL integration for querying legal frameworks, featuring LlamaLex.cpp inference engine optimized for legal text processing.
+- **Attention-based HyperGNN**: The HyperGNN model now includes an advanced attention mechanism for more accurate hyperedge aggregation.
 
 ### ZA Judiciary Integration
 
@@ -81,7 +82,7 @@ analyticase/
 
 4.  **Initialize the database**
     ```bash
-    python za_judiciary_integration/scripts/init_database.py
+    python scripts/sync_db.py
     ```
 
 ### Running Simulations

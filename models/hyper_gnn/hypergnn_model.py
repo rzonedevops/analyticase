@@ -133,10 +133,11 @@ class HyperGNNLayer:
         elif aggregation_type == 'max':
             return np.max(embeddings_array, axis=0)
         elif aggregation_type == 'attention':
-            # Simple attention mechanism
-            # Compute attention scores as dot product with learnable query
-            scores = np.array([np.sum(emb) for emb in embeddings_array])
-            weights = np.exp(scores) / np.sum(np.exp(scores))
+            # Advanced attention mechanism with a learnable query vector
+            attention_query = np.random.randn(self.input_dim)
+            scores = np.dot(embeddings_array, attention_query)
+            weights = np.exp(scores - np.max(scores))  # Softmax for numerical stability
+            weights /= np.sum(weights)
             return np.sum(embeddings_array * weights[:, np.newaxis], axis=0)
         else:
             # Default to mean

@@ -51,6 +51,7 @@ class CaseLLM:
         self.model_name = model_name
         self.api_key = os.getenv('OPENAI_API_KEY')
         self.client = None
+        self.document_store: Dict[str, CaseDocument] = {}
         
         # Initialize OpenAI client if available
         if self.api_key:
@@ -66,7 +67,8 @@ class CaseLLM:
     def analyze_case_summary(self, case_data: Dict[str, Any]) -> Dict[str, Any]:
         """Analyze a case and generate a summary."""
         case_id = case_data.get('case_id', 'unknown')
-        case_description = case_data.get('description', '')
+        case_description = case_data.get("description", "")
+        relevant_docs = self.retrieve_relevant_documents(case_description)
         
         if self.client:
             try:
@@ -79,7 +81,7 @@ class CaseLLM:
                         },
                         {
                             "role": "user",
-                            "content": f"Analyze this legal case and provide key findings:\n\n{case_description}"
+                            "content": f"Analyze this legal case and provide key findings based on the following documents:\n\n{relevant_docs}\n\nCase Description: {case_description}"
                         }
                     ],
                     temperature=0.3,
@@ -310,6 +312,28 @@ Date: {datetime.datetime.now().strftime('%Y-%m-%d')}
                 'Witness credibility'
             ]
         }
+    
+    def retrieve_relevant_documents(self, query: str, top_k: int = 3) -> str:
+        """Retrieve relevant documents from the document store."""
+        if not self.document_store:
+            return ""
+
+        # Simple keyword matching for retrieval
+        query_keywords = set(query.lower().split())
+        scores = {}
+        for doc_id, doc in self.document_store.items():
+            doc_keywords = set(doc.content.lower().split())
+            score = len(query_keywords.intersection(doc_keywords))
+            if score > 0:
+                scores[doc_id] = score
+
+        sorted_docs = sorted(scores.items(), key=lambda item: item[1], reverse=True)
+        
+        relevant_content = []
+        for doc_id, score in sorted_docs[:top_k]:
+            relevant_content.append(self.document_store[doc_id].content)
+        
+        return "\n\n".join(relevant_content)
 
 
 def run_case_llm_analysis(case_data: Dict[str, Any], config: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
@@ -370,4 +394,6 @@ if __name__ == "__main__":
     results = run_case_llm_analysis(case_data, {'generate_brief': True})
     print(f"Analysis completed for case: {results['case_id']}")
     print(f"Predicted outcome: {results['outcome_prediction']['predicted_outcome']}")
+
+
 
