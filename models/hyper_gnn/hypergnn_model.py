@@ -459,6 +459,295 @@ class HyperGNN:
         }
 
 
+class TemporalHypergraph(Hypergraph):
+    """
+    Temporal hypergraph that tracks changes over time.
+    """
+    
+    def __init__(self):
+        super().__init__()
+        self.snapshots: List[Tuple[float, Dict[str, Any]]] = []
+        self.temporal_edges: Dict[str, List[Tuple[float, str]]] = {}  # edge_id -> [(timestamp, status)]
+    
+    def add_temporal_hyperedge(self, hyperedge: Hyperedge, timestamp: float):
+        """
+        Add a hyperedge with timestamp.
+        
+        Args:
+            hyperedge: Hyperedge to add
+            timestamp: Time when edge was created
+        """
+        self.add_hyperedge(hyperedge)
+        
+        if hyperedge.edge_id not in self.temporal_edges:
+            self.temporal_edges[hyperedge.edge_id] = []
+        
+        self.temporal_edges[hyperedge.edge_id].append((timestamp, 'created'))
+    
+    def remove_temporal_hyperedge(self, edge_id: str, timestamp: float):
+        """
+        Mark a hyperedge as removed at a specific time.
+        
+        Args:
+            edge_id: Edge ID to remove
+            timestamp: Time when edge was removed
+        """
+        if edge_id in self.hyperedges:
+            if edge_id not in self.temporal_edges:
+                self.temporal_edges[edge_id] = []
+            
+            self.temporal_edges[edge_id].append((timestamp, 'removed'))
+    
+    def snapshot_at_time(self, timestamp: float) -> Hypergraph:
+        """
+        Get a snapshot of the hypergraph at a specific time.
+        
+        Args:
+            timestamp: Time to get snapshot at
+            
+        Returns:
+            Hypergraph snapshot
+        """
+        snapshot = Hypergraph()
+        
+        # Add all nodes (assuming nodes don't change)
+        for node_id, node in self.nodes.items():
+            snapshot.add_node(node)
+        
+        # Add edges that exist at this timestamp
+        for edge_id, edge in self.hyperedges.items():
+            if edge_id in self.temporal_edges:
+                events = self.temporal_edges[edge_id]
+                # Check if edge exists at timestamp
+                created = False
+                removed = False
+                
+                for event_time, status in sorted(events):
+                    if event_time > timestamp:
+                        break
+                    if status == 'created':
+                        created = True
+                    elif status == 'removed':
+                        removed = True
+                
+                if created and not removed:
+                    snapshot.add_hyperedge(edge)
+            else:
+                # Edge without temporal info - include it
+                snapshot.add_hyperedge(edge)
+        
+        return snapshot
+    
+    def get_temporal_evolution(self) -> Dict[str, Any]:
+        """
+        Get statistics about temporal evolution.
+        
+        Returns:
+            Temporal evolution statistics
+        """
+        all_events = []
+        for edge_id, events in self.temporal_edges.items():
+            for timestamp, status in events:
+                all_events.append((timestamp, edge_id, status))
+        
+        all_events.sort()
+        
+        edge_counts_over_time = []
+        current_count = len(self.hyperedges)
+        
+        for timestamp, edge_id, status in all_events:
+            if status == 'created':
+                current_count += 1
+            elif status == 'removed':
+                current_count -= 1
+            
+            edge_counts_over_time.append({
+                'timestamp': timestamp,
+                'num_edges': current_count,
+                'event': status
+            })
+        
+        return {
+            'total_events': len(all_events),
+            'evolution': edge_counts_over_time,
+            'tracked_edges': len(self.temporal_edges)
+        }
+
+
+class AttentionHyperGNNLayer(HyperGNNLayer):
+    """
+    HyperGNN layer with learnable attention mechanism.
+    """
+    
+    def __init__(self, input_dim: int, output_dim: int):
+        super().__init__(input_dim, output_dim)
+        
+        # Attention parameters
+        self.W_attention = np.random.randn(input_dim, 1) * 0.1
+        self.attention_bias = np.zeros(1)
+    
+    def compute_attention_weights(self, node_embeddings: List[np.ndarray]) -> np.ndarray:
+        """
+        Compute attention weights for node embeddings.
+        
+        Args:
+            node_embeddings: List of node embeddings
+            
+        Returns:
+            Attention weights array
+        """
+        if not node_embeddings:
+            return np.array([])
+        
+        embeddings_array = np.array(node_embeddings)
+        
+        # Compute attention scores
+        scores = np.dot(embeddings_array, self.W_attention) + self.attention_bias
+        scores = scores.squeeze()
+        
+        # Apply softmax
+        exp_scores = np.exp(scores - np.max(scores))
+        weights = exp_scores / (np.sum(exp_scores) + 1e-8)
+        
+        return weights
+    
+    def aggregate_to_hyperedge(self, node_embeddings: List[np.ndarray], 
+                              aggregation_type: str = 'attention') -> np.ndarray:
+        """
+        Aggregate node embeddings with attention.
+        
+        Args:
+            node_embeddings: List of node embeddings
+            aggregation_type: Type of aggregation
+            
+        Returns:
+            Aggregated embedding
+        """
+        if aggregation_type == 'attention' or aggregation_type == 'learned_attention':
+            if not node_embeddings:
+                return np.zeros(self.input_dim)
+            
+            embeddings_array = np.array(node_embeddings)
+            weights = self.compute_attention_weights(node_embeddings)
+            
+            return np.sum(embeddings_array * weights[:, np.newaxis], axis=0)
+        else:
+            return super().aggregate_to_hyperedge(node_embeddings, aggregation_type)
+
+
+class HierarchicalHypergraph:
+    """
+    Hierarchical hypergraph with multiple levels of abstraction.
+    """
+    
+    def __init__(self):
+        self.levels: List[Hypergraph] = []
+        self.level_mappings: List[Dict[str, str]] = []  # Maps nodes from level i to level i+1
+    
+    def add_level(self, hypergraph: Hypergraph, mapping: Optional[Dict[str, str]] = None):
+        """
+        Add a level to the hierarchy.
+        
+        Args:
+            hypergraph: Hypergraph at this level
+            mapping: Mapping from previous level nodes to this level
+        """
+        self.levels.append(hypergraph)
+        if mapping and len(self.levels) > 1:
+            self.level_mappings.append(mapping)
+    
+    def coarsen_graph(self, hypergraph: Hypergraph, num_clusters: int) -> Tuple[Hypergraph, Dict[str, str]]:
+        """
+        Create a coarser version of the hypergraph by clustering nodes.
+        
+        Args:
+            hypergraph: Input hypergraph
+            num_clusters: Number of clusters to create
+            
+        Returns:
+            Tuple of (coarse hypergraph, mapping from original to coarse nodes)
+        """
+        # Use simple random clustering for demonstration
+        # In practice, use community detection
+        node_ids = list(hypergraph.nodes.keys())
+        cluster_size = max(1, len(node_ids) // num_clusters)
+        
+        coarse_graph = Hypergraph()
+        mapping = {}
+        
+        # Create cluster nodes
+        for i in range(num_clusters):
+            cluster_id = f"cluster_{i}"
+            cluster_node = Node(
+                node_id=cluster_id,
+                node_type="cluster",
+                attributes={'size': 0}
+            )
+            coarse_graph.add_node(cluster_node)
+        
+        # Assign nodes to clusters
+        for idx, node_id in enumerate(node_ids):
+            cluster_idx = min(idx // cluster_size, num_clusters - 1)
+            cluster_id = f"cluster_{cluster_idx}"
+            mapping[node_id] = cluster_id
+            coarse_graph.nodes[cluster_id].attributes['size'] += 1
+        
+        # Create coarse edges
+        edge_clusters = {}
+        for edge_id, edge in hypergraph.hyperedges.items():
+            # Map edge nodes to clusters
+            cluster_nodes = {mapping[nid] for nid in edge.nodes if nid in mapping}
+            
+            if len(cluster_nodes) > 1:
+                cluster_edge_id = f"coarse_{edge_id}"
+                if cluster_edge_id not in edge_clusters:
+                    coarse_edge = Hyperedge(
+                        edge_id=cluster_edge_id,
+                        nodes=cluster_nodes,
+                        edge_type=edge.edge_type,
+                        weight=edge.weight
+                    )
+                    coarse_graph.add_hyperedge(coarse_edge)
+                    edge_clusters[cluster_edge_id] = True
+        
+        return coarse_graph, mapping
+    
+    def build_hierarchy(self, base_graph: Hypergraph, num_levels: int = 3):
+        """
+        Build a hierarchical hypergraph.
+        
+        Args:
+            base_graph: Base level hypergraph
+            num_levels: Number of hierarchy levels
+        """
+        self.levels = [base_graph]
+        
+        current_graph = base_graph
+        for level in range(1, num_levels):
+            # Coarsen by reducing nodes
+            num_clusters = max(5, len(current_graph.nodes) // (2 ** level))
+            coarse_graph, mapping = self.coarsen_graph(current_graph, num_clusters)
+            
+            self.levels.append(coarse_graph)
+            self.level_mappings.append(mapping)
+            
+            current_graph = coarse_graph
+    
+    def get_statistics(self) -> Dict[str, Any]:
+        """Get statistics for all levels."""
+        return {
+            "num_levels": len(self.levels),
+            "level_stats": [
+                {
+                    "level": i,
+                    "num_nodes": len(level.nodes),
+                    "num_edges": len(level.hyperedges)
+                }
+                for i, level in enumerate(self.levels)
+            ]
+        }
+
+
 def create_case_hypergraph(case_data: Dict[str, Any], embedding_dim: int = 64) -> Hypergraph:
     """Create a hypergraph from case data."""
     hg = Hypergraph()
