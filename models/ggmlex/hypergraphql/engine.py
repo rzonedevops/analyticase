@@ -541,6 +541,218 @@ class HypergraphQLEngine:
         
         return result
     
+    def query_subgraph(
+        self,
+        node_ids: List[str],
+        include_edges: bool = True,
+        expand_neighbors: bool = False
+    ) -> QueryResult:
+        """
+        Extract a subgraph containing specified nodes.
+        
+        Args:
+            node_ids: List of node IDs to include
+            include_edges: Whether to include edges between nodes
+            expand_neighbors: Whether to expand to immediate neighbors
+            
+        Returns:
+            Query result with subgraph
+        """
+        subgraph_nodes = []
+        subgraph_edges = []
+        
+        # Collect specified nodes
+        node_set = set(node_ids)
+        if expand_neighbors:
+            # Add immediate neighbors
+            for node_id in node_ids:
+                edge_ids = self.node_to_edges.get(node_id, set())
+                for edge_id in edge_ids:
+                    edge = self.edges.get(edge_id)
+                    if edge:
+                        node_set.update(edge.nodes)
+        
+        # Get nodes
+        for node_id in node_set:
+            node = self.nodes.get(node_id)
+            if node:
+                subgraph_nodes.append(node)
+        
+        # Get edges if requested
+        if include_edges:
+            for node_id in node_set:
+                edge_ids = self.node_to_edges.get(node_id, set())
+                for edge_id in edge_ids:
+                    edge = self.edges.get(edge_id)
+                    if edge and edge not in subgraph_edges:
+                        # Only include edge if all nodes are in subgraph
+                        if edge.nodes.issubset(node_set):
+                            subgraph_edges.append(edge)
+        
+        return QueryResult(
+            nodes=subgraph_nodes,
+            edges=subgraph_edges,
+            metadata={
+                "query_type": "subgraph_query",
+                "num_nodes": len(subgraph_nodes),
+                "num_edges": len(subgraph_edges),
+                "expanded": expand_neighbors
+            }
+        )
+    
+    def query_legal_reasoning_chain(
+        self,
+        start_node_id: str,
+        max_depth: int = 5
+    ) -> QueryResult:
+        """
+        Find legal reasoning chains starting from a node.
+        
+        This follows DEPENDS_ON relationships to build a chain of legal reasoning.
+        
+        Args:
+            start_node_id: Starting node ID
+            max_depth: Maximum chain depth
+            
+        Returns:
+            Query result with reasoning chain
+        """
+        if start_node_id not in self.nodes:
+            return QueryResult()
+        
+        reasoning_chains = []
+        visited = set()
+        
+        def build_chain(node_id: str, depth: int, current_chain: List[LegalNode], current_edges: List[LegalHyperedge]):
+            """Recursively build reasoning chain."""
+            if depth >= max_depth or node_id in visited:
+                if len(current_chain) > 1:
+                    reasoning_chains.append((current_chain.copy(), current_edges.copy()))
+                return
+            
+            visited.add(node_id)
+            node = self.nodes.get(node_id)
+            if not node:
+                return
+            
+            current_chain.append(node)
+            
+            # Find outgoing DEPENDS_ON edges
+            edge_ids = self.node_to_edges.get(node_id, set())
+            has_dependencies = False
+            
+            for edge_id in edge_ids:
+                edge = self.edges.get(edge_id)
+                if edge and edge.relation_type == LegalRelationType.DEPENDS_ON:
+                    # Find target nodes
+                    for target_id in edge.nodes:
+                        if target_id != node_id and target_id not in visited:
+                            has_dependencies = True
+                            build_chain(target_id, depth + 1, current_chain, current_edges + [edge])
+            
+            if not has_dependencies and len(current_chain) > 1:
+                reasoning_chains.append((current_chain.copy(), current_edges.copy()))
+            
+            current_chain.pop()
+            visited.discard(node_id)
+        
+        build_chain(start_node_id, 0, [], [])
+        
+        # Select the longest chain
+        if reasoning_chains:
+            best_chain = max(reasoning_chains, key=lambda x: len(x[0]))
+            return QueryResult(
+                nodes=best_chain[0],
+                edges=best_chain[1],
+                metadata={
+                    "query_type": "reasoning_chain",
+                    "start_node": start_node_id,
+                    "chain_length": len(best_chain[0]),
+                    "num_chains_found": len(reasoning_chains)
+                }
+            )
+        
+        return QueryResult(metadata={"query_type": "reasoning_chain", "chains_found": 0})
+    
+    def query_similar_nodes(
+        self,
+        node_id: str,
+        similarity_threshold: float = 0.3,
+        max_results: int = 10
+    ) -> QueryResult:
+        """
+        Find nodes similar to a given node based on content and structure.
+        
+        Args:
+            node_id: Source node ID
+            similarity_threshold: Minimum similarity score (0-1)
+            max_results: Maximum number of results
+            
+        Returns:
+            Query result with similar nodes
+        """
+        source_node = self.nodes.get(node_id)
+        if not source_node:
+            return QueryResult()
+        
+        similar_nodes = []
+        
+        for other_id, other_node in self.nodes.items():
+            if other_id == node_id:
+                continue
+            
+            # Compute similarity score
+            score = 0.0
+            
+            # Type similarity (0.3 weight)
+            if source_node.node_type == other_node.node_type:
+                score += 0.3
+            
+            # Content similarity (0.4 weight) - Jaccard similarity
+            source_words = set(source_node.content.lower().split())
+            other_words = set(other_node.content.lower().split())
+            if source_words or other_words:
+                intersection = source_words.intersection(other_words)
+                union = source_words.union(other_words)
+                content_sim = len(intersection) / len(union) if union else 0
+                score += 0.4 * content_sim
+            
+            # Structural similarity (0.3 weight) - shared neighbors
+            source_neighbors = set()
+            for edge_id in self.node_to_edges.get(node_id, set()):
+                edge = self.edges.get(edge_id)
+                if edge:
+                    source_neighbors.update(edge.nodes - {node_id})
+            
+            other_neighbors = set()
+            for edge_id in self.node_to_edges.get(other_id, set()):
+                edge = self.edges.get(edge_id)
+                if edge:
+                    other_neighbors.update(edge.nodes - {other_id})
+            
+            if source_neighbors or other_neighbors:
+                neighbor_intersection = source_neighbors.intersection(other_neighbors)
+                neighbor_union = source_neighbors.union(other_neighbors)
+                structural_sim = len(neighbor_intersection) / len(neighbor_union) if neighbor_union else 0
+                score += 0.3 * structural_sim
+            
+            if score >= similarity_threshold:
+                similar_nodes.append((other_node, score))
+        
+        # Sort by score and limit results
+        similar_nodes.sort(key=lambda x: x[1], reverse=True)
+        similar_nodes = similar_nodes[:max_results]
+        
+        return QueryResult(
+            nodes=[node for node, _ in similar_nodes],
+            metadata={
+                "query_type": "similarity_query",
+                "source_node": node_id,
+                "similarity_scores": {node.node_id: score for node, score in similar_nodes},
+                "threshold": similarity_threshold
+            }
+        )
+    
     def get_statistics(self) -> Dict[str, Any]:
         """
         Get hypergraph statistics.

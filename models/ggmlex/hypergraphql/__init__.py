@@ -10,6 +10,10 @@ from .schema import (
     LegalSchema, LegalNode, LegalHyperedge,
     LegalNodeType, LegalRelationType
 )
+from .visualization import (
+    HypergraphVisualizer,
+    visualize_query_result
+)
 
 __all__ = [
     'HypergraphQLEngine',
@@ -19,4 +23,6 @@ __all__ = [
     'LegalHyperedge',
     'LegalNodeType',
     'LegalRelationType',
+    'HypergraphVisualizer',
+    'visualize_query_result',
 ]
