@@ -101,8 +101,11 @@ Query engine for legal framework relationships:
 #### Schema Definition (`schema.py`)
 
 - `LegalNodeType`: Defines types of legal entities (statute, case, principle, etc.)
-- `LegalRelationType`: Defines relationships (cites, interprets, overrules, etc.)
+- `LegalRelationType`: Defines relationships (cites, interprets, overrules, infers_from, etc.)
+- `InferenceType`: Defines inference models (deductive, inductive, abductive, analogical)
 - `LegalNode`: Represents legal entities in the hypergraph
+  - Includes `inference_level` (0=enumerated law, 1=principle, 2=meta-principle)
+  - Includes `confidence` score for inferred nodes
 - `LegalHyperedge`: Represents relationships between entities
 - `LegalSchema`: Schema validation and constraints
 
@@ -113,6 +116,52 @@ Query engine for legal framework relationships:
 - Graph traversal and querying
 - Integration with lex/ legal framework
 - Pattern matching and path finding
+- Inference level queries (get_enumerated_laws, get_first_order_principles, etc.)
+
+#### Inference Engine (`inference.py`)
+
+- `InferenceEngine`: Derives legal principles from enumerated laws
+- Four inference models:
+  - **Deductive**: Apply principles to specific cases (confidence: 0.9-1.0)
+  - **Inductive**: Generalize from multiple laws (confidence: 0.7-0.95)
+  - **Abductive**: Find best explanations for patterns (confidence: 0.5-0.8)
+  - **Analogical**: Transfer principles across domains (confidence: 0.6-0.9)
+- Builds inference hierarchy: Level 0 → Level 1 → Level 2
+- Pattern recognition for common legal concepts
+
+**Example:**
+```python
+from models.ggmlex.hypergraphql import (
+    HypergraphQLEngine, InferenceEngine, 
+    LegalNode, LegalNodeType, InferenceType
+)
+
+# Initialize engines
+hypergraph = HypergraphQLEngine()
+inference = InferenceEngine(hypergraph)
+
+# Get enumerated laws (Level 0)
+laws = hypergraph.get_enumerated_laws()
+
+# Select laws with common pattern
+reasonable_person_laws = [
+    law for law in laws.nodes 
+    if "reasonable" in law.content.lower()
+]
+
+# Infer principle (Level 1)
+result = inference.infer_principles(
+    source_nodes=reasonable_person_laws,
+    inference_type=InferenceType.INDUCTIVE,
+    target_level=1
+)
+
+print(f"Inferred: {result.principle.name}")
+print(f"Confidence: {result.confidence:.3f}")
+print(f"Based on: {len(reasonable_person_laws)} laws")
+```
+
+For detailed inference engine documentation, see [INFERENCE_ENGINE_README.md](INFERENCE_ENGINE_README.md).
 
 **Example:**
 ```python

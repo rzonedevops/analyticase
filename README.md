@@ -42,7 +42,9 @@ analyticase/
 - **System Dynamics Model**: Provides a high-level view of case flow through the judicial system using stock-and-flow diagrams to identify systemic issues.
 - **HyperGNN Model**: Utilizes hypergraph neural networks to uncover complex, higher-order relationships between entities in a case that traditional graph models might miss.
 - **Case-LLM**: Leverages large language models for advanced legal document analysis, summarization, entity extraction, and brief generation. Now features a Retrieval-Augmented Generation (RAG) implementation for more context-aware analysis.
-- **GGMLEX**: GGML-based ML framework with HypergraphQL integration for querying legal frameworks, featuring LlamaLex.cpp inference engine optimized for legal text processing.
+- **GGMLEX**: GGML-based ML framework with HypergraphQL integration for querying legal frameworks, featuring:
+  - LlamaLex.cpp inference engine optimized for legal text processing
+  - **Inference Engine**: Processes lex scheme expressions to derive legal principles at multiple abstraction levels (enumerated laws → first-order principles → meta-principles) using deductive, inductive, abductive, and analogical inference models
 - **Attention-based HyperGNN**: The HyperGNN model now includes an advanced attention mechanism for more accurate hyperedge aggregation.
 
 ### ZA Judiciary Integration

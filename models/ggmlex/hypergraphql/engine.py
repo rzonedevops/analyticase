@@ -777,6 +777,74 @@ class HypergraphQLEngine:
             "edge_types": edge_type_counts,
             "avg_node_degree": sum(len(edges) for edges in self.node_to_edges.values()) / max(len(self.nodes), 1)
         }
+    
+    def query_by_inference_level(self, level: int) -> QueryResult:
+        """
+        Query nodes by inference level.
+        
+        Args:
+            level: Inference level (0=enumerated laws, 1=first-order principles, 2=meta-principles)
+        
+        Returns:
+            Query result with nodes at specified level
+        """
+        matching_nodes = [
+            node for node in self.nodes.values()
+            if node.inference_level == level
+        ]
+        
+        return QueryResult(
+            nodes=matching_nodes,
+            metadata={
+                "query_type": "inference_level",
+                "level": level,
+                "count": len(matching_nodes)
+            }
+        )
+    
+    def get_enumerated_laws(self) -> QueryResult:
+        """
+        Get all enumerated laws (inference level 0).
+        
+        Returns:
+            Query result with level 0 nodes
+        """
+        return self.query_by_inference_level(0)
+    
+    def get_first_order_principles(self) -> QueryResult:
+        """
+        Get all first-order principles (inference level 1).
+        
+        Returns:
+            Query result with level 1 nodes
+        """
+        return self.query_by_inference_level(1)
+    
+    def get_meta_principles(self) -> QueryResult:
+        """
+        Get all meta-principles (inference level 2).
+        
+        Returns:
+            Query result with level 2 nodes
+        """
+        return self.query_by_inference_level(2)
+    
+    def build_inference_hierarchy(self) -> Dict[int, List[LegalNode]]:
+        """
+        Build complete inference hierarchy.
+        
+        Returns:
+            Dictionary mapping inference levels to list of nodes
+        """
+        hierarchy = {}
+        
+        for node in self.nodes.values():
+            level = node.inference_level
+            if level not in hierarchy:
+                hierarchy[level] = []
+            hierarchy[level].append(node)
+        
+        return hierarchy
 
 
 if __name__ == "__main__":
