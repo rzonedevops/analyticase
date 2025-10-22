@@ -188,6 +188,34 @@ The specification provides:
 - [Formal Methods Resources](https://formalmethods.wikia.org/)
 - [CZT Community](http://czt.sourceforge.net/)
 
+## Lex Hypergraph Specification
+
+The repository includes a specialized formal specification for the **Lex Hypergraph** - the hypergraph structure used to represent legal frameworks and enable inference of general principles from enumerated laws.
+
+### Key Documents
+
+- **[LEX_HYPERGRAPH_SPEC.md](LEX_HYPERGRAPH_SPEC.md)**: Complete Z++ formal specification of the lex hypergraph structure, including:
+  - Legal node and hyperedge schemas
+  - Hypergraph operations and invariants
+  - Inference operations for legal reasoning
+  - Examples of legal framework representation
+
+- **[INFERENCE_MODELS.md](INFERENCE_MODELS.md)**: Detailed description of the four primary inference models:
+  1. **Deductive Inference**: Top-down reasoning from general principles to specific cases
+  2. **Inductive Inference**: Bottom-up generalization from specific laws to general principles
+  3. **Abductive Inference**: Inference to best explanation for observed legal patterns
+  4. **Analogical Inference**: Cross-domain transfer of legal principles
+
+### Integration with Lex Framework
+
+The lex hypergraph specification integrates with the legal frameworks in the `lex/` directory:
+- Automatically loads legal definitions from Scheme (.scm) files
+- Builds hypergraph structure with nodes and edges
+- Supports inference operations to discover general principles
+- Enables querying and navigation of legal relationships
+
+See the [lex/README.md](../../lex/README.md) for information about the legal framework directory structure.
+
 ## Mapping to Implementation
 
 ### Python Implementation Correspondence

@@ -26,6 +26,8 @@ Welcome to the AnalytiCase Z++ formal specification. This index helps you naviga
 | [README.md](README.md) | Overview, introduction, and guide | All users |
 | [SPECIFICATION.md](SPECIFICATION.md) | Complete Z++ formal specification (Markdown) | Developers, Researchers |
 | [analyticase_zpp_spec.tex](analyticase_zpp_spec.tex) | Complete Z++ formal specification (LaTeX) | Formal methods experts |
+| [LEX_HYPERGRAPH_SPEC.md](LEX_HYPERGRAPH_SPEC.md) | Z++ specification for lex hypergraph | Developers, Legal AI Researchers |
+| [INFERENCE_MODELS.md](INFERENCE_MODELS.md) | Primary inference models for legal reasoning | Researchers, Implementers |
 
 ### Supporting Documentation
 
@@ -36,6 +38,26 @@ Welcome to the AnalytiCase Z++ formal specification. This index helps you naviga
 | [VERIFICATION_CHECKLIST.md](VERIFICATION_CHECKLIST.md) | Implementation verification guide | QA, Developers |
 
 ## Specification Coverage
+
+### Lex Hypergraph (NEW)
+
+- **Legal Node Schema**: Entities in the legal framework hypergraph
+  - Specification: [LEX_HYPERGRAPH_SPEC.md§3](LEX_HYPERGRAPH_SPEC.md#legal-node-schema)
+  - Implementation: `models/ggmlex/hypergraphql/schema.py::LegalNode`
+  
+- **Legal Hyperedge Schema**: Relationships between legal entities
+  - Specification: [LEX_HYPERGRAPH_SPEC.md§4](LEX_HYPERGRAPH_SPEC.md#legal-hyperedge-schema)
+  - Implementation: `models/ggmlex/hypergraphql/schema.py::LegalHyperedge`
+  
+- **Lex Hypergraph Structure**: Complete legal framework graph
+  - Specification: [LEX_HYPERGRAPH_SPEC.md§5](LEX_HYPERGRAPH_SPEC.md#lex-hypergraph-structure)
+  - Implementation: `models/ggmlex/hypergraphql/engine.py::HypergraphQLEngine`
+
+- **Inference Models**: Models for deriving general principles from laws
+  - Deductive Inference: [INFERENCE_MODELS.md§3.1](INFERENCE_MODELS.md#model-1-deductive-inference-model)
+  - Inductive Inference: [INFERENCE_MODELS.md§3.2](INFERENCE_MODELS.md#model-2-inductive-inference-model)
+  - Abductive Inference: [INFERENCE_MODELS.md§3.3](INFERENCE_MODELS.md#model-3-abductive-inference-model)
+  - Analogical Inference: [INFERENCE_MODELS.md§3.4](INFERENCE_MODELS.md#model-4-analogical-inference-model)
 
 ### Data Structures (Section 3)
 
