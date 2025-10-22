@@ -1,0 +1,736 @@
+% AnalytiCase Z++ Formal Specification
+% Legal Case Analysis & Simulation Framework
+% Version 1.0
+
+\documentclass{article}
+\usepackage{zed-csp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{AnalytiCase: Formal Specification in Z++}
+\author{AnalytiCase Development Team}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+This document provides a formal specification of the AnalytiCase system using Z++, 
+an object-oriented extension of the Z notation. AnalytiCase is a comprehensive 
+legal case analysis and simulation framework that integrates multiple analysis models 
+with South African judiciary systems.
+
+\subsection{Purpose}
+
+The purpose of this specification is to:
+\begin{itemize}
+    \item Formally define the core data structures and operations
+    \item Specify pre-conditions, post-conditions, and invariants
+    \item Document state transitions and system behaviors
+    \item Provide a rigorous foundation for implementation verification
+\end{itemize}
+
+\subsection{Scope}
+
+This specification covers:
+\begin{itemize}
+    \item Core hypergraph data structures
+    \item Legal case management
+    \item ZA Judiciary integration (Court Online and CaseLines)
+    \item Simulation models and execution
+    \item Analysis operations
+\end{itemize}
+
+\newpage
+
+\section{Basic Types}
+
+\subsection{Given Sets}
+
+\begin{zed}
+[CASEID, NODEID, EDGEID, AGENTID, EVENTID, RUNID, BUNDLEID]
+\end{zed}
+
+\begin{zed}
+[TIMESTAMP, FILEPATH, COURTCODE, CASENO, JSONDATA]
+\end{zed}
+
+\subsection{Free Types}
+
+\begin{zed}
+NODETYPE ::= person | organization | event | document | evidence | court
+\end{zed}
+
+\begin{zed}
+EDGETYPE ::= transaction | communication | attendance | ownership | relationship
+\end{zed}
+
+\begin{zed}
+CASESTATUS ::= filed | pending | active | closed | archived
+\end{zed}
+
+\begin{zed}
+CASETYPE ::= civil | criminal | commercial | constitutional
+\end{zed}
+
+\begin{zed}
+AGENTTYPE ::= investigator | attorney | judge | clerk
+\end{zed}
+
+\begin{zed}
+SIMTYPE ::= agent\_based | discrete\_event | system\_dynamics | hypergnn | case\_llm
+\end{zed}
+
+\begin{zed}
+BUNDLETYPE ::= pleadings | evidence | correspondence | orders
+\end{zed}
+
+\begin{zed}
+BUNDLESTATUS ::= draft | review | submitted | accepted
+\end{zed}
+
+\newpage
+
+\section{Core Data Structures}
+
+\subsection{Node Class}
+
+A Node represents an entity in the hypergraph with attributes and embeddings.
+
+\begin{class}{Node}
+    nodeId: NODEID \\
+    nodeType: NODETYPE \\
+    attributes: JSONDATA \\
+    embedding: \seq \real \\
+    embeddingDim: \nat
+\where
+    embeddingDim > 0 \\
+    \#embedding = embeddingDim \\
+    \forall e: \ran embedding @ -1.0 \leq e \leq 1.0
+\end{class}
+
+\begin{schema}{InitializeNodeEmbedding}
+    \Delta Node \\
+    dim?: \nat
+\where
+    dim? > 0 \\
+    embeddingDim' = dim? \\
+    \#embedding' = dim? \\
+    nodeId' = nodeId \\
+    nodeType' = nodeType \\
+    attributes' = attributes
+\end{schema}
+
+\subsection{Hyperedge Class}
+
+A Hyperedge connects multiple nodes with a specific relationship type and weight.
+
+\begin{class}{Hyperedge}
+    edgeId: EDGEID \\
+    nodes: \power NODEID \\
+    edgeType: EDGETYPE \\
+    weight: \real \\
+    attributes: JSONDATA \\
+    attentionWeights: NODEID \pfun \real
+\where
+    \#nodes \geq 2 \\
+    0 \leq weight \leq 1 \\
+    \dom attentionWeights \subseteq nodes \\
+    \forall w: \ran attentionWeights @ 0 \leq w \leq 1 \\
+    \sum \ran attentionWeights = 1.0
+\end{schema}
+
+\begin{schema}{AddNodeToHyperedge}
+    \Delta Hyperedge \\
+    node?: NODEID \\
+    attWeight?: \real
+\where
+    node? \notin nodes \\
+    0 \leq attWeight? \leq 1 \\
+    nodes' = nodes \cup \{node?\} \\
+    attentionWeights' = attentionWeights \cup \{node? \mapsto attWeight?\} \\
+    edgeId' = edgeId \\
+    edgeType' = edgeType \\
+    weight' = weight \\
+    attributes' = attributes
+\end{schema}
+
+\subsection{Hypergraph Class}
+
+The Hypergraph manages the complete graph structure with nodes and hyperedges.
+
+\begin{class}{Hypergraph}
+    nodes: NODEID \pfun Node \\
+    hyperedges: EDGEID \pfun Hyperedge \\
+    nodeToEdges: NODEID \pfun \power EDGEID
+\where
+    \dom nodeToEdges = \dom nodes \\
+    \forall n: \dom nodes @ \\
+    \t1 nodeToEdges(n) = \{e: \dom hyperedges | n \in hyperedges(e).nodes\} \\
+    \forall e: \dom hyperedges @ hyperedges(e).nodes \subseteq \dom nodes
+\end{class}
+
+\begin{schema}{AddNode}
+    \Delta Hypergraph \\
+    node?: Node
+\where
+    node?.nodeId \notin \dom nodes \\
+    nodes' = nodes \cup \{node?.nodeId \mapsto node?\} \\
+    nodeToEdges' = nodeToEdges \cup \{node?.nodeId \mapsto \emptyset\} \\
+    hyperedges' = hyperedges
+\end{schema}
+
+\begin{schema}{AddHyperedge}
+    \Delta Hypergraph \\
+    edge?: Hyperedge
+\where
+    edge?.edgeId \notin \dom hyperedges \\
+    edge?.nodes \subseteq \dom nodes \\
+    hyperedges' = hyperedges \cup \{edge?.edgeId \mapsto edge?\} \\
+    nodes' = nodes \\
+    \forall n: edge?.nodes @ \\
+    \t1 nodeToEdges'(n) = nodeToEdges(n) \cup \{edge?.edgeId\}
+\end{schema}
+
+\begin{schema}{GetNodeNeighbors}
+    \Xi Hypergraph \\
+    nodeId?: NODEID \\
+    neighbors!: \power NODEID
+\where
+    nodeId? \in \dom nodes \\
+    neighbors! = \bigcup \{hyperedges(e).nodes \setminus \{nodeId?\} | \\
+    \t1 e: nodeToEdges(nodeId?)\}
+\end{schema}
+
+\begin{schema}{HypergraphStatistics}
+    \Xi Hypergraph \\
+    numNodes!: \nat \\
+    numEdges!: \nat \\
+    avgNodeDegree!: \real \\
+    maxNodeDegree!: \nat \\
+    avgEdgeSize!: \real \\
+    maxEdgeSize!: \nat
+\where
+    numNodes! = \#nodes \\
+    numEdges! = \#hyperedges \\
+    numNodes! > 0 \implies \\
+    \t1 avgNodeDegree! = (\sum \{n: \dom nodes @ \#nodeToEdges(n)\}) / numNodes! \\
+    maxNodeDegree! = \max \{\#nodeToEdges(n) | n: \dom nodes\} \\
+    numEdges! > 0 \implies \\
+    \t1 avgEdgeSize! = (\sum \{e: \dom hyperedges @ \#hyperedges(e).nodes\}) / numEdges! \\
+    maxEdgeSize! = \max \{\#hyperedges(e).nodes | e: \dom hyperedges\}
+\end{schema}
+
+\newpage
+
+\section{Legal Case Management}
+
+\subsection{Party Class}
+
+\begin{class}{Party}
+    partyId: NODEID \\
+    name: \seq \char \\
+    partyType: \{plaintiff, defendant, witness, expert\} \\
+    contactInfo: JSONDATA \\
+    legalRepresentation: \power NODEID
+\where
+    \#name > 0
+\end{class}
+
+\subsection{LegalCase Class}
+
+\begin{class}{LegalCase}
+    caseId: CASEID \\
+    caseNumber: CASENO \\
+    courtCode: COURTCODE \\
+    caseType: CASETYPE \\
+    title: \seq \char \\
+    status: CASESTATUS \\
+    filingDate: TIMESTAMP \\
+    plaintiff: Party \\
+    defendant: Party \\
+    hypergraph: Hypergraph \\
+    documents: \power FILEPATH \\
+    events: \seq EVENTID
+\where
+    \#title > 0 \\
+    plaintiff.partyType = plaintiff \\
+    defendant.partyType = defendant \\
+    plaintiff.partyId \in \dom hypergraph.nodes \\
+    defendant.partyId \in \dom hypergraph.nodes
+\end{class}
+
+\begin{schema}{CreateCase}
+    \Delta LegalCase \\
+    caseNum?: CASENO \\
+    court?: COURTCODE \\
+    type?: CASETYPE \\
+    title?: \seq \char \\
+    plaintiff?: Party \\
+    defendant?: Party
+\where
+    \#title? > 0 \\
+    plaintiff?.partyType = plaintiff \\
+    defendant?.partyType = defendant \\
+    caseNumber' = caseNum? \\
+    courtCode' = court? \\
+    caseType' = type? \\
+    title' = title? \\
+    status' = filed \\
+    plaintiff' = plaintiff? \\
+    defendant' = defendant? \\
+    documents' = \emptyset \\
+    events' = \langle \rangle \\
+    hypergraph'.nodes = \{plaintiff?.partyId \mapsto plaintiff?, \\
+    \t1 defendant?.partyId \mapsto defendant?\} \\
+    hypergraph'.hyperedges = \emptyset
+\end{schema}
+
+\begin{schema}{UpdateCaseStatus}
+    \Delta LegalCase \\
+    newStatus?: CASESTATUS
+\where
+    status' = newStatus? \\
+    caseId' = caseId \\
+    caseNumber' = caseNumber \\
+    courtCode' = courtCode \\
+    caseType' = caseType \\
+    title' = title \\
+    plaintiff' = plaintiff \\
+    defendant' = defendant \\
+    hypergraph' = hypergraph \\
+    documents' = documents \\
+    events' = events
+\end{schema}
+
+\begin{schema}{AddDocument}
+    \Delta LegalCase \\
+    document?: FILEPATH
+\where
+    document? \notin documents \\
+    documents' = documents \cup \{document?\} \\
+    caseId' = caseId \\
+    caseNumber' = caseNumber \\
+    status' = status \\
+    hypergraph' = hypergraph \\
+    events' = events
+\end{schema}
+
+\newpage
+
+\section{ZA Judiciary Integration}
+
+\subsection{CourtOnlineCase Class}
+
+\begin{class}{CourtOnlineCase}
+    case: LegalCase \\
+    courtOnlineId: \seq \char \\
+    eFilingEnabled: \bool \\
+    eFilingStatus: \{enabled, disabled, suspended\} \\
+    filingHistory: \seq TIMESTAMP \\
+    digitalSignature: \seq \char
+\where
+    \#courtOnlineId > 0 \\
+    eFilingEnabled = \true \iff eFilingStatus = enabled \\
+    case.status \in \{filed, pending, active\} \implies \\
+    \t1 \#filingHistory > 0
+\end{class}
+
+\begin{schema}{ValidateCaseNumber}
+    \Xi CourtOnlineCase \\
+    valid!: \bool
+\where
+    valid! \iff \\
+    \t1 (\exists prefix, num, year: \seq \char @ \\
+    \t2 case.caseNumber = prefix \cat num \cat ``/'' \cat year \land \\
+    \t2 \#num \geq 4 \land \#num \leq 6 \land \\
+    \t2 \#year = 4)
+\end{schema}
+
+\begin{schema}{EnableEFiling}
+    \Delta CourtOnlineCase \\
+    signature?: \seq \char
+\where
+    eFilingStatus \neq suspended \\
+    \#signature? > 0 \\
+    eFilingEnabled' = \true \\
+    eFilingStatus' = enabled \\
+    digitalSignature' = signature? \\
+    case' = case \\
+    courtOnlineId' = courtOnlineId
+\end{schema}
+
+\subsection{Document Class}
+
+\begin{class}{Document}
+    documentId: NODEID \\
+    fileName: \seq \char \\
+    fileType: \{pdf, docx, txt, image\} \\
+    pageCount: \nat \\
+    filePath: FILEPATH \\
+    uploadDate: TIMESTAMP \\
+    redacted: \bool \\
+    paginated: \bool
+\where
+    \#fileName > 0 \\
+    pageCount > 0
+\end{class}
+
+\subsection{CaseLinesBundle Class}
+
+\begin{class}{CaseLinesBundle}
+    bundleId: BUNDLEID \\
+    caseId: CASEID \\
+    bundleName: \seq \char \\
+    bundleType: BUNDLETYPE \\
+    status: BUNDLESTATUS \\
+    documents: \seq Document \\
+    totalPages: \nat \\
+    paginationComplete: \bool \\
+    redactionComplete: \bool \\
+    createdAt: TIMESTAMP
+\where
+    \#bundleName > 0 \\
+    totalPages = \sum \{d: \ran documents @ d.pageCount\} \\
+    paginationComplete \iff (\forall d: \ran documents @ d.paginated) \\
+    redactionComplete \iff (\forall d: \ran documents @ d.redacted) \\
+    status = accepted \implies paginationComplete \land redactionComplete
+\end{class}
+
+\begin{schema}{AddDocumentToBundle}
+    \Delta CaseLinesBundle \\
+    doc?: Document
+\where
+    doc? \notin \ran documents \\
+    documents' = documents \cat \langle doc? \rangle \\
+    totalPages' = totalPages + doc?.pageCount \\
+    paginationComplete' = paginationComplete \land doc?.paginated \\
+    redactionComplete' = redactionComplete \land doc?.redacted \\
+    bundleId' = bundleId \\
+    bundleName' = bundleName \\
+    bundleType' = bundleType \\
+    status' = status
+\end{schema}
+
+\begin{schema}{SubmitBundle}
+    \Delta CaseLinesBundle \\
+    submissionDate!: TIMESTAMP
+\where
+    status = review \\
+    paginationComplete = \true \\
+    redactionComplete = \true \\
+    \#documents > 0 \\
+    status' = submitted \\
+    bundleId' = bundleId \\
+    documents' = documents \\
+    totalPages' = totalPages
+\end{schema}
+
+\newpage
+
+\section{Simulation Models}
+
+\subsection{Agent Class}
+
+\begin{class}{Agent}
+    agentId: AGENTID \\
+    agentType: AGENTTYPE \\
+    workload: \nat \\
+    efficiency: \real \\
+    interactions: \power AGENTID \\
+    caseAssignments: \power CASEID
+\where
+    0 \leq efficiency \leq 1 \\
+    agentId \notin interactions
+\end{class}
+
+\begin{schema}{AssignCase}
+    \Delta Agent \\
+    case?: CASEID
+\where
+    case? \notin caseAssignments \\
+    caseAssignments' = caseAssignments \cup \{case?\} \\
+    workload' = workload + 1 \\
+    agentId' = agentId \\
+    agentType' = agentType \\
+    efficiency' = efficiency \\
+    interactions' = interactions
+\end{schema}
+
+\begin{schema}{RecordInteraction}
+    \Delta Agent \\
+    other?: AGENTID
+\where
+    other? \neq agentId \\
+    other? \notin interactions \\
+    interactions' = interactions \cup \{other?\} \\
+    agentId' = agentId \\
+    agentType' = agentType \\
+    workload' = workload \\
+    efficiency' = efficiency \\
+    caseAssignments' = caseAssignments
+\end{schema}
+
+\subsection{SimulationEvent Class}
+
+\begin{class}{SimulationEvent}
+    eventId: EVENTID \\
+    eventType: \{filing, hearing, ruling, closure\} \\
+    timestamp: \real \\
+    caseId: CASEID \\
+    involvedAgents: \power AGENTID \\
+    duration: \real \\
+    outcome: JSONDATA
+\where
+    timestamp \geq 0 \\
+    duration > 0 \\
+    \#involvedAgents > 0
+\end{class}
+
+\subsection{SimulationRun Class}
+
+\begin{class}{SimulationRun}
+    runId: RUNID \\
+    simulationType: SIMTYPE \\
+    startTime: TIMESTAMP \\
+    endTime: TIMESTAMP \\
+    configuration: JSONDATA \\
+    agents: AGENTID \pfun Agent \\
+    events: \seq SimulationEvent \\
+    results: JSONDATA \\
+    status: \{running, completed, failed\}
+\where
+    status = completed \implies \#events > 0 \\
+    \forall i, j: \dom events | i < j @ \\
+    \t1 events(i).timestamp \leq events(j).timestamp
+\end{class}
+
+\begin{schema}{InitializeSimulation}
+    \Delta SimulationRun \\
+    type?: SIMTYPE \\
+    config?: JSONDATA
+\where
+    simulationType' = type? \\
+    configuration' = config? \\
+    status' = running \\
+    agents' = \emptyset \\
+    events' = \langle \rangle \\
+    results' = \{\}
+\end{schema}
+
+\begin{schema}{AddSimulationEvent}
+    \Delta SimulationRun \\
+    event?: SimulationEvent
+\where
+    status = running \\
+    event?.eventId \notin \{e: \ran events @ e.eventId\} \\
+    events' = events \cat \langle event? \rangle \\
+    runId' = runId \\
+    simulationType' = simulationType \\
+    status' = status \\
+    agents' = agents
+\end{schema}
+
+\begin{schema}{CompleteSimulation}
+    \Delta SimulationRun \\
+    results?: JSONDATA
+\where
+    status = running \\
+    \#events > 0 \\
+    status' = completed \\
+    results' = results? \\
+    runId' = runId \\
+    simulationType' = simulationType \\
+    agents' = agents \\
+    events' = events
+\end{schema}
+
+\newpage
+
+\section{Analysis Operations}
+
+\subsection{Community Detection}
+
+\begin{schema}{DetectCommunities}
+    \Xi Hypergraph \\
+    algorithm?: \{louvain, spectral, label\_propagation\} \\
+    communities!: \power (\power NODEID)
+\where
+    \#nodes > 0 \\
+    \bigcup communities! = \dom nodes \\
+    \forall c1, c2: communities! | c1 \neq c2 @ c1 \cap c2 = \emptyset \\
+    \#communities! \geq 1
+\end{schema}
+
+\subsection{Centrality Analysis}
+
+\begin{schema}{ComputeCentrality}
+    \Xi Hypergraph \\
+    nodeId?: NODEID \\
+    metric?: \{degree, betweenness, closeness, eigenvector\} \\
+    centrality!: \real
+\where
+    nodeId? \in \dom nodes \\
+    0 \leq centrality! \leq 1
+\end{schema}
+
+\subsection{Temporal Pattern Detection}
+
+\begin{schema}{DetectTemporalPatterns}
+    \Xi LegalCase \\
+    timeWindow?: \real \\
+    patterns!: \power (\seq EVENTID) \\
+    confidence!: \real
+\where
+    timeWindow? > 0 \\
+    \forall p: patterns! @ \#p \geq 2 \\
+    0 \leq confidence! \leq 1
+\end{schema}
+
+\subsection{Link Prediction}
+
+\begin{schema}{PredictLinks}
+    \Xi Hypergraph \\
+    sourceNode?: NODEID \\
+    targetNode?: NODEID \\
+    probability!: \real \\
+    method?: \{common\_neighbors, jaccard, adamic\_adar, preferential\_attachment\}
+\where
+    sourceNode? \in \dom nodes \\
+    targetNode? \in \dom nodes \\
+    sourceNode? \neq targetNode? \\
+    0 \leq probability! \leq 1
+\end{schema}
+
+\newpage
+
+\section{System Invariants}
+
+\subsection{Hypergraph Consistency}
+
+\begin{theorem}{HypergraphConsistency}
+\forall Hypergraph @ \\
+\t1 (\forall n: \dom nodes @ n \in \dom nodeToEdges) \land \\
+\t1 (\forall e: \dom hyperedges @ hyperedges(e).nodes \subseteq \dom nodes) \land \\
+\t1 (\forall n: \dom nodes @ \\
+\t2 nodeToEdges(n) = \{e: \dom hyperedges | n \in hyperedges(e).nodes\})
+\end{theorem}
+
+\subsection{Case Status Transitions}
+
+\begin{theorem}{ValidStatusTransitions}
+\forall LegalCase @ \\
+\t1 status = filed \implies status' \in \{pending, active, archived\} \land \\
+\t1 status = pending \implies status' \in \{active, closed, archived\} \land \\
+\t1 status = active \implies status' \in \{closed, archived\} \land \\
+\t1 status = closed \implies status' \in \{archived\} \land \\
+\t1 status = archived \implies status' = archived
+\end{theorem}
+
+\subsection{Bundle Submission Rules}
+
+\begin{theorem}{BundleSubmissionRequirements}
+\forall CaseLinesBundle @ \\
+\t1 status = submitted \implies \\
+\t2 paginationComplete = \true \land \\
+\t2 redactionComplete = \true \land \\
+\t2 \#documents > 0
+\end{theorem}
+
+\subsection{Simulation Event Ordering}
+
+\begin{theorem}{EventTemporalOrdering}
+\forall SimulationRun @ \\
+\t1 \forall i, j: \dom events | i < j @ \\
+\t2 events(i).timestamp \leq events(j).timestamp
+\end{theorem}
+
+\newpage
+
+\section{Example Specifications}
+
+\subsection{Creating a Trust Fraud Case}
+
+\begin{example}
+Let $plaintiff = \langle``John Doe'', plaintiff, \{\}, \emptyset \rangle$ \\
+Let $defendant = \langle``Acme Trust Co.'', defendant, \{\}, \emptyset \rangle$ \\
+Let $caseNum = ``(GP) 12345/2025''$ \\
+Let $court = ``GP''$ \\
+Let $type = civil$ \\
+Let $title = ``Trust Fraud Investigation''$
+
+Then applying CreateCase yields:
+\begin{itemize}
+    \item $caseNumber' = ``(GP) 12345/2025''$
+    \item $status' = filed$
+    \item $hypergraph'.nodes = \{plaintiff.partyId, defendant.partyId\}$
+    \item $documents' = \emptyset$
+\end{itemize}
+\end{example}
+
+\subsection{Building a Hypergraph}
+
+\begin{example}
+Starting with an empty Hypergraph:
+\begin{enumerate}
+    \item AddNode($node1$: person)
+    \item AddNode($node2$: organization)
+    \item AddNode($node3$: document)
+    \item AddHyperedge($edge1$: transaction, nodes = \{$node1, node2$\})
+    \item AddHyperedge($edge2$: ownership, nodes = \{$node1, node2, node3$\})
+\end{enumerate}
+
+Results in:
+\begin{itemize}
+    \item $\#nodes = 3$
+    \item $\#hyperedges = 2$
+    \item $nodeToEdges(node1) = \{edge1, edge2\}$
+    \item $nodeToEdges(node2) = \{edge1, edge2\}$
+    \item $nodeToEdges(node3) = \{edge2\}$
+\end{itemize}
+\end{example}
+
+\newpage
+
+\section{Conclusion}
+
+This Z++ formal specification provides a rigorous mathematical foundation for the 
+AnalytiCase system. It defines:
+
+\begin{itemize}
+    \item Core data structures with precise invariants
+    \item Operations with explicit pre- and post-conditions
+    \item System-wide consistency requirements
+    \item State transition rules
+    \item Integration points with ZA judiciary systems
+\end{itemize}
+
+The specification can be used to:
+\begin{itemize}
+    \item Verify implementation correctness
+    \item Generate test cases
+    \item Document system behavior
+    \item Support formal reasoning about system properties
+    \item Guide future enhancements
+\end{itemize}
+
+\subsection{Future Extensions}
+
+Potential areas for specification enhancement include:
+\begin{itemize}
+    \item Concurrency and synchronization for multi-user access
+    \item Security and access control policies
+    \item Real-time constraints for simulation execution
+    \item Database transaction semantics
+    \item Network communication protocols for judiciary integration
+    \item Machine learning model specifications for Case-LLM
+\end{itemize}
+
+\end{document}
