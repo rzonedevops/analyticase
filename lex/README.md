@@ -6,9 +6,9 @@ This directory contains a comprehensive legal framework organized by legal branc
 
 ```
 lex/
-├── lv0/                     # Inference Level 0 - Enumerated Known Laws
+├── lv1/                     # Inference Level 1 - First-Order Principles
 │   ├── known_laws.scm       # 60+ fundamental legal maxims and principles
-│   └── README.md            # Documentation of known laws
+│   └── README.md            # Documentation of first-order principles
 ├── cri/                    # Criminal Law
 │   └── za/                 # South African Criminal Law
 │       └── south_african_criminal_law.scm
@@ -39,7 +39,7 @@ lex/
 
 The legal framework is organized into inference levels, reflecting the abstraction hierarchy of legal reasoning:
 
-### Level 0: Enumerated Known Laws (`lv0/`)
+### Level 1: First-Order Principles (`lv1/`)
 
 The foundational layer containing 60+ universally recognized legal maxims and principles:
 
@@ -50,20 +50,20 @@ The foundational layer containing 60+ universally recognized legal maxims and pr
 - **Constitutional**: supremacy-of-constitution, rule-of-law, ubuntu
 - **And 50+ more fundamental legal principles**
 
-These known laws serve as the axiomatic foundation from which all higher-level legal principles are derived through inference. They have confidence = 1.0 (explicitly stated, universally recognized).
+These first-order principles serve as the foundational layer from which all higher-level legal principles are derived through inference. They have confidence = 1.0 (explicitly stated, universally recognized).
 
 **Example derivation**:
 ```
-Level 0: pacta-sunt-servanda + consensus-ad-idem + consideration-exists
+Level 1: pacta-sunt-servanda + consensus-ad-idem + consideration-exists
     ↓ (Inductive inference)
-Level 1: Valid contracts require mutual agreement and consideration
+Level 2: Valid contracts require mutual agreement and consideration
     ↓ (Abductive inference)
-Level 2: Contract law promotes certainty and voluntary obligations
+Level 3: Contract law promotes certainty and voluntary obligations
 ```
 
-### Level 1+: Derived Legal Frameworks
+### Level 2+: Derived Legal Frameworks
 
-The jurisdiction-specific frameworks (`civ/za/`, `cri/za/`, etc.) are derived from Level 0 known laws through:
+The jurisdiction-specific frameworks (`civ/za/`, `cri/za/`, etc.) are derived from Level 1 first-order principles through:
 
 - **Deductive reasoning**: Applying general principles to specific jurisdictions
 - **Inductive reasoning**: Generalizing from specific laws to broader principles
@@ -147,7 +147,7 @@ All frameworks include:
 
 ## Statistics
 
-- **Level 0 Known Laws**: 60+ fundamental legal maxims and principles
+- **Level 1 First-Order Principles**: 60+ fundamental legal maxims and principles
 - **Total Legal Principles**: 823 (across all 8 jurisdiction-specific frameworks)
 - **Total Functions**: 800+ placeholder functions ready for implementation
 - **Jurisdictions**: South Africa (za) with extensibility for other jurisdictions

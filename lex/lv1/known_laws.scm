@@ -1,4 +1,4 @@
-;; Known Laws - Inference Level 0 (Enumerated Laws)
+;; Known Laws - Inference Level 1 (First-Order Principles)
 ;; Fundamental legal maxims and principles from which the scheme frameworks are derived
 ;; These are the foundational legal principles that underpin all legal reasoning
 
@@ -242,7 +242,7 @@
   (list 'inference
         (list 'source law)
         (list 'facts fact-pattern)
-        (list 'level 0)  ;; Level 0 = enumerated law
+        (list 'level 1)  ;; Level 1 = first-order principle
         (list 'confidence 1.0)))  ;; Known laws have confidence 1.0
 
 ;; Function to combine multiple known laws

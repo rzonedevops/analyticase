@@ -1,29 +1,29 @@
-# Level 0: Enumerated Laws (Known Legal Principles)
+# Level 1: First-Order Principles (Known Legal Maxims)
 
 ## Overview
 
-This directory contains the foundational legal maxims and principles that form the basis of all legal reasoning in the AnalytiCase framework. These are **inference level 0** - the enumerated laws from which higher-order legal principles are derived through the inference engine.
+This directory contains the foundational legal maxims and principles that form the basis of all legal reasoning in the AnalytiCase framework. These are **inference level 1** - the first-order principles from which higher-order legal principles are derived through the inference engine.
 
 ## Inference Level Hierarchy
 
 ```
-Level 0 (lv0): Enumerated Laws (This Layer)
+Level 1 (lv1): First-Order Principles (This Layer)
     ↓ Inductive/Abductive Inference
-Level 1: First-order Principles
-    ↓ Further Inference
 Level 2: Meta-principles
+    ↓ Further Inference
+Level 3: Higher Abstractions
     ↓
-Level N: Higher Abstractions
+Level N: Advanced Meta-principles
 ```
 
 ## Purpose
 
-Level 0 laws serve as the foundation for:
+Level 1 principles serve as the foundation for:
 
 1. **Legal Reasoning**: All legal arguments trace back to these fundamental principles
 2. **Inference Generation**: Higher-level principles are derived from combinations of these laws
 3. **Framework Derivation**: The scheme frameworks in `lex/civ/`, `lex/cri/`, etc. are based on these principles
-4. **Confidence Scoring**: Level 0 laws have confidence = 1.0 (explicitly stated, universally recognized)
+4. **Confidence Scoring**: Level 1 principles have confidence = 1.0 (explicitly stated, universally recognized)
 
 ## Contents
 
@@ -111,40 +111,40 @@ A comprehensive collection of 60+ fundamental legal maxims organized by category
 
 ## Integration with Inference Engine
 
-The enumerated laws in this directory integrate with the inference engine (`models/ggmlex/hypergraphql/inference.py`) as follows:
+The first-order principles in this directory integrate with the inference engine (`models/ggmlex/hypergraphql/inference.py`) as follows:
 
-### Level 0 Properties
+### Level 1 Properties
 ```python
 {
-    "inference_level": 0,
+    "inference_level": 1,
     "confidence": 1.0,
-    "inference_type": "ENUMERATED",
+    "inference_type": "FIRST_ORDER_PRINCIPLE",
     "source": "known_laws.scm"
 }
 ```
 
 ### Derivation Examples
 
-**Inductive Inference** (Level 0 → Level 1):
+**Inductive Inference** (Level 1 → Level 2):
 ```scheme
-;; Level 0 laws
+;; Level 1 principles
 (audi-alteram-partem)  ;; Hear the other side
 (nemo-iudex-in-causa-sua)  ;; No one judge in own cause
 (procedural-fairness)  ;; Fair procedures required
 
-;; Inferred Level 1 principle
+;; Inferred Level 2 meta-principle
 → "Natural justice requires fair hearing and impartial adjudication"
    (confidence: 0.85)
 ```
 
-**Abductive Inference** (Level 0 → Level 2):
+**Abductive Inference** (Level 1 → Level 3):
 ```scheme
-;; Level 0 observations
+;; Level 1 observations
 (actus-non-facit-reum-nisi-mens-sit-rea)  ;; Guilty act + guilty mind
 (culpa)  ;; Fault required
 (bona-fides)  ;; Good faith
 
-;; Abduced Level 2 meta-principle
+;; Abduced Level 3 higher meta-principle
 → "Legal liability requires mental culpability for fairness"
    (confidence: 0.65)
 ```
@@ -159,8 +159,8 @@ from models.ggmlex.hypergraphql import HypergraphQLEngine
 # Load hypergraph with known laws
 engine = HypergraphQLEngine()
 
-# Get all Level 0 enumerated laws
-known_laws = engine.get_enumerated_laws()
+# Get all Level 1 first-order principles
+known_laws = engine.get_first_order_principles()
 print(f"Loaded {len(known_laws.nodes)} known legal principles")
 
 # Filter by category
@@ -186,11 +186,11 @@ procedural_laws = [
        "nemo-iudex" in law.content
 ]
 
-# Infer first-order principle
+# Infer meta-principle
 result = inference.infer_principles(
     source_nodes=procedural_laws,
     inference_type=InferenceType.INDUCTIVE,
-    target_level=1
+    target_level=2
 )
 
 print(f"Inferred: {result.principle.name}")
@@ -229,7 +229,7 @@ When adding new known laws:
 2. Provide both Latin term and English translation
 3. Add to appropriate category section
 4. Include in combine-known-laws function if related to other laws
-5. Maintain confidence = 1.0 (enumerated laws are axiomatic)
+5. Maintain confidence = 1.0 (first-order principles are axiomatic)
 
 ## References
 
