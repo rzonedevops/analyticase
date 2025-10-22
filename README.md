@@ -193,6 +193,7 @@ See the [case study README](case_studies/trust_fraud_analysis/README.md) for det
 
 ## Documentation
 
+- **Formal Specification**: See `docs/formal_specification/README.md` for the Z++ formal specification of the system, including core data structures, operations, and invariants.
 - **Simulation Models**: Detailed documentation for each model can be found in the `README.md` file within each model's directory (e.g., `models/agent_based/README.md`).
 - **Case Studies**: See `case_studies/trust_fraud_analysis/README.md` for the trust fraud analysis case study documentation.
 - **GGMLEX Framework**: See `models/ggmlex/README.md` for comprehensive documentation on the GGML-based ML framework, HypergraphQL, and LlamaLex.cpp inference engine.
