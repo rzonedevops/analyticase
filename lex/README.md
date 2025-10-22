@@ -6,6 +6,9 @@ This directory contains a comprehensive legal framework organized by legal branc
 
 ```
 lex/
+├── lv2/                     # Inference Level 2 - Meta-Principles (Legal Foundations)
+│   ├── legal_foundations.scm # Known jurisprudential theories and philosophies
+│   └── README.md            # Documentation of legal foundations
 ├── lv1/                     # Inference Level 1 - First-Order Principles
 │   ├── known_laws.scm       # 60+ fundamental legal maxims and principles
 │   └── README.md            # Documentation of first-order principles
@@ -39,6 +42,41 @@ lex/
 
 The legal framework is organized into inference levels, reflecting the abstraction hierarchy of legal reasoning:
 
+### Level 2: Meta-Principles (`lv2/`)
+
+The jurisprudential foundations layer containing known legal theories and philosophical frameworks:
+
+- **Natural Law Theory**: Law derives from universal moral principles (Aristotle, Aquinas, Finnis)
+- **Legal Positivism**: Law defined by authoritative sources (Austin, Kelsen, Hart, Raz)
+- **Legal Realism**: Law as actual judicial behavior (Holmes, Llewellyn, Frank, Pound)
+- **Interpretive Theory**: Law as integrity (Ronald Dworkin)
+- **African Legal Philosophy**: Ubuntu and community-centered values
+- **Critical Legal Studies**: Law and power dynamics
+- **Feminist Jurisprudence**: Substantive equality and care ethics
+- **Economic Analysis**: Law and efficiency (Posner, Calabresi, Coase)
+- **Procedural Justice**: Fair process theories
+- **Constitutional Theory**: Constitutional supremacy and transformative constitutionalism
+- **Contract Theory**: Will theory, reliance theory, efficiency theory
+- **Tort/Delict Theory**: Corrective justice, distributive justice, deterrence
+- **Criminal Law Theory**: Retributive justice, utilitarian theory, expressive theory
+- **Property Theory**: Labor theory (Locke), utilitarian theory, personality theory (Hegel)
+- **Evidence Theory**: Rational proof, truth-finding, procedural fairness
+- **Administrative Law Theory**: Rule of law, accountability, regulatory balance
+- **Remedies Theory**: Compensation, deterrence, equity principles
+- **Statutory Interpretation Theory**: Textualism, purposivism, intentionalism
+- **International Law Theory**: Dualism, monism, sovereignty
+
+These meta-principles provide the theoretical grounding from which first-order principles are derived through deductive inference. They have confidence = 0.85-0.95 (well-established theoretical frameworks).
+
+**Example derivation**:
+```
+Level 2: natural-law-theory (law derives from universal moral principles)
+    ↓ (Deductive inference)
+Level 1: rule-of-law + human-dignity + bona-fides
+    ↓ (Inductive inference)
+Level 0: Specific constitutional and civil law provisions
+```
+
 ### Level 1: First-Order Principles (`lv1/`)
 
 The foundational layer containing 60+ universally recognized legal maxims and principles:
@@ -54,14 +92,14 @@ These first-order principles serve as the foundational layer from which all high
 
 **Example derivation**:
 ```
+Level 2: natural-law-theory + procedural-fairness-theory
+    ↓ (Deductive inference)
 Level 1: pacta-sunt-servanda + consensus-ad-idem + consideration-exists
     ↓ (Inductive inference)
-Level 2: Valid contracts require mutual agreement and consideration
-    ↓ (Abductive inference)
-Level 3: Contract law promotes certainty and voluntary obligations
+Level 0: Valid contracts require mutual agreement and consideration
 ```
 
-### Level 2+: Derived Legal Frameworks
+### Level 0+: Derived Legal Frameworks
 
 The jurisdiction-specific frameworks (`civ/za/`, `cri/za/`, etc.) are derived from Level 1 first-order principles through:
 
@@ -147,6 +185,7 @@ All frameworks include:
 
 ## Statistics
 
+- **Level 2 Meta-Principles**: 40+ known legal foundations and jurisprudential theories
 - **Level 1 First-Order Principles**: 60+ fundamental legal maxims and principles
 - **Total Legal Principles**: 823 (across all 8 jurisdiction-specific frameworks)
 - **Total Functions**: 800+ placeholder functions ready for implementation
