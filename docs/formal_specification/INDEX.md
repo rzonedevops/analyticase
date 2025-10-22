@@ -35,6 +35,7 @@ Welcome to the AnalytiCase Z++ formal specification. This index helps you naviga
 |------|---------|----------|
 | [NOTATION_GUIDE.md](NOTATION_GUIDE.md) | Z++ notation reference and tutorial | Beginners, Reference |
 | [EXAMPLES.md](EXAMPLES.md) | Practical implementation examples | Developers |
+| [EXAMPLES_LEX_HYPERGRAPH.md](EXAMPLES_LEX_HYPERGRAPH.md) | Lex hypergraph and inference examples | Developers, Legal AI Researchers |
 | [VERIFICATION_CHECKLIST.md](VERIFICATION_CHECKLIST.md) | Implementation verification guide | QA, Developers |
 
 ## Specification Coverage
