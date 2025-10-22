@@ -210,3 +210,31 @@ See the [case study README](case_studies/trust_fraud_analysis/README.md) for det
 
 For questions or support, please contact the development team.
 
+
+## Lex Scheme Database
+
+The **Lex Scheme** is a comprehensive legal framework management system integrated into AnalytiCase. It provides a hypergraph-based database for storing and querying legal information.
+
+### Features
+
+- **14 Core Tables** for legal entities (statutes, cases, courts, judges, parties)
+- **Hypergraph Relationships** supporting 13 relationship types
+- **Full-Text Search** across legal documents using PostgreSQL GIN indexes
+- **Integration** with Agent-Based, Discrete-Event, and System Dynamics models
+- **Versioning & Audit Trail** for tracking legal entity changes
+- **Analytics & Tracking** for usage monitoring
+
+### Database Schema
+
+The Lex Scheme schema is located in `schema/lex_scheme_enhanced.sql` and has been deployed to the Neon database.
+
+### Management Tools
+
+- **lex_db_manager.py**: Python tool for database management
+- **deploy_lex_schema.py**: Deployment script for schema updates
+
+### Documentation
+
+- [Lex Scheme Design Document](docs/lex_scheme_design.md)
+- [Enhancement Report](LEX_SCHEME_ENHANCEMENT_REPORT.md)
+
