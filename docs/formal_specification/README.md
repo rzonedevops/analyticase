@@ -4,6 +4,8 @@
 
 This directory contains the formal specification of the AnalytiCase system using Z++ (an object-oriented extension of the Z notation). The specification provides a rigorous mathematical foundation for the system's core components, operations, and invariants.
 
+**📋 Quick Navigation**: See [INDEX.md](INDEX.md) for a complete guide to all documentation files.
+
 ## What is Z++?
 
 Z++ is an object-oriented extension of the Z formal specification language. It combines:
