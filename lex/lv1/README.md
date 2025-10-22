@@ -7,23 +7,24 @@ This directory contains the foundational legal maxims and principles that form t
 ## Inference Level Hierarchy
 
 ```
+Level 2 (lv2): Meta-Principles (Legal Foundations/Theories)
+    ↓ Deductive/Abductive Inference
 Level 1 (lv1): First-Order Principles (This Layer)
     ↓ Inductive/Abductive Inference
-Level 2: Meta-principles
-    ↓ Further Inference
-Level 3: Higher Abstractions
+Level 0: Enumerated Laws
     ↓
-Level N: Advanced Meta-principles
+Level -1: Specific Cases
 ```
 
 ## Purpose
 
 Level 1 principles serve as the foundation for:
 
-1. **Legal Reasoning**: All legal arguments trace back to these fundamental principles
-2. **Inference Generation**: Higher-level principles are derived from combinations of these laws
+1. **Legal Reasoning**: All legal arguments trace back to these fundamental principles, which themselves derive from Level 2 jurisprudential theories
+2. **Inference Generation**: Higher-level principles are derived from combinations of these laws, and these laws are derived from Level 2 meta-principles
 3. **Framework Derivation**: The scheme frameworks in `lex/civ/`, `lex/cri/`, etc. are based on these principles
 4. **Confidence Scoring**: Level 1 principles have confidence = 1.0 (explicitly stated, universally recognized)
+5. **Theoretical Grounding**: Each principle can be traced to its jurisprudential foundation in `lex/lv2/`
 
 ## Contents
 
@@ -221,6 +222,24 @@ The scheme frameworks in other `lex/` directories are derived from these known l
 | `lex/con/za/` | supremacy-of-constitution, rule-of-law, separation-of-powers, ubuntu |
 | `lex/admin/za/` | audi-alteram-partem, legality, rationality, procedural-fairness |
 
+## Relationship to Legal Foundations (Level 2)
+
+First-order principles are derived from jurisprudential theories in `lex/lv2/`:
+
+| First-Order Principle | Derived From (Level 2) |
+|----------------------|------------------------|
+| pacta-sunt-servanda, consensus-ad-idem | will-theory, contract-theory |
+| rule-of-law, human-dignity | natural-law-theory, constitutional-theory |
+| nullum-crimen-sine-lege, nulla-poena-sine-lege | legal-positivism |
+| audi-alteram-partem, nemo-iudex-in-causa-sua | procedural-fairness-theory, natural-law-theory |
+| ubuntu | ubuntu-philosophy, African-legal-philosophy |
+| restitutio-in-integrum, damnum-injuria-datum | corrective-justice, tort-theory |
+| supremacy-of-constitution | constitutional-supremacy-theory |
+| literal-rule, golden-rule | textualism, purposivism |
+| stare-decisis | legal-realism, predictive-theory-of-law |
+
+See `lex/lv2/README.md` for comprehensive documentation of legal foundations.
+
 ## Contributing
 
 When adding new known laws:
@@ -249,6 +268,7 @@ When adding new known laws:
 
 ## See Also
 
+- **Legal Foundations (Level 2)**: `lex/lv2/README.md`
 - **Inference Engine**: `models/ggmlex/INFERENCE_ENGINE_README.md`
 - **HypergraphQL**: `models/ggmlex/README.md`
 - **Legal Frameworks**: `lex/README.md`

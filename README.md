@@ -18,6 +18,7 @@ analyticase/
 ├── case_studies/             # Real-world and synthetic case studies
 │   └── trust_fraud_analysis/ # Trust fraud case with agent centrality analysis
 ├── lex/                      # Legal framework directory (legislation structure)
+│   ├── lv2/                  # Inference level 2 - meta-principles (legal foundations/theories)
 │   ├── lv1/                  # Inference level 1 - first-order principles (legal maxims)
 │   └── civ/za/               # South African civil law framework
 ├── simulations/              # Unified simulation runner and results
@@ -200,6 +201,7 @@ See the [case study README](case_studies/trust_fraud_analysis/README.md) for det
 - **Simulation Models**: Detailed documentation for each model can be found in the `README.md` file within each model's directory (e.g., `models/agent_based/README.md`).
 - **Case Studies**: See `case_studies/trust_fraud_analysis/README.md` for the trust fraud analysis case study documentation.
 - **Legal Framework**: See `lex/README.md` for the comprehensive legal framework documentation. The framework includes:
+  - `lex/lv2/` - Inference level 2: Meta-principles (known legal foundations and jurisprudential theories from which first-order principles are derived)
   - `lex/lv1/` - Inference level 1: First-order principles (60+ fundamental legal maxims and principles)
   - `lex/civ/`, `lex/cri/`, etc. - Jurisdiction-specific legal frameworks derived from first-order principles
 - **GGMLEX Framework**: See `models/ggmlex/README.md` for comprehensive documentation on the GGML-based ML framework, HypergraphQL, and LlamaLex.cpp inference engine.
