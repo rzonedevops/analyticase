@@ -29,6 +29,14 @@ class LegalNodeType(Enum):
     JUDGE = "judge"
 
 
+class InferenceType(Enum):
+    """Types of inference used to derive principles."""
+    DEDUCTIVE = "deductive"
+    INDUCTIVE = "inductive"
+    ABDUCTIVE = "abductive"
+    ANALOGICAL = "analogical"
+
+
 class LegalRelationType(Enum):
     """Types of relationships between legal entities."""
     CITES = "cites"
@@ -42,6 +50,8 @@ class LegalRelationType(Enum):
     CONFLICTS_WITH = "conflicts_with"
     SUPPORTS = "supports"
     DEPENDS_ON = "depends_on"  # For dependencies between legal definitions
+    INFERS_FROM = "infers_from"  # For inferred principles from laws
+    GENERALIZES = "generalizes"  # For generalization relationships
 
 
 @dataclass
@@ -60,6 +70,9 @@ class LegalNode:
     jurisdiction: str = "za"  # South Africa by default
     metadata: Dict[str, Any] = field(default_factory=dict)
     properties: Dict[str, Any] = field(default_factory=dict)
+    inference_level: int = 0  # 0=enumerated law, 1=first-order principle, 2=meta-principle
+    inference_type: Optional['InferenceType'] = None  # How this node was inferred (if applicable)
+    confidence: float = 1.0  # Confidence score for inferred nodes
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert node to dictionary representation."""
@@ -70,7 +83,10 @@ class LegalNode:
             "content": self.content,
             "jurisdiction": self.jurisdiction,
             "metadata": self.metadata,
-            "properties": self.properties
+            "properties": self.properties,
+            "inference_level": self.inference_level,
+            "inference_type": self.inference_type.value if self.inference_type else None,
+            "confidence": self.confidence
         }
 
 
@@ -89,6 +105,8 @@ class LegalHyperedge:
     weight: float = 1.0
     metadata: Dict[str, Any] = field(default_factory=dict)
     properties: Dict[str, Any] = field(default_factory=dict)
+    confidence: float = 1.0  # Confidence in the relationship (for inferred edges)
+    inference_type: Optional['InferenceType'] = None  # How this relationship was inferred
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert hyperedge to dictionary representation."""
@@ -98,7 +116,9 @@ class LegalHyperedge:
             "nodes": list(self.nodes),
             "weight": self.weight,
             "metadata": self.metadata,
-            "properties": self.properties
+            "properties": self.properties,
+            "confidence": self.confidence,
+            "inference_type": self.inference_type.value if self.inference_type else None
         }
 
 

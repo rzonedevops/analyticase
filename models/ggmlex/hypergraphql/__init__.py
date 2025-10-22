@@ -8,12 +8,13 @@ the legal framework structure in lex/.
 from .engine import HypergraphQLEngine, QueryResult
 from .schema import (
     LegalSchema, LegalNode, LegalHyperedge,
-    LegalNodeType, LegalRelationType
+    LegalNodeType, LegalRelationType, InferenceType
 )
 from .visualization import (
     HypergraphVisualizer,
     visualize_query_result
 )
+from .inference import InferenceEngine, InferenceResult
 
 __all__ = [
     'HypergraphQLEngine',
@@ -23,6 +24,9 @@ __all__ = [
     'LegalHyperedge',
     'LegalNodeType',
     'LegalRelationType',
+    'InferenceType',
     'HypergraphVisualizer',
     'visualize_query_result',
+    'InferenceEngine',
+    'InferenceResult',
 ]
