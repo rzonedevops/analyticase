@@ -506,11 +506,13 @@ class InferenceEngine:
         pattern = self._identify_common_pattern(nodes)
         
         if pattern and pattern.get("id") != "generic":
+            # Return pattern with matches preserved
             return {
                 "id": pattern["id"],
                 "name": pattern["name"],
                 "description": pattern["description"],
-                "type": "pattern_based"
+                "type": "pattern_based",
+                "matches": pattern.get("matches", len(nodes))
             }
         
         # Fallback: generic hypothesis
