@@ -1,0 +1,723 @@
+INFO:__main__:Initialized simulation with 18 agents
+INFO:__main__:Agent Attorney 2 learned principle: pacta-sunt-servanda
+INFO:__main__:Agent Attorney 4 learned principle: pacta-sunt-servanda
+INFO:__main__:Agent Attorney 5 learned principle: pacta-sunt-servanda
+INFO:__main__:Agent Attorney 6 learned principle: pacta-sunt-servanda
+INFO:__main__:Agent Judge 0 learned principle: pacta-sunt-servanda
+INFO:__main__:Agent Judge 1 learned principle: pacta-sunt-servanda
+INFO:__main__:Agent Judge 2 learned principle: pacta-sunt-servanda
+INFO:__main__:Agent Investigator 2 learned principle: pacta-sunt-servanda
+INFO:__main__:Agent Investigator 4 learned principle: pacta-sunt-servanda
+INFO:__main__:Agent Attorney 3 learned principle: audi-alteram-partem
+INFO:__main__:Agent Attorney 4 learned principle: audi-alteram-partem
+INFO:__main__:Agent Attorney 5 learned principle: audi-alteram-partem
+INFO:__main__:Agent Attorney 8 learned principle: audi-alteram-partem
+INFO:__main__:Agent Judge 0 learned principle: audi-alteram-partem
+INFO:__main__:Agent Judge 1 learned principle: audi-alteram-partem
+INFO:__main__:Agent Judge 2 learned principle: audi-alteram-partem
+INFO:__main__:Agent Investigator 1 learned principle: audi-alteram-partem
+INFO:__main__:Agent Investigator 2 learned principle: audi-alteram-partem
+INFO:__main__:Agent Investigator 3 learned principle: audi-alteram-partem
+INFO:__main__:Running simulation for 100 steps
+INFO:__main__:Agent Judge 2 applied audi-alteram-partem: Success
+INFO:__main__:Agent Judge 1 applied audi-alteram-partem: Success
+INFO:__main__:Agent Attorney 5 applied pacta-sunt-servanda: Success
+INFO:__main__:Agent Judge 1 applied pacta-sunt-servanda: Success
+INFO:__main__:Agent Attorney 5 applied audi-alteram-partem: Success
+INFO:__main__:Agent Judge 0 applied audi-alteram-partem: Success
+INFO:__main__:Agent Attorney 5 applied audi-alteram-partem: Failed
+INFO:__main__:Agent Attorney 3 applied audi-alteram-partem: Success
+INFO:__main__:Agent Judge 1 applied audi-alteram-partem: Success
+INFO:__main__:Agent Attorney 5 applied pacta-sunt-servanda: Success
+INFO:__main__:Agent Judge 1 applied pacta-sunt-servanda: Success
+INFO:__main__:Agent Attorney 4 applied audi-alteram-partem: Success
+INFO:__main__:Agent Attorney 8 applied audi-alteram-partem: Failed
+INFO:__main__:Agent Judge 2 applied audi-alteram-partem: Success
+INFO:__main__:Agent Judge 1 applied pacta-sunt-servanda: Success
+INFO:__main__:Agent Attorney 5 applied audi-alteram-partem: Success
+INFO:__main__:Agent Judge 0 applied audi-alteram-partem: Success
+{
+  "simulation_steps": 99,
+  "total_agents": 18,
+  "total_events": 52,
+  "case_decisions": 20,
+  "avg_reputation": 0.5770146703150886,
+  "avg_expertise": 0.6890007288628903,
+  "avg_principle_accuracy": 0.5315838888888889,
+  "agent_metrics": [
+    {
+      "agent_id": "attorney_0",
+      "agent_type": "attorney",
+      "expertise_level": 0.714740165396773,
+      "reputation_score": 0.5577905310026912,
+      "principle_application_accuracy": 0.5,
+      "case_success_rate": 0.5,
+      "precedent_awareness": 0.5,
+      "domain_expertise": {
+        "contract": 0.5122099451182787,
+        "civil": 0.6140254565362705,
+        "criminal": 0.6109987635946539,
+        "constitutional": 0.36996943521527365,
+        "administrative": 0.31788990444678256,
+        "delict": 0.4609968347105513,
+        "property": 0.6699356401900662,
+        "procedure": 0.34767707566801037
+      },
+      "principles_known": 0,
+      "principles_invoked": {},
+      "cases_handled": 0,
+      "collaboration_count": 2,
+      "stress_level": 0.0,
+      "current_workload": 0
+    },
+    {
+      "agent_id": "attorney_1",
+      "agent_type": "attorney",
+      "expertise_level": 0.8777659013095966,
+      "reputation_score": 0.5731298341097765,
+      "principle_application_accuracy": 0.5,
+      "case_success_rate": 0.5,
+      "precedent_awareness": 0.5,
+      "domain_expertise": {
+        "contract": 0.4379226203057138,
+        "civil": 0.4778299746773772,
+        "criminal": 0.6248884682282645,
+        "constitutional": 0.5739520601767019,
+        "administrative": 0.6543191789301105,
+        "delict": 0.6673008669932219,
+        "property": 0.41712267318748714,
+        "procedure": 0.6541919292620679
+      },
+      "principles_known": 0,
+      "principles_invoked": {},
+      "cases_handled": 0,
+      "collaboration_count": 1,
+      "stress_level": 0.0,
+      "current_workload": 0
+    },
+    {
+      "agent_id": "attorney_2",
+      "agent_type": "attorney",
+      "expertise_level": 0.6300867345061473,
+      "reputation_score": 0.530993889587725,
+      "principle_application_accuracy": 0.5,
+      "case_success_rate": 0.5,
+      "precedent_awareness": 0.5,
+      "domain_expertise": {
+        "contract": 0.41307939678823097,
+        "civil": 0.4109769274964956,
+        "criminal": 0.4276308536470869,
+        "constitutional": 0.565416183034072,
+        "administrative": 0.5192867066552515,
+        "delict": 0.3540081105473456,
+        "property": 0.6426949075418054,
+        "procedure": 0.329378442912229
+      },
+      "principles_known": 1,
+      "principles_invoked": {},
+      "cases_handled": 0,
+      "collaboration_count": 4,
+      "stress_level": 0.0,
+      "current_workload": 0
+    },
+    {
+      "agent_id": "attorney_3",
+      "agent_type": "attorney",
+      "expertise_level": 0.6775147848228511,
+      "reputation_score": 0.5900808283949973,
+      "principle_application_accuracy": 0.55,
+      "case_success_rate": 0.5,
+      "precedent_awareness": 0.5,
+      "domain_expertise": {
+        "contract": 0.5105273962295168,
+        "civil": 0.3813460489610111,
+        "criminal": 0.3509076225956069,
+        "constitutional": 0.6385032420391678,
+        "administrative": 0.5657411805748547,
+        "delict": 0.33891459225941767,
+        "property": 0.5532633022723032,
+        "procedure": 0.6495726636994046
+      },
+      "principles_known": 1,
+      "principles_invoked": {
+        "audi-alteram-partem": 1
+      },
+      "cases_handled": 0,
+      "collaboration_count": 3,
+      "stress_level": 0.0,
+      "current_workload": 0
+    },
+    {
+      "agent_id": "attorney_4",
+      "agent_type": "attorney",
+      "expertise_level": 0.8586420084161643,
+      "reputation_score": 0.6015207175881948,
+      "principle_application_accuracy": 0.55,
+      "case_success_rate": 0.5,
+      "precedent_awareness": 0.5,
+      "domain_expertise": {
+        "contract": 0.5071979412956764,
+        "civil": 0.6781258843443532,
+        "criminal": 0.6146529033352282,
+        "constitutional": 0.46338178336300345,
+        "administrative": 0.48983514051736476,
+        "delict": 0.569067488477666,
+        "property": 0.4627252872554944,
+        "procedure": 0.4715479515816547
+      },
+      "principles_known": 2,
+      "principles_invoked": {
+        "audi-alteram-partem": 1
+      },
+      "cases_handled": 0,
+      "collaboration_count": 3,
+      "stress_level": 0.0,
+      "current_workload": 0
+    },
+    {
+      "agent_id": "attorney_5",
+      "agent_type": "attorney",
+      "expertise_level": 0.6907081226213793,
+      "reputation_score": 0.6066797711513787,
+      "principle_application_accuracy": 0.6237550000000001,
+      "case_success_rate": 0.5,
+      "precedent_awareness": 0.5,
+      "domain_expertise": {
+        "contract": 0.5194066241405993,
+        "civil": 0.7620717257400705,
+        "criminal": 0.3000389880425699,
+        "constitutional": 0.4143896619587565,
+        "administrative": 0.5300371587207899,
+        "delict": 0.5983049949262139,
+        "property": 0.5407746342459321,
+        "procedure": 0.5437758919975865
+      },
+      "principles_known": 2,
+      "principles_invoked": {
+        "pacta-sunt-servanda": 2,
+        "audi-alteram-partem": 3
+      },
+      "cases_handled": 0,
+      "collaboration_count": 3,
+      "stress_level": 0.0,
+      "current_workload": 0
+    },
+    {
+      "agent_id": "attorney_6",
+      "agent_type": "attorney",
+      "expertise_level": 0.6450333905807274,
+      "reputation_score": 0.5780593533937015,
+      "principle_application_accuracy": 0.5,
+      "case_success_rate": 0.5,
+      "precedent_awareness": 0.5,
+      "domain_expertise": {
+        "contract": 0.5542823518232265,
+        "civil": 0.4539339610075617,
+        "criminal": 0.4464018628398049,
+        "constitutional": 0.41458428020827376,
+        "administrative": 0.5927763340931518,
+        "delict": 0.8212523296006328,
+        "property": 0.5400532738315799,
+        "procedure": 0.5453919066163382
+      },
+      "principles_known": 1,
+      "principles_invoked": {},
+      "cases_handled": 0,
+      "collaboration_count": 5,
+      "stress_level": 0.0,
+      "current_workload": 0
+    },
+    {
+      "agent_id": "attorney_7",
+      "agent_type": "attorney",
+      "expertise_level": 0.6096964331944172,
+      "reputation_score": 0.5423653663223907,
+      "principle_application_accuracy": 0.5,
+      "case_success_rate": 0.5,
+      "precedent_awareness": 0.5,
+      "domain_expertise": {
+        "contract": 0.6253888318424121,
+        "civil": 0.4140773864206121,
+        "criminal": 0.6436396155747708,
+        "constitutional": 0.6825530237473544,
+        "administrative": 0.4182573764466681,
+        "delict": 0.65491790543933,
+        "property": 0.7371604026722114,
+        "procedure": 0.4611898526810565
+      },
+      "principles_known": 0,
+      "principles_invoked": {},
+      "cases_handled": 0,
+      "collaboration_count": 1,
+      "stress_level": 0.0,
+      "current_workload": 0
+    },
+    {
+      "agent_id": "attorney_8",
+      "agent_type": "attorney",
+      "expertise_level": 0.7104253227095201,
+      "reputation_score": 0.5434747191441055,
+      "principle_application_accuracy": 0.45,
+      "case_success_rate": 0.5,
+      "precedent_awareness": 0.5,
+      "domain_expertise": {
+        "contract": 0.5372530947726804,
+        "civil": 0.6909908897723777,
+        "criminal": 0.3665891896085085,
+        "constitutional": 0.5678511016750729,
+        "administrative": 0.3406858983259054,
+        "delict": 0.7534725871899856,
+        "property": 0.3295765843869741,
+        "procedure": 0.3024967537329875
+      },
+      "principles_known": 1,
+      "principles_invoked": {
+        "audi-alteram-partem": 1
+      },
+      "cases_handled": 0,
+      "collaboration_count": 7,
+      "stress_level": 0.0,
+      "current_workload": 0
+    },
+    {
+      "agent_id": "attorney_9",
+      "agent_type": "attorney",
+      "expertise_level": 0.8657074731013754,
+      "reputation_score": 0.5762372079438954,
+      "principle_application_accuracy": 0.5,
+      "case_success_rate": 0.5,
+      "precedent_awareness": 0.5,
+      "domain_expertise": {
+        "contract": 0.6436803962067283,
+        "civil": 0.3986821193567446,
+        "criminal": 0.5164788514658594,
+        "constitutional": 0.7248558969970503,
+        "administrative": 0.40609786294636896,
+        "delict": 0.35515095998293655,
+        "property": 0.5277191866417188,
+        "procedure": 0.309227534103612
+      },
+      "principles_known": 0,
+      "principles_invoked": {},
+      "cases_handled": 0,
+      "collaboration_count": 8,
+      "stress_level": 0.0,
+      "current_workload": 0
+    },
+    {
+      "agent_id": "judge_0",
+      "agent_type": "judge",
+      "expertise_level": 0.94721235214701,
+      "reputation_score": 0.5731449799250014,
+      "principle_application_accuracy": 0.5950000000000001,
+      "case_success_rate": 0.5,
+      "precedent_awareness": 0.5,
+      "domain_expertise": {
+        "contract": 0.7443271470576082,
+        "civil": 0.9465447874927244,
+        "criminal": 0.921121127650097,
+        "constitutional": 0.9491365545897705,
+        "administrative": 0.8953703945750872,
+        "delict": 0.8056319797785437,
+        "property": 0.8027458873659984,
+        "procedure": 0.8300931284463045
+      },
+      "principles_known": 2,
+      "principles_invoked": {
+        "audi-alteram-partem": 2
+      },
+      "cases_handled": 0,
+      "collaboration_count": 1,
+      "stress_level": 0.0,
+      "current_workload": 0
+    },
+    {
+      "agent_id": "judge_1",
+      "agent_type": "judge",
+      "expertise_level": 0.8007877068114085,
+      "reputation_score": 0.639607708890586,
+      "principle_application_accuracy": 0.704755,
+      "case_success_rate": 0.5,
+      "precedent_awareness": 0.5,
+      "domain_expertise": {
+        "contract": 0.7590283610172238,
+        "civil": 0.9376712116154104,
+        "criminal": 0.7274597460619219,
+        "constitutional": 0.8894454327366711,
+        "administrative": 0.8201855794027666,
+        "delict": 0.9018578366917258,
+        "property": 0.8591844219818703,
+        "procedure": 0.9403653437930144
+      },
+      "principles_known": 2,
+      "principles_invoked": {
+        "audi-alteram-partem": 2,
+        "pacta-sunt-servanda": 3
+      },
+      "cases_handled": 0,
+      "collaboration_count": 5,
+      "stress_level": 0.0,
+      "current_workload": 0
+    },
+    {
+      "agent_id": "judge_2",
+      "agent_type": "judge",
+      "expertise_level": 0.8736927239146526,
+      "reputation_score": 0.5937806444724892,
+      "principle_application_accuracy": 0.5950000000000001,
+      "case_success_rate": 0.5,
+      "precedent_awareness": 0.5,
+      "domain_expertise": {
+        "contract": 0.8160977457773706,
+        "civil": 0.8440366209482505,
+        "criminal": 0.7393859572831398,
+        "constitutional": 0.7542189491150301,
+        "administrative": 0.9120034957446292,
+        "delict": 0.7404420653002636,
+        "property": 0.7371434223251914,
+        "procedure": 0.7757492500996437
+      },
+      "principles_known": 2,
+      "principles_invoked": {
+        "audi-alteram-partem": 2
+      },
+      "cases_handled": 0,
+      "collaboration_count": 3,
+      "stress_level": 0.0,
+      "current_workload": 0
+    },
+    {
+      "agent_id": "investigator_0",
+      "agent_type": "investigator",
+      "expertise_level": 0.5,
+      "reputation_score": 0.598771424466449,
+      "principle_application_accuracy": 0.5,
+      "case_success_rate": 0.5,
+      "precedent_awareness": 0.5,
+      "domain_expertise": {
+        "contract": 0.6649247317543436,
+        "civil": 0.46418014268924335,
+        "criminal": 0.541227987867065,
+        "constitutional": 0.30497743318768744,
+        "administrative": 0.6898449962498632,
+        "delict": 0.4752433892371425,
+        "property": 0.3089039441139659,
+        "procedure": 0.4525599157020655
+      },
+      "principles_known": 0,
+      "principles_invoked": {},
+      "cases_handled": 0,
+      "collaboration_count": 3,
+      "stress_level": 0.0,
+      "current_workload": 0
+    },
+    {
+      "agent_id": "investigator_1",
+      "agent_type": "investigator",
+      "expertise_level": 0.5,
+      "reputation_score": 0.5863786086667436,
+      "principle_application_accuracy": 0.5,
+      "case_success_rate": 0.5,
+      "precedent_awareness": 0.5,
+      "domain_expertise": {
+        "contract": 0.5492085059769773,
+        "civil": 0.4703236345525338,
+        "criminal": 0.4873935560644672,
+        "constitutional": 0.422625574528128,
+        "administrative": 0.44153899803989255,
+        "delict": 0.5393386614192588,
+        "property": 0.5829992126980517,
+        "procedure": 0.5762961129195086
+      },
+      "principles_known": 1,
+      "principles_invoked": {},
+      "cases_handled": 0,
+      "collaboration_count": 5,
+      "stress_level": 0.0,
+      "current_workload": 0
+    },
+    {
+      "agent_id": "investigator_2",
+      "agent_type": "investigator",
+      "expertise_level": 0.5,
+      "reputation_score": 0.5822862600227401,
+      "principle_application_accuracy": 0.5,
+      "case_success_rate": 0.5,
+      "precedent_awareness": 0.5,
+      "domain_expertise": {
+        "contract": 0.5521576998534911,
+        "civil": 0.3191866414796485,
+        "criminal": 0.47420881227123923,
+        "constitutional": 0.37157128411319307,
+        "administrative": 0.6308265429376692,
+        "delict": 0.597070253894701,
+        "property": 0.6232995918752864,
+        "procedure": 0.47364632024709435
+      },
+      "principles_known": 2,
+      "principles_invoked": {},
+      "cases_handled": 0,
+      "collaboration_count": 2,
+      "stress_level": 0.0,
+      "current_workload": 0
+    },
+    {
+      "agent_id": "investigator_3",
+      "agent_type": "investigator",
+      "expertise_level": 0.5,
+      "reputation_score": 0.5484038769483037,
+      "principle_application_accuracy": 0.5,
+      "case_success_rate": 0.5,
+      "precedent_awareness": 0.5,
+      "domain_expertise": {
+        "contract": 0.46177993853475796,
+        "civil": 0.6615201305961755,
+        "criminal": 0.6168482698104177,
+        "constitutional": 0.5053673082235455,
+        "administrative": 0.6834858237689759,
+        "delict": 0.6710607016141472,
+        "property": 0.38873124676011095,
+        "procedure": 0.4241249032286611
+      },
+      "principles_known": 1,
+      "principles_invoked": {},
+      "cases_handled": 0,
+      "collaboration_count": 3,
+      "stress_level": 0.0,
+      "current_workload": 0
+    },
+    {
+      "agent_id": "investigator_4",
+      "agent_type": "investigator",
+      "expertise_level": 0.5,
+      "reputation_score": 0.5635583436404255,
+      "principle_application_accuracy": 0.5,
+      "case_success_rate": 0.5,
+      "precedent_awareness": 0.5,
+      "domain_expertise": {
+        "contract": 0.40028363933165395,
+        "civil": 0.6063296578400799,
+        "criminal": 0.3872701868950839,
+        "constitutional": 0.4628763228132847,
+        "administrative": 0.6716433464737768,
+        "delict": 0.642673149682841,
+        "property": 0.3708369556936892,
+        "procedure": 0.32993309819114286
+      },
+      "principles_known": 1,
+      "principles_invoked": {},
+      "cases_handled": 0,
+      "collaboration_count": 5,
+      "stress_level": 0.0,
+      "current_workload": 0
+    }
+  ],
+  "events": [
+    {
+      "timestamp": "2025-10-27T01:42:01.501047",
+      "agent_1": "investigator_3",
+      "agent_2": "attorney_0",
+      "type": "consultation",
+      "outcome": "success",
+      "outcome_score": 0.788952655013456,
+      "context": {},
+      "precedents_shared": true
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.501234",
+      "type": "case_decision",
+      "judge": "judge_2",
+      "plaintiff_attorney": "attorney_4",
+      "defendant_attorney": "attorney_8",
+      "outcome": "plaintiff_wins",
+      "judge_confidence": 0.9353186734109803,
+      "principles_applied": [
+        "audi-alteram-partem"
+      ]
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.501317",
+      "agent_1": "attorney_6",
+      "agent_2": "judge_2",
+      "type": "consultation",
+      "outcome": "success",
+      "outcome_score": 0.929581545099886,
+      "context": {},
+      "precedents_shared": true
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.501588",
+      "type": "case_decision",
+      "judge": "judge_2",
+      "plaintiff_attorney": "attorney_3",
+      "defendant_attorney": "attorney_7",
+      "outcome": "plaintiff_wins",
+      "judge_confidence": 0.6943536050860566,
+      "principles_applied": []
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.501766",
+      "agent_1": "attorney_9",
+      "agent_2": "investigator_1",
+      "type": "consultation",
+      "outcome": "success",
+      "outcome_score": 0.9877293255786175,
+      "context": {},
+      "precedents_shared": true
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.501811",
+      "type": "case_decision",
+      "judge": "judge_0",
+      "plaintiff_attorney": "attorney_0",
+      "defendant_attorney": "attorney_6",
+      "outcome": "plaintiff_wins",
+      "judge_confidence": 0.6892996758772214,
+      "principles_applied": []
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.501925",
+      "agent_1": "attorney_5",
+      "agent_2": "attorney_8",
+      "type": "negotiation",
+      "outcome": "pending",
+      "outcome_score": 0.4377391546735769,
+      "context": {},
+      "precedents_shared": false
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.501969",
+      "agent_1": "investigator_0",
+      "agent_2": "attorney_3",
+      "type": "negotiation",
+      "outcome": "pending",
+      "outcome_score": 0.24113575106684915,
+      "context": {},
+      "precedents_shared": false
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.502077",
+      "agent_1": "attorney_9",
+      "agent_2": "judge_1",
+      "type": "negotiation",
+      "outcome": "pending",
+      "outcome_score": 0.2974502405895394,
+      "context": {},
+      "precedents_shared": false
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.502286",
+      "agent_1": "attorney_9",
+      "agent_2": "investigator_2",
+      "type": "consultation",
+      "outcome": "success",
+      "outcome_score": 0.9114313001137005,
+      "context": {},
+      "precedents_shared": true
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.502456",
+      "type": "case_decision",
+      "judge": "judge_1",
+      "plaintiff_attorney": "attorney_9",
+      "defendant_attorney": "attorney_0",
+      "outcome": "plaintiff_wins",
+      "judge_confidence": 0.99,
+      "principles_applied": [
+        "pacta-sunt-servanda"
+      ]
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.502536",
+      "agent_1": "attorney_4",
+      "agent_2": "attorney_2",
+      "type": "collaboration",
+      "outcome": "pending",
+      "outcome_score": 0.33076312538822084,
+      "context": {},
+      "precedents_shared": false
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.502602",
+      "agent_1": "investigator_1",
+      "agent_2": "attorney_6",
+      "type": "consultation",
+      "outcome": "success",
+      "outcome_score": 0.853833323204156,
+      "context": {},
+      "precedents_shared": true
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.502718",
+      "agent_1": "investigator_3",
+      "agent_2": "judge_2",
+      "type": "negotiation",
+      "outcome": "pending",
+      "outcome_score": 0.2979329632053099,
+      "context": {},
+      "precedents_shared": false
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.502941",
+      "agent_1": "attorney_6",
+      "agent_2": "attorney_5",
+      "type": "collaboration",
+      "outcome": "success",
+      "outcome_score": 0.8874754326014804,
+      "context": {},
+      "precedents_shared": true
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.502988",
+      "agent_1": "investigator_1",
+      "agent_2": "investigator_0",
+      "type": "negotiation",
+      "outcome": "success",
+      "outcome_score": 0.9990484111968805,
+      "context": {},
+      "precedents_shared": true
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.503036",
+      "agent_1": "attorney_2",
+      "agent_2": "attorney_3",
+      "type": "negotiation",
+      "outcome": "pending",
+      "outcome_score": 0.3582096729626097,
+      "context": {},
+      "precedents_shared": false
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.503089",
+      "agent_1": "judge_1",
+      "agent_2": "investigator_0",
+      "type": "consultation",
+      "outcome": "success",
+      "outcome_score": 0.9886658334676104,
+      "context": {},
+      "precedents_shared": true
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.503259",
+      "type": "case_decision",
+      "judge": "judge_0",
+      "plaintiff_attorney": "attorney_5",
+      "defendant_attorney": "attorney_1",
+      "outcome": "plaintiff_wins",
+      "judge_confidence": 0.958779317777294,
+      "principles_applied": [
+        "audi-alteram-partem"
+      ]
+    },
+    {
+      "timestamp": "2025-10-27T01:42:01.503341",
+      "agent_1": "attorney_7",
+      "agent_2": "attorney_8",
+      "type": "collaboration",
+      "outcome": "success",
+      "outcome_score": 0.711826831611954,
+      "context": {},
+      "precedents_shared": true
+    }
+  ]
+}

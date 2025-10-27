@@ -1,0 +1,8 @@
+INFO:__main__:Initialized Enhanced HyperGNN with 3 layers, 4 attention heads
+
+=== HyperGNN Model Insights ===
+Hypergraph Statistics: {'num_nodes': 3, 'num_hyperedges': 1, 'avg_node_degree': np.float64(1.0), 'max_node_degree': 1, 'avg_edge_size': np.float64(3.0), 'max_edge_size': 3, 'node_type_distribution': {'statute': 0, 'case': 1, 'principle': 2, 'party': 0, 'judge': 0, 'attorney': 0, 'evidence': 0, 'precedent': 0, 'legal_concept': 0}, 'edge_type_distribution': {'cites': 0, 'overrules': 0, 'applies': 1, 'conflicts': 0, 'supports': 0, 'represents': 0, 'adjudicates': 0, 'derives_from': 0, 'instantiates': 0, 'temporal_sequence': 0}}
+Detected Conflicts: 0
+Top Nodes by Type: {'case': [{'node_id': 'case_001', 'importance': 0.1667631867739531}], 'principle': [{'node_id': 'principle_pacta_sunt_servanda', 'importance': 0.16675539990177743}, {'node_id': 'principle_bona_fides', 'importance': 0.1667408537959906}]}
+
+Case Outcome Prediction: {'plaintiff_wins': 0.499994490849108, 'defendant_wins': 0.500005509150892}

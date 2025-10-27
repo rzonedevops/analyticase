@@ -1,0 +1,1288 @@
+INFO:__main__:Initialized enhanced discrete-event simulation (duration: 365.0 days)
+INFO:__main__:Starting simulation with 100 cases
+INFO:__main__:Case filed: (GP) 10099/2025 at time 0.04
+INFO:__main__:Case filed: (GP) 10065/2025 at time 0.06
+INFO:__main__:Case filed: (GP) 10098/2025 at time 0.09
+INFO:__main__:Case filed: (GP) 10095/2025 at time 0.09
+INFO:__main__:Case filed: (GP) 10084/2025 at time 0.11
+INFO:__main__:Case filed: (GP) 10040/2025 at time 0.12
+INFO:__main__:Case filed: (GP) 10085/2025 at time 0.14
+INFO:__main__:Case filed: (GP) 10031/2025 at time 0.16
+INFO:__main__:Case filed: (GP) 10010/2025 at time 0.17
+INFO:__main__:Case filed: (GP) 10006/2025 at time 0.22
+INFO:__main__:Case filed: (GP) 10045/2025 at time 0.25
+INFO:__main__:Case filed: (GP) 10089/2025 at time 0.25
+INFO:__main__:Case filed: (GP) 10022/2025 at time 0.25
+INFO:__main__:Case filed: (GP) 10013/2025 at time 0.27
+INFO:__main__:Case filed: (GP) 10016/2025 at time 0.31
+INFO:__main__:Case filed: (GP) 10056/2025 at time 0.33
+INFO:__main__:Case filed: (GP) 10067/2025 at time 0.38
+INFO:__main__:Case filed: (GP) 10060/2025 at time 0.45
+INFO:__main__:Case filed: (GP) 10034/2025 at time 0.47
+INFO:__main__:Case filed: (GP) 10041/2025 at time 0.49
+INFO:__main__:Case filed: (GP) 10036/2025 at time 0.54
+INFO:__main__:Case filed: (GP) 10032/2025 at time 0.56
+INFO:__main__:Case filed: (GP) 10062/2025 at time 0.57
+INFO:__main__:Case filed: (GP) 10037/2025 at time 0.60
+INFO:__main__:Case filed: (GP) 10074/2025 at time 0.62
+INFO:__main__:Case filed: (GP) 10066/2025 at time 0.62
+INFO:__main__:Case filed: (GP) 10020/2025 at time 0.63
+INFO:__main__:Case filed: (GP) 10087/2025 at time 0.63
+INFO:__main__:Case filed: (GP) 10024/2025 at time 0.68
+INFO:__main__:Case filed: (GP) 10049/2025 at time 0.71
+INFO:__main__:Case filed: (GP) 10039/2025 at time 0.77
+INFO:__main__:Case filed: (GP) 10059/2025 at time 0.77
+INFO:__main__:Case filed: (GP) 10075/2025 at time 0.79
+INFO:__main__:Case filed: (GP) 10079/2025 at time 0.82
+INFO:__main__:Case filed: (GP) 10002/2025 at time 0.84
+INFO:__main__:Case filed: (GP) 10050/2025 at time 0.93
+INFO:__main__:Case filed: (GP) 10011/2025 at time 0.95
+INFO:__main__:Case filed: (GP) 10064/2025 at time 0.96
+INFO:__main__:Case filed: (GP) 10077/2025 at time 0.97
+INFO:__main__:Case filed: (GP) 10094/2025 at time 1.01
+INFO:__main__:Case filed: (GP) 10096/2025 at time 1.08
+INFO:__main__:Case filed: (GP) 10035/2025 at time 1.09
+INFO:__main__:Case filed: (GP) 10088/2025 at time 1.14
+INFO:__main__:Case filed: (GP) 10007/2025 at time 1.16
+INFO:__main__:Case filed: (GP) 10029/2025 at time 1.19
+INFO:__main__:Case filed: (GP) 10092/2025 at time 1.22
+INFO:__main__:Case filed: (GP) 10090/2025 at time 1.31
+INFO:__main__:Case filed: (GP) 10025/2025 at time 1.32
+INFO:__main__:Case filed: (GP) 10071/2025 at time 1.37
+INFO:__main__:Case filed: (GP) 10047/2025 at time 1.39
+INFO:__main__:Case filed: (GP) 10003/2025 at time 1.42
+INFO:__main__:Case filed: (GP) 10030/2025 at time 1.42
+INFO:__main__:Case filed: (GP) 10009/2025 at time 1.49
+INFO:__main__:Case filed: (GP) 10044/2025 at time 1.55
+INFO:__main__:Case filed: (GP) 10058/2025 at time 1.62
+INFO:__main__:Case filed: (GP) 10069/2025 at time 1.68
+INFO:__main__:Case filed: (GP) 10076/2025 at time 1.79
+INFO:__main__:Case filed: (GP) 10057/2025 at time 1.87
+INFO:__main__:Case filed: (GP) 10078/2025 at time 1.91
+INFO:__main__:Case filed: (GP) 10046/2025 at time 2.01
+INFO:__main__:Case filed: (GP) 10091/2025 at time 2.04
+INFO:__main__:Case filed: (GP) 10055/2025 at time 2.09
+INFO:__main__:Case filed: (GP) 10033/2025 at time 2.14
+INFO:__main__:Case filed: (GP) 10019/2025 at time 2.20
+INFO:__main__:Case filed: (GP) 10082/2025 at time 2.29
+INFO:__main__:Case filed: (GP) 10068/2025 at time 2.32
+INFO:__main__:Case filed: (GP) 10005/2025 at time 2.51
+INFO:__main__:Case filed: (GP) 10072/2025 at time 2.55
+INFO:__main__:Case filed: (GP) 10017/2025 at time 2.61
+INFO:__main__:Case filed: (GP) 10014/2025 at time 2.63
+INFO:__main__:Case filed: (GP) 10026/2025 at time 2.65
+INFO:__main__:Case filed: (GP) 10023/2025 at time 2.71
+INFO:__main__:Case filed: (GP) 10093/2025 at time 2.72
+INFO:__main__:Case filed: (GP) 10070/2025 at time 2.84
+INFO:__main__:Case filed: (GP) 10053/2025 at time 2.95
+INFO:__main__:Case filed: (GP) 10061/2025 at time 3.01
+INFO:__main__:Case filed: (GP) 10054/2025 at time 3.05
+INFO:__main__:Case filed: (GP) 10008/2025 at time 3.05
+INFO:__main__:Case filed: (GP) 10042/2025 at time 3.11
+INFO:__main__:Case filed: (GP) 10083/2025 at time 3.39
+INFO:__main__:Case filed: (GP) 10063/2025 at time 3.45
+INFO:__main__:Evidence submitted for case (GP) 10006/2025: 18 items
+INFO:__main__:Case filed: (GP) 10043/2025 at time 3.75
+INFO:__main__:Case filed: (GP) 10081/2025 at time 4.26
+INFO:__main__:Case filed: (GP) 10015/2025 at time 4.50
+INFO:__main__:Case filed: (GP) 10073/2025 at time 4.68
+INFO:__main__:Evidence submitted for case (GP) 10092/2025: 10 items
+INFO:__main__:Case filed: (GP) 10018/2025 at time 4.92
+INFO:__main__:Case filed: (GP) 10097/2025 at time 4.96
+INFO:__main__:Case filed: (GP) 10027/2025 at time 5.02
+INFO:__main__:Case filed: (GP) 10001/2025 at time 5.02
+INFO:__main__:Case filed: (GP) 10051/2025 at time 5.03
+INFO:__main__:Case filed: (GP) 10052/2025 at time 5.03
+INFO:__main__:Evidence submitted for case (GP) 10044/2025: 15 items
+INFO:__main__:Case filed: (GP) 10086/2025 at time 5.28
+INFO:__main__:Evidence submitted for case (GP) 10041/2025: 5 items
+INFO:__main__:Evidence submitted for case (GP) 10076/2025: 11 items
+INFO:__main__:Case filed: (GP) 10048/2025 at time 6.25
+INFO:__main__:Evidence submitted for case (GP) 10029/2025: 15 items
+INFO:__main__:Evidence submitted for case (GP) 10079/2025: 11 items
+INFO:__main__:Evidence submitted for case (GP) 10037/2025: 18 items
+INFO:__main__:Evidence submitted for case (GP) 10011/2025: 18 items
+INFO:__main__:Case filed: (GP) 10021/2025 at time 7.11
+INFO:__main__:Case filed: (GP) 10000/2025 at time 7.39
+INFO:__main__:Evidence submitted for case (GP) 10046/2025: 17 items
+INFO:__main__:Evidence submitted for case (GP) 10036/2025: 5 items
+INFO:__main__:Case filed: (GP) 10080/2025 at time 7.52
+INFO:__main__:Case filed: (GP) 10038/2025 at time 7.76
+INFO:__main__:Evidence submitted for case (GP) 10072/2025: 8 items
+INFO:__main__:Evidence submitted for case (GP) 10056/2025: 16 items
+INFO:__main__:Evidence submitted for case (GP) 10064/2025: 17 items
+INFO:__main__:Evidence submitted for case (GP) 10088/2025: 18 items
+INFO:__main__:Evidence submitted for case (GP) 10050/2025: 14 items
+INFO:__main__:Evidence submitted for case (GP) 10078/2025: 7 items
+INFO:__main__:Evidence submitted for case (GP) 10025/2025: 8 items
+INFO:__main__:Evidence submitted for case (GP) 10090/2025: 7 items
+INFO:__main__:Evidence submitted for case (GP) 10074/2025: 17 items
+INFO:__main__:Case filed: (GP) 10012/2025 at time 8.71
+INFO:__main__:Evidence submitted for case (GP) 10097/2025: 8 items
+INFO:__main__:Evidence submitted for case (GP) 10031/2025: 9 items
+INFO:__main__:Evidence submitted for case (GP) 10045/2025: 12 items
+INFO:__main__:Evidence submitted for case (GP) 10096/2025: 10 items
+INFO:__main__:Evidence submitted for case (GP) 10095/2025: 16 items
+INFO:__main__:Evidence submitted for case (GP) 10019/2025: 20 items
+INFO:__main__:Evidence submitted for case (GP) 10059/2025: 15 items
+INFO:__main__:Evidence submitted for case (GP) 10051/2025: 18 items
+INFO:__main__:Evidence submitted for case (GP) 10063/2025: 7 items
+INFO:__main__:Evidence submitted for case (GP) 10027/2025: 18 items
+INFO:__main__:Evidence submitted for case (GP) 10099/2025: 13 items
+INFO:__main__:Evidence submitted for case (GP) 10065/2025: 11 items
+INFO:__main__:Evidence submitted for case (GP) 10054/2025: 8 items
+INFO:__main__:Case filed: (GP) 10028/2025 at time 10.75
+INFO:__main__:Evidence submitted for case (GP) 10002/2025: 8 items
+INFO:__main__:Evidence submitted for case (GP) 10084/2025: 20 items
+INFO:__main__:Evidence submitted for case (GP) 10062/2025: 5 items
+INFO:__main__:Evidence submitted for case (GP) 10023/2025: 19 items
+INFO:__main__:Evidence submitted for case (GP) 10066/2025: 19 items
+INFO:__main__:Evidence submitted for case (GP) 10094/2025: 17 items
+INFO:__main__:Evidence submitted for case (GP) 10058/2025: 13 items
+INFO:__main__:Evidence submitted for case (GP) 10082/2025: 19 items
+INFO:__main__:Evidence submitted for case (GP) 10049/2025: 14 items
+INFO:__main__:Evidence submitted for case (GP) 10048/2025: 10 items
+INFO:__main__:Evidence submitted for case (GP) 10077/2025: 14 items
+INFO:__main__:Evidence submitted for case (GP) 10047/2025: 8 items
+INFO:__main__:Evidence submitted for case (GP) 10087/2025: 12 items
+INFO:__main__:Evidence submitted for case (GP) 10071/2025: 11 items
+INFO:__main__:Evidence submitted for case (GP) 10005/2025: 8 items
+INFO:__main__:Evidence submitted for case (GP) 10017/2025: 15 items
+INFO:__main__:Evidence submitted for case (GP) 10089/2025: 14 items
+INFO:__main__:Case (GP) 10076/2025 transitioned to pre_trial at time 15.38
+INFO:__main__:Discovery completed for case (GP) 10076/2025
+INFO:__main__:Evidence submitted for case (GP) 10043/2025: 19 items
+INFO:__main__:Evidence submitted for case (GP) 10081/2025: 5 items
+INFO:__main__:Evidence submitted for case (GP) 10075/2025: 9 items
+INFO:__main__:Evidence submitted for case (GP) 10035/2025: 20 items
+INFO:__main__:Evidence submitted for case (GP) 10073/2025: 20 items
+INFO:__main__:Evidence submitted for case (GP) 10018/2025: 10 items
+INFO:__main__:Evidence submitted for case (GP) 10028/2025: 6 items
+INFO:__main__:Evidence submitted for case (GP) 10057/2025: 6 items
+INFO:__main__:Case filed: (GP) 10004/2025 at time 17.09
+INFO:__main__:Case (GP) 10074/2025 transitioned to pre_trial at time 17.19
+INFO:__main__:Discovery completed for case (GP) 10074/2025
+INFO:__main__:Evidence submitted for case (GP) 10012/2025: 19 items
+INFO:__main__:Evidence submitted for case (GP) 10026/2025: 13 items
+INFO:__main__:Evidence submitted for case (GP) 10060/2025: 18 items
+INFO:__main__:Evidence submitted for case (GP) 10086/2025: 7 items
+INFO:__main__:Evidence submitted for case (GP) 10067/2025: 15 items
+INFO:__main__:Evidence submitted for case (GP) 10030/2025: 14 items
+INFO:__main__:Evidence submitted for case (GP) 10024/2025: 14 items
+INFO:__main__:Case (GP) 10011/2025 transitioned to pre_trial at time 18.03
+INFO:__main__:Discovery completed for case (GP) 10011/2025
+INFO:__main__:Evidence submitted for case (GP) 10013/2025: 17 items
+INFO:__main__:Case (GP) 10046/2025 transitioned to pre_trial at time 18.54
+INFO:__main__:Discovery completed for case (GP) 10046/2025
+INFO:__main__:Evidence submitted for case (GP) 10069/2025: 20 items
+INFO:__main__:Evidence submitted for case (GP) 10010/2025: 17 items
+INFO:__main__:Evidence submitted for case (GP) 10021/2025: 20 items
+INFO:__main__:Evidence submitted for case (GP) 10098/2025: 20 items
+INFO:__main__:Evidence submitted for case (GP) 10083/2025: 15 items
+INFO:__main__:Evidence submitted for case (GP) 10033/2025: 18 items
+INFO:__main__:Evidence submitted for case (GP) 10040/2025: 18 items
+INFO:__main__:Evidence submitted for case (GP) 10004/2025: 17 items
+INFO:__main__:Evidence submitted for case (GP) 10070/2025: 6 items
+INFO:__main__:Case (GP) 10064/2025 transitioned to pre_trial at time 20.60
+INFO:__main__:Discovery completed for case (GP) 10064/2025
+INFO:__main__:Evidence submitted for case (GP) 10053/2025: 9 items
+INFO:__main__:Case (GP) 10044/2025 transitioned to pre_trial at time 20.94
+INFO:__main__:Discovery completed for case (GP) 10044/2025
+INFO:__main__:Evidence submitted for case (GP) 10001/2025: 6 items
+INFO:__main__:Evidence submitted for case (GP) 10016/2025: 13 items
+INFO:__main__:Evidence submitted for case (GP) 10009/2025: 15 items
+INFO:__main__:Evidence submitted for case (GP) 10039/2025: 16 items
+INFO:__main__:Evidence submitted for case (GP) 10008/2025: 13 items
+INFO:__main__:Evidence submitted for case (GP) 10038/2025: 9 items
+INFO:__main__:Evidence submitted for case (GP) 10014/2025: 5 items
+INFO:__main__:Evidence submitted for case (GP) 10034/2025: 8 items
+INFO:__main__:Case (GP) 10025/2025 transitioned to pre_trial at time 22.11
+INFO:__main__:Discovery completed for case (GP) 10025/2025
+INFO:__main__:Evidence submitted for case (GP) 10093/2025: 11 items
+INFO:__main__:Evidence submitted for case (GP) 10091/2025: 17 items
+INFO:__main__:Case (GP) 10029/2025 transitioned to pre_trial at time 22.93
+INFO:__main__:Discovery completed for case (GP) 10029/2025
+INFO:__main__:Evidence submitted for case (GP) 10085/2025: 10 items
+INFO:__main__:Evidence submitted for case (GP) 10022/2025: 20 items
+INFO:__main__:Evidence submitted for case (GP) 10080/2025: 17 items
+INFO:__main__:Evidence submitted for case (GP) 10007/2025: 5 items
+INFO:__main__:Case (GP) 10036/2025 transitioned to pre_trial at time 24.70
+INFO:__main__:Discovery completed for case (GP) 10036/2025
+INFO:__main__:Evidence submitted for case (GP) 10042/2025: 7 items
+INFO:__main__:Evidence submitted for case (GP) 10061/2025: 16 items
+INFO:__main__:Evidence submitted for case (GP) 10020/2025: 10 items
+INFO:__main__:Evidence submitted for case (GP) 10068/2025: 9 items
+INFO:__main__:Case (GP) 10059/2025 transitioned to pre_trial at time 26.03
+INFO:__main__:Discovery completed for case (GP) 10059/2025
+INFO:__main__:Evidence submitted for case (GP) 10032/2025: 14 items
+INFO:__main__:Evidence submitted for case (GP) 10003/2025: 15 items
+INFO:__main__:Evidence submitted for case (GP) 10000/2025: 20 items
+INFO:__main__:Case (GP) 10079/2025 transitioned to pre_trial at time 27.10
+INFO:__main__:Discovery completed for case (GP) 10079/2025
+INFO:__main__:Case (GP) 10072/2025 transitioned to pre_trial at time 27.96
+INFO:__main__:Discovery completed for case (GP) 10072/2025
+INFO:__main__:Evidence submitted for case (GP) 10055/2025: 8 items
+INFO:__main__:Case (GP) 10069/2025 transitioned to pre_trial at time 28.52
+INFO:__main__:Discovery completed for case (GP) 10069/2025
+INFO:__main__:Case (GP) 10092/2025 transitioned to pre_trial at time 29.03
+INFO:__main__:Discovery completed for case (GP) 10092/2025
+INFO:__main__:Case (GP) 10047/2025 transitioned to pre_trial at time 29.07
+INFO:__main__:Discovery completed for case (GP) 10047/2025
+INFO:__main__:Case (GP) 10050/2025 transitioned to pre_trial at time 29.11
+INFO:__main__:Discovery completed for case (GP) 10050/2025
+INFO:__main__:Case (GP) 10006/2025 transitioned to pre_trial at time 30.52
+INFO:__main__:Discovery completed for case (GP) 10006/2025
+INFO:__main__:Evidence submitted for case (GP) 10052/2025: 8 items
+INFO:__main__:Hearing scheduled for case (GP) 10046/2025 in courtroom_0
+INFO:__main__:Case (GP) 10041/2025 transitioned to settlement at time 32.00
+INFO:__main__:Settlement reached for case (GP) 10041/2025: R874161.33
+INFO:__main__:Evidence submitted for case (GP) 10015/2025: 15 items
+INFO:__main__:Case (GP) 10051/2025 transitioned to pre_trial at time 32.21
+INFO:__main__:Discovery completed for case (GP) 10051/2025
+INFO:__main__:Case (GP) 10088/2025 transitioned to pre_trial at time 32.33
+INFO:__main__:Discovery completed for case (GP) 10088/2025
+INFO:__main__:Case (GP) 10063/2025 transitioned to pre_trial at time 32.46
+INFO:__main__:Discovery completed for case (GP) 10063/2025
+INFO:__main__:Case (GP) 10002/2025 transitioned to pre_trial at time 32.56
+INFO:__main__:Discovery completed for case (GP) 10002/2025
+INFO:__main__:Hearing scheduled for case (GP) 10074/2025 in courtroom_1
+INFO:__main__:Hearing scheduled for case (GP) 10025/2025 in courtroom_2
+INFO:__main__:Case (GP) 10041/2025 transitioned to closed at time 34.06
+INFO:__main__:Case closed: (GP) 10041/2025 (duration: 33.57 days)
+INFO:__main__:Case (GP) 10025/2025 transitioned to trial at time 34.92
+INFO:__main__:Hearing conducted for case (GP) 10025/2025
+INFO:__main__:Principle in-dubio-pro-reo invoked in case (GP) 10025/2025
+INFO:__main__:Case (GP) 10023/2025 transitioned to pre_trial at time 35.44
+INFO:__main__:Discovery completed for case (GP) 10023/2025
+INFO:__main__:Case (GP) 10046/2025 transitioned to trial at time 35.58
+INFO:__main__:Hearing conducted for case (GP) 10046/2025
+INFO:__main__:Principle audi-alteram-partem invoked in case (GP) 10046/2025
+INFO:__main__:Principle nemo-iudex-in-causa-sua invoked in case (GP) 10046/2025
+INFO:__main__:Case (GP) 10028/2025 transitioned to pre_trial at time 35.60
+INFO:__main__:Discovery completed for case (GP) 10028/2025
+INFO:__main__:Settlement negotiation failed for case (GP) 10018/2025
+INFO:__main__:Case (GP) 10017/2025 transitioned to pre_trial at time 35.95
+INFO:__main__:Discovery completed for case (GP) 10017/2025
+INFO:__main__:Case (GP) 10074/2025 transitioned to trial at time 36.06
+INFO:__main__:Hearing conducted for case (GP) 10074/2025
+INFO:__main__:Principle audi-alteram-partem invoked in case (GP) 10074/2025
+INFO:__main__:Settlement negotiation failed for case (GP) 10067/2025
+INFO:__main__:Case (GP) 10075/2025 transitioned to pre_trial at time 36.40
+INFO:__main__:Discovery completed for case (GP) 10075/2025
+INFO:__main__:Hearing scheduled for case (GP) 10011/2025 in courtroom_0
+INFO:__main__:Case (GP) 10056/2025 transitioned to pre_trial at time 37.96
+INFO:__main__:Discovery completed for case (GP) 10056/2025
+INFO:__main__:Hearing scheduled for case (GP) 10059/2025 in courtroom_1
+INFO:__main__:Hearing scheduled for case (GP) 10064/2025 in courtroom_2
+INFO:__main__:Case (GP) 10021/2025 transitioned to pre_trial at time 38.47
+INFO:__main__:Discovery completed for case (GP) 10021/2025
+INFO:__main__:Case (GP) 10059/2025 transitioned to trial at time 39.24
+INFO:__main__:Hearing conducted for case (GP) 10059/2025
+INFO:__main__:Principle supremacy-of-constitution invoked in case (GP) 10059/2025
+INFO:__main__:Principle rule-of-law invoked in case (GP) 10059/2025
+INFO:__main__:Case (GP) 10097/2025 transitioned to pre_trial at time 39.63
+INFO:__main__:Discovery completed for case (GP) 10097/2025
+INFO:__main__:Settlement negotiation failed for case (GP) 10036/2025
+INFO:__main__:Case (GP) 10010/2025 transitioned to pre_trial at time 40.41
+INFO:__main__:Discovery completed for case (GP) 10010/2025
+INFO:__main__:Settlement negotiation failed for case (GP) 10064/2025
+INFO:__main__:Case (GP) 10011/2025 transitioned to trial at time 40.70
+INFO:__main__:Hearing conducted for case (GP) 10011/2025
+INFO:__main__:Principle supremacy-of-constitution invoked in case (GP) 10011/2025
+INFO:__main__:Principle rule-of-law invoked in case (GP) 10011/2025
+INFO:__main__:Case (GP) 10062/2025 transitioned to pre_trial at time 41.13
+INFO:__main__:Discovery completed for case (GP) 10062/2025
+INFO:__main__:Case (GP) 10064/2025 transitioned to trial at time 41.28
+INFO:__main__:Hearing conducted for case (GP) 10064/2025
+INFO:__main__:Principle damnum-injuria-datum invoked in case (GP) 10064/2025
+INFO:__main__:Principle culpa invoked in case (GP) 10064/2025
+INFO:__main__:Principle causation invoked in case (GP) 10064/2025
+INFO:__main__:Hearing scheduled for case (GP) 10072/2025 in courtroom_0
+INFO:__main__:Case (GP) 10031/2025 transitioned to pre_trial at time 41.78
+INFO:__main__:Discovery completed for case (GP) 10031/2025
+INFO:__main__:Settlement negotiation failed for case (GP) 10023/2025
+INFO:__main__:Hearing scheduled for case (GP) 10076/2025 in courtroom_1
+INFO:__main__:Case (GP) 10071/2025 transitioned to pre_trial at time 42.40
+INFO:__main__:Discovery completed for case (GP) 10071/2025
+INFO:__main__:Case (GP) 10004/2025 transitioned to pre_trial at time 42.63
+INFO:__main__:Discovery completed for case (GP) 10004/2025
+INFO:__main__:Case (GP) 10095/2025 transitioned to pre_trial at time 42.99
+INFO:__main__:Discovery completed for case (GP) 10095/2025
+INFO:__main__:Case (GP) 10076/2025 transitioned to trial at time 43.74
+INFO:__main__:Hearing conducted for case (GP) 10076/2025
+INFO:__main__:Principle audi-alteram-partem invoked in case (GP) 10076/2025
+INFO:__main__:Principle nemo-iudex-in-causa-sua invoked in case (GP) 10076/2025
+INFO:__main__:Hearing scheduled for case (GP) 10002/2025 in courtroom_1
+INFO:__main__:Case (GP) 10065/2025 transitioned to pre_trial at time 43.98
+INFO:__main__:Discovery completed for case (GP) 10065/2025
+INFO:__main__:Case (GP) 10089/2025 transitioned to pre_trial at time 44.02
+INFO:__main__:Discovery completed for case (GP) 10089/2025
+INFO:__main__:Case (GP) 10048/2025 transitioned to pre_trial at time 44.53
+INFO:__main__:Discovery completed for case (GP) 10048/2025
+INFO:__main__:Case (GP) 10096/2025 transitioned to pre_trial at time 44.71
+INFO:__main__:Discovery completed for case (GP) 10096/2025
+INFO:__main__:Case (GP) 10072/2025 transitioned to trial at time 45.00
+INFO:__main__:Hearing conducted for case (GP) 10072/2025
+INFO:__main__:Principle nemo-iudex-in-causa-sua invoked in case (GP) 10072/2025
+INFO:__main__:Hearing scheduled for case (GP) 10044/2025 in courtroom_0
+INFO:__main__:Case (GP) 10025/2025 transitioned to ruling at time 45.10
+INFO:__main__:Ruling issued for case (GP) 10025/2025: defendant wins
+INFO:__main__:Case (GP) 10053/2025 transitioned to pre_trial at time 45.23
+INFO:__main__:Discovery completed for case (GP) 10053/2025
+INFO:__main__:Case (GP) 10035/2025 transitioned to pre_trial at time 45.64
+INFO:__main__:Discovery completed for case (GP) 10035/2025
+INFO:__main__:Case (GP) 10033/2025 transitioned to pre_trial at time 45.77
+INFO:__main__:Discovery completed for case (GP) 10033/2025
+INFO:__main__:Hearing scheduled for case (GP) 10047/2025 in courtroom_2
+INFO:__main__:Hearing scheduled for case (GP) 10051/2025 in courtroom_3
+INFO:__main__:Hearing scheduled for case (GP) 10006/2025 in courtroom_4
+INFO:__main__:Case (GP) 10046/2025 transitioned to ruling at time 47.32
+INFO:__main__:Ruling issued for case (GP) 10046/2025: defendant wins
+INFO:__main__:Case (GP) 10090/2025 transitioned to pre_trial at time 47.43
+INFO:__main__:Discovery completed for case (GP) 10090/2025
+INFO:__main__:Case (GP) 10044/2025 transitioned to trial at time 47.55
+INFO:__main__:Hearing conducted for case (GP) 10044/2025
+INFO:__main__:Principle nemo-plus-iuris invoked in case (GP) 10044/2025
+INFO:__main__:Principle nemo-dat-quod-non-habet invoked in case (GP) 10044/2025
+INFO:__main__:Case (GP) 10082/2025 transitioned to pre_trial at time 48.18
+INFO:__main__:Discovery completed for case (GP) 10082/2025
+INFO:__main__:Case (GP) 10027/2025 transitioned to pre_trial at time 48.27
+INFO:__main__:Discovery completed for case (GP) 10027/2025
+INFO:__main__:Hearing scheduled for case (GP) 10056/2025 in courtroom_0
+INFO:__main__:Case (GP) 10045/2025 transitioned to pre_trial at time 48.52
+INFO:__main__:Discovery completed for case (GP) 10045/2025
+INFO:__main__:Case (GP) 10053/2025 transitioned to settlement at time 48.53
+INFO:__main__:Settlement reached for case (GP) 10053/2025: R632488.62
+INFO:__main__:Case (GP) 10064/2025 transitioned to ruling at time 48.70
+INFO:__main__:Ruling issued for case (GP) 10064/2025: plaintiff wins
+INFO:__main__:Case (GP) 10002/2025 transitioned to trial at time 48.76
+INFO:__main__:Hearing conducted for case (GP) 10002/2025
+INFO:__main__:Principle supremacy-of-constitution invoked in case (GP) 10002/2025
+INFO:__main__:Principle rule-of-law invoked in case (GP) 10002/2025
+INFO:__main__:Case (GP) 10024/2025 transitioned to pre_trial at time 48.84
+INFO:__main__:Discovery completed for case (GP) 10024/2025
+INFO:__main__:Case (GP) 10080/2025 transitioned to pre_trial at time 48.97
+INFO:__main__:Discovery completed for case (GP) 10080/2025
+INFO:__main__:Case (GP) 10051/2025 transitioned to trial at time 49.19
+INFO:__main__:Hearing conducted for case (GP) 10051/2025
+INFO:__main__:Principle supremacy-of-constitution invoked in case (GP) 10051/2025
+INFO:__main__:Case (GP) 10087/2025 transitioned to pre_trial at time 49.20
+INFO:__main__:Discovery completed for case (GP) 10087/2025
+INFO:__main__:Case (GP) 10084/2025 transitioned to pre_trial at time 49.28
+INFO:__main__:Discovery completed for case (GP) 10084/2025
+INFO:__main__:Hearing scheduled for case (GP) 10029/2025 in courtroom_1
+INFO:__main__:Case (GP) 10041/2025 transitioned to pre_trial at time 49.44
+INFO:__main__:Discovery completed for case (GP) 10041/2025
+INFO:__main__:Case (GP) 10047/2025 transitioned to trial at time 49.49
+INFO:__main__:Hearing conducted for case (GP) 10047/2025
+INFO:__main__:Principle in-dubio-pro-reo invoked in case (GP) 10047/2025
+INFO:__main__:Case (GP) 10006/2025 transitioned to trial at time 49.67
+INFO:__main__:Hearing conducted for case (GP) 10006/2025
+INFO:__main__:Principle audi-alteram-partem invoked in case (GP) 10006/2025
+INFO:__main__:Case (GP) 10025/2025 transitioned to closed at time 49.69
+INFO:__main__:Case closed: (GP) 10025/2025 (duration: 48.38 days)
+INFO:__main__:Hearing scheduled for case (GP) 10063/2025 in courtroom_2
+INFO:__main__:Case (GP) 10064/2025 transitioned to closed at time 49.84
+INFO:__main__:Case closed: (GP) 10064/2025 (duration: 48.88 days)
+INFO:__main__:Case (GP) 10073/2025 transitioned to pre_trial at time 49.88
+INFO:__main__:Discovery completed for case (GP) 10073/2025
+INFO:__main__:Case (GP) 10042/2025 transitioned to pre_trial at time 50.22
+INFO:__main__:Discovery completed for case (GP) 10042/2025
+INFO:__main__:Case (GP) 10046/2025 transitioned to closed at time 50.37
+INFO:__main__:Case closed: (GP) 10046/2025 (duration: 48.35 days)
+INFO:__main__:Hearing scheduled for case (GP) 10050/2025 in courtroom_3
+INFO:__main__:Case (GP) 10074/2025 transitioned to ruling at time 50.60
+INFO:__main__:Ruling issued for case (GP) 10074/2025: plaintiff wins
+INFO:__main__:Case (GP) 10053/2025 transitioned to closed at time 50.84
+INFO:__main__:Case closed: (GP) 10053/2025 (duration: 47.89 days)
+INFO:__main__:Case (GP) 10056/2025 transitioned to trial at time 51.11
+INFO:__main__:Hearing conducted for case (GP) 10056/2025
+INFO:__main__:Principle supremacy-of-constitution invoked in case (GP) 10056/2025
+INFO:__main__:Principle rule-of-law invoked in case (GP) 10056/2025
+INFO:__main__:Case (GP) 10029/2025 transitioned to trial at time 51.42
+INFO:__main__:Hearing conducted for case (GP) 10029/2025
+INFO:__main__:Principle supremacy-of-constitution invoked in case (GP) 10029/2025
+INFO:__main__:Case (GP) 10060/2025 transitioned to pre_trial at time 51.46
+INFO:__main__:Discovery completed for case (GP) 10060/2025
+INFO:__main__:Case (GP) 10063/2025 transitioned to trial at time 52.83
+INFO:__main__:Hearing conducted for case (GP) 10063/2025
+INFO:__main__:Principle damnum-injuria-datum invoked in case (GP) 10063/2025
+INFO:__main__:Principle culpa invoked in case (GP) 10063/2025
+INFO:__main__:Principle causation invoked in case (GP) 10063/2025
+INFO:__main__:Case (GP) 10026/2025 transitioned to pre_trial at time 53.13
+INFO:__main__:Discovery completed for case (GP) 10026/2025
+INFO:__main__:Case (GP) 10076/2025 transitioned to ruling at time 53.78
+INFO:__main__:Ruling issued for case (GP) 10076/2025: defendant wins
+INFO:__main__:Hearing scheduled for case (GP) 10088/2025 in courtroom_0
+INFO:__main__:Case (GP) 10044/2025 transitioned to ruling at time 54.07
+INFO:__main__:Ruling issued for case (GP) 10044/2025: plaintiff wins
+INFO:__main__:Case (GP) 10074/2025 transitioned to closed at time 54.24
+INFO:__main__:Case closed: (GP) 10074/2025 (duration: 53.63 days)
+INFO:__main__:Case (GP) 10050/2025 transitioned to trial at time 54.30
+INFO:__main__:Hearing conducted for case (GP) 10050/2025
+INFO:__main__:Principle damnum-injuria-datum invoked in case (GP) 10050/2025
+INFO:__main__:Principle culpa invoked in case (GP) 10050/2025
+INFO:__main__:Hearing scheduled for case (GP) 10036/2025 in courtroom_1
+INFO:__main__:Hearing scheduled for case (GP) 10097/2025 in courtroom_2
+INFO:__main__:Case (GP) 10022/2025 transitioned to pre_trial at time 54.90
+INFO:__main__:Discovery completed for case (GP) 10022/2025
+INFO:__main__:Case (GP) 10091/2025 transitioned to pre_trial at time 54.93
+INFO:__main__:Discovery completed for case (GP) 10091/2025
+INFO:__main__:Case (GP) 10037/2025 transitioned to pre_trial at time 55.44
+INFO:__main__:Discovery completed for case (GP) 10037/2025
+INFO:__main__:Case (GP) 10044/2025 transitioned to closed at time 55.50
+INFO:__main__:Case closed: (GP) 10044/2025 (duration: 53.96 days)
+INFO:__main__:Case (GP) 10088/2025 transitioned to trial at time 55.65
+INFO:__main__:Hearing conducted for case (GP) 10088/2025
+INFO:__main__:Case (GP) 10094/2025 transitioned to pre_trial at time 56.30
+INFO:__main__:Discovery completed for case (GP) 10094/2025
+INFO:__main__:Case (GP) 10036/2025 transitioned to trial at time 56.30
+INFO:__main__:Hearing conducted for case (GP) 10036/2025
+INFO:__main__:Principle damnum-injuria-datum invoked in case (GP) 10036/2025
+INFO:__main__:Principle culpa invoked in case (GP) 10036/2025
+INFO:__main__:Principle causation invoked in case (GP) 10036/2025
+INFO:__main__:Case (GP) 10056/2025 transitioned to ruling at time 56.76
+INFO:__main__:Ruling issued for case (GP) 10056/2025: plaintiff wins
+INFO:__main__:Hearing scheduled for case (GP) 10079/2025 in courtroom_0
+INFO:__main__:Case (GP) 10097/2025 transitioned to trial at time 57.18
+INFO:__main__:Hearing conducted for case (GP) 10097/2025
+INFO:__main__:Principle consensus-ad-idem invoked in case (GP) 10097/2025
+INFO:__main__:Principle bona-fides invoked in case (GP) 10097/2025
+INFO:__main__:Hearing scheduled for case (GP) 10010/2025 in courtroom_1
+INFO:__main__:Hearing scheduled for case (GP) 10075/2025 in courtroom_2
+INFO:__main__:Case (GP) 10059/2025 transitioned to ruling at time 57.70
+INFO:__main__:Ruling issued for case (GP) 10059/2025: plaintiff wins
+INFO:__main__:Hearing scheduled for case (GP) 10053/2025 in courtroom_3
+INFO:__main__:Case (GP) 10070/2025 transitioned to pre_trial at time 58.29
+INFO:__main__:Discovery completed for case (GP) 10070/2025
+INFO:__main__:Hearing scheduled for case (GP) 10069/2025 in courtroom_4
+INFO:__main__:Hearing scheduled for case (GP) 10028/2025 in courtroom_5
+INFO:__main__:Hearing scheduled for case (GP) 10092/2025 in courtroom_6
+INFO:__main__:Case (GP) 10076/2025 transitioned to closed at time 58.47
+INFO:__main__:Case closed: (GP) 10076/2025 (duration: 56.68 days)
+INFO:__main__:Hearing scheduled for case (GP) 10031/2025 in courtroom_7
+INFO:__main__:Case (GP) 10011/2025 transitioned to ruling at time 58.71
+INFO:__main__:Ruling issued for case (GP) 10011/2025: defendant wins
+INFO:__main__:Case (GP) 10029/2025 transitioned to ruling at time 58.88
+INFO:__main__:Ruling issued for case (GP) 10029/2025: defendant wins
+INFO:__main__:Case (GP) 10056/2025 transitioned to closed at time 58.96
+INFO:__main__:Case closed: (GP) 10056/2025 (duration: 58.63 days)
+INFO:__main__:Case (GP) 10006/2025 transitioned to ruling at time 59.25
+INFO:__main__:Ruling issued for case (GP) 10006/2025: plaintiff wins
+INFO:__main__:Hearing scheduled for case (GP) 10084/2025 in courtroom_8
+INFO:__main__:Hearing scheduled for case (GP) 10095/2025 in courtroom_9
+WARNING:__main__:No courtroom available for case (GP) 10023/2025, rescheduling
+INFO:__main__:Settlement negotiation failed for case (GP) 10097/2025
+INFO:__main__:Case (GP) 10069/2025 transitioned to trial at time 60.22
+INFO:__main__:Hearing conducted for case (GP) 10069/2025
+INFO:__main__:Principle nemo-plus-iuris invoked in case (GP) 10069/2025
+INFO:__main__:Principle nemo-dat-quod-non-habet invoked in case (GP) 10069/2025
+INFO:__main__:Case (GP) 10055/2025 transitioned to pre_trial at time 60.29
+INFO:__main__:Discovery completed for case (GP) 10055/2025
+INFO:__main__:Case (GP) 10059/2025 transitioned to closed at time 60.52
+INFO:__main__:Case closed: (GP) 10059/2025 (duration: 59.75 days)
+INFO:__main__:Settlement negotiation failed for case (GP) 10015/2025
+INFO:__main__:Hearing scheduled for case (GP) 10073/2025 in courtroom_4
+WARNING:__main__:No courtroom available for case (GP) 10033/2025, rescheduling
+INFO:__main__:Case (GP) 10028/2025 transitioned to trial at time 60.95
+INFO:__main__:Hearing conducted for case (GP) 10028/2025
+INFO:__main__:Principle audi-alteram-partem invoked in case (GP) 10028/2025
+INFO:__main__:Hearing scheduled for case (GP) 10089/2025 in courtroom_5
+INFO:__main__:Case (GP) 10075/2025 transitioned to trial at time 61.04
+INFO:__main__:Hearing conducted for case (GP) 10075/2025
+INFO:__main__:Principle audi-alteram-partem invoked in case (GP) 10075/2025
+INFO:__main__:Principle nemo-iudex-in-causa-sua invoked in case (GP) 10075/2025
+INFO:__main__:Case (GP) 10031/2025 transitioned to trial at time 61.24
+INFO:__main__:Hearing conducted for case (GP) 10031/2025
+INFO:__main__:Principle in-dubio-pro-reo invoked in case (GP) 10031/2025
+INFO:__main__:Case (GP) 10029/2025 transitioned to closed at time 61.26
+INFO:__main__:Case closed: (GP) 10029/2025 (duration: 60.07 days)
+INFO:__main__:Case (GP) 10019/2025 transitioned to pre_trial at time 61.28
+INFO:__main__:Discovery completed for case (GP) 10019/2025
+INFO:__main__:Case (GP) 10079/2025 transitioned to trial at time 61.56
+INFO:__main__:Hearing conducted for case (GP) 10079/2025
+INFO:__main__:Principle supremacy-of-constitution invoked in case (GP) 10079/2025
+INFO:__main__:Case (GP) 10010/2025 transitioned to trial at time 61.62
+INFO:__main__:Hearing conducted for case (GP) 10010/2025
+INFO:__main__:Principle pacta-sunt-servanda invoked in case (GP) 10010/2025
+INFO:__main__:Case (GP) 10016/2025 transitioned to pre_trial at time 61.70
+INFO:__main__:Discovery completed for case (GP) 10016/2025
+INFO:__main__:Case (GP) 10011/2025 transitioned to closed at time 61.91
+INFO:__main__:Case closed: (GP) 10011/2025 (duration: 60.96 days)
+INFO:__main__:Case (GP) 10053/2025 transitioned to trial at time 61.93
+INFO:__main__:Hearing conducted for case (GP) 10053/2025
+INFO:__main__:Principle pacta-sunt-servanda invoked in case (GP) 10053/2025
+INFO:__main__:Principle bona-fides invoked in case (GP) 10053/2025
+INFO:__main__:Hearing scheduled for case (GP) 10096/2025 in courtroom_0
+INFO:__main__:Case (GP) 10081/2025 transitioned to pre_trial at time 62.31
+INFO:__main__:Discovery completed for case (GP) 10081/2025
+INFO:__main__:Case (GP) 10084/2025 transitioned to trial at time 62.57
+INFO:__main__:Hearing conducted for case (GP) 10084/2025
+INFO:__main__:Principle pacta-sunt-servanda invoked in case (GP) 10084/2025
+INFO:__main__:Principle consensus-ad-idem invoked in case (GP) 10084/2025
+INFO:__main__:Principle bona-fides invoked in case (GP) 10084/2025
+INFO:__main__:Case (GP) 10078/2025 transitioned to pre_trial at time 62.58
+INFO:__main__:Discovery completed for case (GP) 10078/2025
+INFO:__main__:Case (GP) 10047/2025 transitioned to ruling at time 62.91
+INFO:__main__:Ruling issued for case (GP) 10047/2025: defendant wins
+INFO:__main__:Case (GP) 10092/2025 transitioned to trial at time 62.96
+INFO:__main__:Hearing conducted for case (GP) 10092/2025
+INFO:__main__:Case (GP) 10088/2025 transitioned to ruling at time 62.98
+INFO:__main__:Ruling issued for case (GP) 10088/2025: plaintiff wins
+INFO:__main__:Case (GP) 10006/2025 transitioned to closed at time 63.10
+INFO:__main__:Case closed: (GP) 10006/2025 (duration: 62.88 days)
+INFO:__main__:Case (GP) 10096/2025 transitioned to trial at time 63.19
+INFO:__main__:Hearing conducted for case (GP) 10096/2025
+INFO:__main__:Principle nemo-iudex-in-causa-sua invoked in case (GP) 10096/2025
+INFO:__main__:Case (GP) 10073/2025 transitioned to trial at time 63.40
+INFO:__main__:Hearing conducted for case (GP) 10073/2025
+INFO:__main__:Principle nemo-iudex-in-causa-sua invoked in case (GP) 10073/2025
+INFO:__main__:Case (GP) 10095/2025 transitioned to trial at time 63.47
+INFO:__main__:Hearing conducted for case (GP) 10095/2025
+INFO:__main__:Principle nemo-dat-quod-non-habet invoked in case (GP) 10095/2025
+INFO:__main__:Case (GP) 10054/2025 transitioned to pre_trial at time 63.81
+INFO:__main__:Discovery completed for case (GP) 10054/2025
+INFO:__main__:Case (GP) 10088/2025 transitioned to closed at time 64.02
+INFO:__main__:Case closed: (GP) 10088/2025 (duration: 62.88 days)
+INFO:__main__:Case (GP) 10051/2025 transitioned to ruling at time 64.07
+INFO:__main__:Ruling issued for case (GP) 10051/2025: defendant wins
+INFO:__main__:Case (GP) 10072/2025 transitioned to ruling at time 64.47
+INFO:__main__:Ruling issued for case (GP) 10072/2025: plaintiff wins
+INFO:__main__:Case (GP) 10089/2025 transitioned to trial at time 64.82
+INFO:__main__:Hearing conducted for case (GP) 10089/2025
+INFO:__main__:Principle supremacy-of-constitution invoked in case (GP) 10089/2025
+INFO:__main__:Principle rule-of-law invoked in case (GP) 10089/2025
+INFO:__main__:Hearing scheduled for case (GP) 10062/2025 in courtroom_0
+INFO:__main__:Hearing scheduled for case (GP) 10082/2025 in courtroom_1
+INFO:__main__:Case (GP) 10012/2025 transitioned to pre_trial at time 65.27
+INFO:__main__:Discovery completed for case (GP) 10012/2025
+INFO:__main__:Hearing scheduled for case (GP) 10023/2025 in courtroom_2
+INFO:__main__:Case (GP) 10014/2025 transitioned to pre_trial at time 65.58
+INFO:__main__:Discovery completed for case (GP) 10014/2025
+INFO:__main__:Hearing scheduled for case (GP) 10017/2025 in courtroom_3
+INFO:__main__:Case (GP) 10002/2025 transitioned to ruling at time 65.78
+INFO:__main__:Ruling issued for case (GP) 10002/2025: plaintiff wins
+INFO:__main__:Case (GP) 10086/2025 transitioned to pre_trial at time 65.94
+INFO:__main__:Discovery completed for case (GP) 10086/2025
+INFO:__main__:Case (GP) 10067/2025 transitioned to pre_trial at time 66.01
+INFO:__main__:Discovery completed for case (GP) 10067/2025
+INFO:__main__:Hearing scheduled for case (GP) 10033/2025 in courtroom_4
+INFO:__main__:Case (GP) 10062/2025 transitioned to trial at time 66.20
+INFO:__main__:Hearing conducted for case (GP) 10062/2025
+INFO:__main__:Principle supremacy-of-constitution invoked in case (GP) 10062/2025
+INFO:__main__:Case (GP) 10015/2025 transitioned to pre_trial at time 66.30
+INFO:__main__:Discovery completed for case (GP) 10015/2025
+INFO:__main__:Hearing scheduled for case (GP) 10027/2025 in courtroom_0
+INFO:__main__:Hearing scheduled for case (GP) 10065/2025 in courtroom_5
+INFO:__main__:Hearing scheduled for case (GP) 10048/2025 in courtroom_6
+INFO:__main__:Hearing scheduled for case (GP) 10004/2025 in courtroom_7
+INFO:__main__:Case (GP) 10003/2025 transitioned to pre_trial at time 67.31
+INFO:__main__:Discovery completed for case (GP) 10003/2025
+INFO:__main__:Hearing scheduled for case (GP) 10071/2025 in courtroom_8
+INFO:__main__:Case (GP) 10017/2025 transitioned to trial at time 67.67
+INFO:__main__:Hearing conducted for case (GP) 10017/2025
+INFO:__main__:Principle pacta-sunt-servanda invoked in case (GP) 10017/2025
+INFO:__main__:Case (GP) 10047/2025 transitioned to closed at time 67.75
+INFO:__main__:Case closed: (GP) 10047/2025 (duration: 66.36 days)
+INFO:__main__:Hearing scheduled for case (GP) 10087/2025 in courtroom_3
+INFO:__main__:Hearing scheduled for case (GP) 10021/2025 in courtroom_9
+INFO:__main__:Case (GP) 10027/2025 transitioned to trial at time 68.13
+INFO:__main__:Hearing conducted for case (GP) 10027/2025
+INFO:__main__:Case (GP) 10051/2025 transitioned to closed at time 68.17
+INFO:__main__:Case closed: (GP) 10051/2025 (duration: 63.14 days)
+INFO:__main__:Case (GP) 10028/2025 transitioned to ruling at time 68.20
+INFO:__main__:Ruling issued for case (GP) 10028/2025: defendant wins
+INFO:__main__:Case (GP) 10004/2025 transitioned to trial at time 68.25
+INFO:__main__:Hearing conducted for case (GP) 10004/2025
+INFO:__main__:Case (GP) 10092/2025 transitioned to ruling at time 68.31
+INFO:__main__:Ruling issued for case (GP) 10092/2025: defendant wins
+INFO:__main__:Hearing scheduled for case (GP) 10037/2025 in courtroom_0
+INFO:__main__:Case (GP) 10082/2025 transitioned to trial at time 68.68
+INFO:__main__:Hearing conducted for case (GP) 10082/2025
+INFO:__main__:Principle consensus-ad-idem invoked in case (GP) 10082/2025
+INFO:__main__:Principle bona-fides invoked in case (GP) 10082/2025
+INFO:__main__:Hearing scheduled for case (GP) 10022/2025 in courtroom_1
+INFO:__main__:Settlement negotiation failed for case (GP) 10049/2025
+INFO:__main__:Case (GP) 10065/2025 transitioned to trial at time 68.88
+INFO:__main__:Hearing conducted for case (GP) 10065/2025
+INFO:__main__:Principle nemo-plus-iuris invoked in case (GP) 10065/2025
+INFO:__main__:Principle nemo-dat-quod-non-habet invoked in case (GP) 10065/2025
+INFO:__main__:Hearing scheduled for case (GP) 10035/2025 in courtroom_5
+INFO:__main__:Case (GP) 10072/2025 transitioned to closed at time 68.96
+INFO:__main__:Case closed: (GP) 10072/2025 (duration: 66.41 days)
+INFO:__main__:Case (GP) 10023/2025 transitioned to trial at time 69.05
+INFO:__main__:Hearing conducted for case (GP) 10023/2025
+INFO:__main__:Hearing scheduled for case (GP) 10094/2025 in courtroom_2
+INFO:__main__:Hearing scheduled for case (GP) 10091/2025 in courtroom_7
+INFO:__main__:Case (GP) 10002/2025 transitioned to closed at time 69.50
+INFO:__main__:Case closed: (GP) 10002/2025 (duration: 68.66 days)
+INFO:__main__:Case (GP) 10010/2025 transitioned to ruling at time 69.72
+INFO:__main__:Ruling issued for case (GP) 10010/2025: plaintiff wins
+INFO:__main__:Case (GP) 10033/2025 transitioned to trial at time 69.88
+INFO:__main__:Hearing conducted for case (GP) 10033/2025
+INFO:__main__:Principle supremacy-of-constitution invoked in case (GP) 10033/2025
+INFO:__main__:Case (GP) 10048/2025 transitioned to trial at time 70.04
+INFO:__main__:Hearing conducted for case (GP) 10048/2025
+INFO:__main__:Principle nullum-crimen-sine-lege invoked in case (GP) 10048/2025
+INFO:__main__:Principle in-dubio-pro-reo invoked in case (GP) 10048/2025
+INFO:__main__:Case (GP) 10063/2025 transitioned to ruling at time 70.13
+INFO:__main__:Ruling issued for case (GP) 10063/2025: defendant wins
+INFO:__main__:Case (GP) 10050/2025 transitioned to ruling at time 70.51
+INFO:__main__:Ruling issued for case (GP) 10050/2025: defendant wins
+INFO:__main__:Case (GP) 10035/2025 transitioned to trial at time 70.58
+INFO:__main__:Hearing conducted for case (GP) 10035/2025
+INFO:__main__:Principle nemo-plus-iuris invoked in case (GP) 10035/2025
+INFO:__main__:Principle nemo-dat-quod-non-habet invoked in case (GP) 10035/2025
+INFO:__main__:Case (GP) 10092/2025 transitioned to closed at time 70.78
+INFO:__main__:Case closed: (GP) 10092/2025 (duration: 69.56 days)
+INFO:__main__:Case (GP) 10069/2025 transitioned to ruling at time 70.95
+INFO:__main__:Ruling issued for case (GP) 10069/2025: plaintiff wins
+INFO:__main__:Case (GP) 10037/2025 transitioned to trial at time 71.15
+INFO:__main__:Hearing conducted for case (GP) 10037/2025
+INFO:__main__:Case (GP) 10021/2025 transitioned to trial at time 71.46
+INFO:__main__:Hearing conducted for case (GP) 10021/2025
+INFO:__main__:Principle pacta-sunt-servanda invoked in case (GP) 10021/2025
+INFO:__main__:Principle consensus-ad-idem invoked in case (GP) 10021/2025
+INFO:__main__:Principle bona-fides invoked in case (GP) 10021/2025
+INFO:__main__:Case (GP) 10096/2025 transitioned to ruling at time 71.65
+INFO:__main__:Ruling issued for case (GP) 10096/2025: plaintiff wins
+INFO:__main__:Hearing scheduled for case (GP) 10041/2025 in courtroom_0
+INFO:__main__:Case (GP) 10097/2025 transitioned to ruling at time 71.92
+INFO:__main__:Ruling issued for case (GP) 10097/2025: defendant wins
+INFO:__main__:Hearing scheduled for case (GP) 10080/2025 in courtroom_4
+INFO:__main__:Case (GP) 10071/2025 transitioned to trial at time 72.00
+INFO:__main__:Hearing conducted for case (GP) 10071/2025
+INFO:__main__:Case (GP) 10063/2025 transitioned to closed at time 72.06
+INFO:__main__:Case closed: (GP) 10063/2025 (duration: 68.61 days)
+INFO:__main__:Case (GP) 10087/2025 transitioned to trial at time 72.26
+INFO:__main__:Hearing conducted for case (GP) 10087/2025
+INFO:__main__:Principle in-dubio-pro-reo invoked in case (GP) 10087/2025
+INFO:__main__:Case (GP) 10091/2025 transitioned to trial at time 72.34
+INFO:__main__:Hearing conducted for case (GP) 10091/2025
+INFO:__main__:Principle damnum-injuria-datum invoked in case (GP) 10091/2025
+INFO:__main__:Principle culpa invoked in case (GP) 10091/2025
+INFO:__main__:Case (GP) 10013/2025 transitioned to pre_trial at time 72.46
+INFO:__main__:Discovery completed for case (GP) 10013/2025
+INFO:__main__:Case (GP) 10001/2025 transitioned to pre_trial at time 72.65
+INFO:__main__:Discovery completed for case (GP) 10001/2025
+INFO:__main__:Case (GP) 10010/2025 transitioned to closed at time 72.65
+INFO:__main__:Case closed: (GP) 10010/2025 (duration: 72.48 days)
+INFO:__main__:Case (GP) 10094/2025 transitioned to trial at time 73.04
+INFO:__main__:Hearing conducted for case (GP) 10094/2025
+INFO:__main__:Principle causation invoked in case (GP) 10094/2025
+INFO:__main__:Case (GP) 10028/2025 transitioned to closed at time 73.08
+INFO:__main__:Case closed: (GP) 10028/2025 (duration: 62.32 days)
+INFO:__main__:Case (GP) 10041/2025 transitioned to trial at time 73.23
+INFO:__main__:Hearing conducted for case (GP) 10041/2025
+INFO:__main__:Principle damnum-injuria-datum invoked in case (GP) 10041/2025
+INFO:__main__:Case (GP) 10004/2025 transitioned to ruling at time 73.33
+INFO:__main__:Ruling issued for case (GP) 10004/2025: defendant wins
+INFO:__main__:Hearing scheduled for case (GP) 10024/2025 in courtroom_0
+INFO:__main__:Case (GP) 10022/2025 transitioned to trial at time 73.51
+INFO:__main__:Hearing conducted for case (GP) 10022/2025
+INFO:__main__:Principle damnum-injuria-datum invoked in case (GP) 10022/2025
+INFO:__main__:Principle culpa invoked in case (GP) 10022/2025
+INFO:__main__:Case (GP) 10031/2025 transitioned to ruling at time 73.59
+INFO:__main__:Ruling issued for case (GP) 10031/2025: defendant wins
+INFO:__main__:Hearing scheduled for case (GP) 10045/2025 in courtroom_1
+INFO:__main__:Case (GP) 10036/2025 transitioned to ruling at time 73.84
+INFO:__main__:Ruling issued for case (GP) 10036/2025: defendant wins
+INFO:__main__:Case (GP) 10069/2025 transitioned to closed at time 73.99
+INFO:__main__:Case closed: (GP) 10069/2025 (duration: 72.31 days)
+INFO:__main__:Case (GP) 10063/2025 transitioned to settlement at time 74.06
+INFO:__main__:Settlement reached for case (GP) 10063/2025: R143016.94
+INFO:__main__:Case (GP) 10017/2025 transitioned to ruling at time 74.12
+INFO:__main__:Ruling issued for case (GP) 10017/2025: plaintiff wins
+INFO:__main__:Hearing scheduled for case (GP) 10090/2025 in courtroom_2
+INFO:__main__:Hearing scheduled for case (GP) 10054/2025 in courtroom_3
+INFO:__main__:Case (GP) 10097/2025 transitioned to closed at time 75.19
+INFO:__main__:Case closed: (GP) 10097/2025 (duration: 70.23 days)
+INFO:__main__:Case (GP) 10096/2025 transitioned to closed at time 75.42
+INFO:__main__:Case closed: (GP) 10096/2025 (duration: 74.34 days)
+INFO:__main__:Case (GP) 10053/2025 transitioned to ruling at time 75.44
+INFO:__main__:Ruling issued for case (GP) 10053/2025: defendant wins
+INFO:__main__:Case (GP) 10050/2025 transitioned to closed at time 75.47
+INFO:__main__:Case closed: (GP) 10050/2025 (duration: 74.55 days)
+INFO:__main__:Case (GP) 10024/2025 transitioned to trial at time 75.55
+INFO:__main__:Hearing conducted for case (GP) 10024/2025
+INFO:__main__:Principle nemo-plus-iuris invoked in case (GP) 10024/2025
+INFO:__main__:Principle nemo-dat-quod-non-habet invoked in case (GP) 10024/2025
+INFO:__main__:Hearing scheduled for case (GP) 10081/2025 in courtroom_0
+INFO:__main__:Hearing scheduled for case (GP) 10042/2025 in courtroom_5
+INFO:__main__:Case (GP) 10043/2025 transitioned to pre_trial at time 76.01
+INFO:__main__:Discovery completed for case (GP) 10043/2025
+INFO:__main__:Case (GP) 10054/2025 transitioned to trial at time 76.06
+INFO:__main__:Hearing conducted for case (GP) 10054/2025
+INFO:__main__:Principle damnum-injuria-datum invoked in case (GP) 10054/2025
+INFO:__main__:Principle culpa invoked in case (GP) 10054/2025
+INFO:__main__:Principle causation invoked in case (GP) 10054/2025
+INFO:__main__:Case (GP) 10018/2025 transitioned to pre_trial at time 76.08
+INFO:__main__:Discovery completed for case (GP) 10018/2025
+INFO:__main__:Case (GP) 10080/2025 transitioned to trial at time 76.09
+INFO:__main__:Hearing conducted for case (GP) 10080/2025
+INFO:__main__:Principle in-dubio-pro-reo invoked in case (GP) 10080/2025
+INFO:__main__:Case (GP) 10031/2025 transitioned to closed at time 76.21
+INFO:__main__:Case closed: (GP) 10031/2025 (duration: 76.05 days)
+INFO:__main__:Case (GP) 10077/2025 transitioned to pre_trial at time 76.81
+INFO:__main__:Discovery completed for case (GP) 10077/2025
+INFO:__main__:Hearing scheduled for case (GP) 10060/2025 in courtroom_3
+INFO:__main__:Case (GP) 10027/2025 transitioned to ruling at time 76.98
+INFO:__main__:Ruling issued for case (GP) 10027/2025: plaintiff wins
+INFO:__main__:Case (GP) 10075/2025 transitioned to ruling at time 77.12
+INFO:__main__:Ruling issued for case (GP) 10075/2025: defendant wins
+INFO:__main__:Hearing scheduled for case (GP) 10070/2025 in courtroom_4
+INFO:__main__:Case (GP) 10036/2025 transitioned to closed at time 77.53
+INFO:__main__:Case closed: (GP) 10036/2025 (duration: 76.99 days)
+INFO:__main__:Case (GP) 10090/2025 transitioned to trial at time 77.69
+INFO:__main__:Hearing conducted for case (GP) 10090/2025
+INFO:__main__:Principle damnum-injuria-datum invoked in case (GP) 10090/2025
+INFO:__main__:Principle culpa invoked in case (GP) 10090/2025
+INFO:__main__:Settlement negotiation failed for case (GP) 10017/2025
+INFO:__main__:Case (GP) 10004/2025 transitioned to closed at time 77.86
+INFO:__main__:Case closed: (GP) 10004/2025 (duration: 60.76 days)
+INFO:__main__:Case (GP) 10030/2025 transitioned to pre_trial at time 77.93
+INFO:__main__:Discovery completed for case (GP) 10030/2025
+INFO:__main__:Hearing scheduled for case (GP) 10015/2025 in courtroom_2
+INFO:__main__:Case (GP) 10045/2025 transitioned to trial at time 78.22
+INFO:__main__:Hearing conducted for case (GP) 10045/2025
+INFO:__main__:Principle damnum-injuria-datum invoked in case (GP) 10045/2025
+INFO:__main__:Case (GP) 10035/2025 transitioned to ruling at time 78.26
+INFO:__main__:Ruling issued for case (GP) 10035/2025: defendant wins
+INFO:__main__:Case (GP) 10042/2025 transitioned to trial at time 78.26
+INFO:__main__:Hearing conducted for case (GP) 10042/2025
+INFO:__main__:Principle supremacy-of-constitution invoked in case (GP) 10042/2025
+INFO:__main__:Principle rule-of-law invoked in case (GP) 10042/2025
+INFO:__main__:Case (GP) 10017/2025 transitioned to closed at time 78.29
+INFO:__main__:Case closed: (GP) 10017/2025 (duration: 75.68 days)
+INFO:__main__:Case (GP) 10063/2025 transitioned to closed at time 78.32
+INFO:__main__:Case closed: (GP) 10063/2025 (duration: 74.87 days)
+INFO:__main__:Case (GP) 10070/2025 transitioned to trial at time 78.32
+INFO:__main__:Hearing conducted for case (GP) 10070/2025
+INFO:__main__:Principle pacta-sunt-servanda invoked in case (GP) 10070/2025
+INFO:__main__:Principle consensus-ad-idem invoked in case (GP) 10070/2025
+INFO:__main__:Case (GP) 10021/2025 transitioned to ruling at time 78.62
+INFO:__main__:Ruling issued for case (GP) 10021/2025: defendant wins
+INFO:__main__:Case (GP) 10079/2025 transitioned to ruling at time 78.90
+INFO:__main__:Ruling issued for case (GP) 10079/2025: plaintiff wins
+INFO:__main__:Hearing scheduled for case (GP) 10003/2025 in courtroom_1
+INFO:__main__:Hearing scheduled for case (GP) 10026/2025 in courtroom_4
+INFO:__main__:Case (GP) 10073/2025 transitioned to ruling at time 79.17
+INFO:__main__:Ruling issued for case (GP) 10073/2025: plaintiff wins
+INFO:__main__:Case (GP) 10058/2025 transitioned to pre_trial at time 79.32
+INFO:__main__:Discovery completed for case (GP) 10058/2025
+INFO:__main__:Case (GP) 10053/2025 transitioned to closed at time 79.39
+INFO:__main__:Case closed: (GP) 10053/2025 (duration: 76.45 days)
+INFO:__main__:Case (GP) 10091/2025 transitioned to ruling at time 79.58
+INFO:__main__:Ruling issued for case (GP) 10091/2025: plaintiff wins
+INFO:__main__:Case (GP) 10027/2025 transitioned to closed at time 79.71
+INFO:__main__:Case closed: (GP) 10027/2025 (duration: 74.70 days)
+INFO:__main__:Case (GP) 10084/2025 transitioned to ruling at time 79.72
+INFO:__main__:Ruling issued for case (GP) 10084/2025: defendant wins
+INFO:__main__:Case (GP) 10023/2025 transitioned to ruling at time 79.75
+INFO:__main__:Ruling issued for case (GP) 10023/2025: plaintiff wins
+INFO:__main__:Case (GP) 10075/2025 transitioned to closed at time 79.79
+INFO:__main__:Case closed: (GP) 10075/2025 (duration: 79.00 days)
+INFO:__main__:Case (GP) 10094/2025 transitioned to ruling at time 79.83
+INFO:__main__:Ruling issued for case (GP) 10094/2025: defendant wins
+INFO:__main__:Case (GP) 10066/2025 transitioned to pre_trial at time 79.95
+INFO:__main__:Discovery completed for case (GP) 10066/2025
+INFO:__main__:Case (GP) 10095/2025 transitioned to ruling at time 80.15
+INFO:__main__:Ruling issued for case (GP) 10095/2025: defendant wins
+INFO:__main__:Case (GP) 10015/2025 transitioned to trial at time 80.23
+INFO:__main__:Hearing conducted for case (GP) 10015/2025
+INFO:__main__:Principle damnum-injuria-datum invoked in case (GP) 10015/2025
+INFO:__main__:Principle culpa invoked in case (GP) 10015/2025
+INFO:__main__:Principle causation invoked in case (GP) 10015/2025
+INFO:__main__:Case (GP) 10081/2025 transitioned to trial at time 80.42
+INFO:__main__:Hearing conducted for case (GP) 10081/2025
+INFO:__main__:Principle nemo-plus-iuris invoked in case (GP) 10081/2025
+INFO:__main__:Principle nemo-dat-quod-non-habet invoked in case (GP) 10081/2025
+INFO:__main__:Case (GP) 10065/2025 transitioned to ruling at time 80.63
+INFO:__main__:Ruling issued for case (GP) 10065/2025: defendant wins
+INFO:__main__:Case (GP) 10048/2025 transitioned to ruling at time 80.64
+INFO:__main__:Ruling issued for case (GP) 10048/2025: defendant wins
+INFO:__main__:Case (GP) 10020/2025 transitioned to pre_trial at time 80.66
+INFO:__main__:Discovery completed for case (GP) 10020/2025
+INFO:__main__:Hearing scheduled for case (GP) 10016/2025 in courtroom_0
+INFO:__main__:Case (GP) 10091/2025 transitioned to closed at time 80.82
+INFO:__main__:Case closed: (GP) 10091/2025 (duration: 78.78 days)
+INFO:__main__:Case (GP) 10082/2025 transitioned to ruling at time 80.83
+INFO:__main__:Ruling issued for case (GP) 10082/2025: plaintiff wins
+INFO:__main__:Case (GP) 10079/2025 transitioned to closed at time 81.02
+INFO:__main__:Case closed: (GP) 10079/2025 (duration: 80.20 days)
+INFO:__main__:Case (GP) 10060/2025 transitioned to trial at time 81.31
+INFO:__main__:Hearing conducted for case (GP) 10060/2025
+INFO:__main__:Principle nullum-crimen-sine-lege invoked in case (GP) 10060/2025
+INFO:__main__:Case (GP) 10021/2025 transitioned to closed at time 81.33
+INFO:__main__:Case closed: (GP) 10021/2025 (duration: 74.23 days)
+INFO:__main__:Hearing scheduled for case (GP) 10086/2025 in courtroom_2
+INFO:__main__:Case (GP) 10003/2025 transitioned to trial at time 81.41
+INFO:__main__:Hearing conducted for case (GP) 10003/2025
+INFO:__main__:Principle audi-alteram-partem invoked in case (GP) 10003/2025
+INFO:__main__:Principle nemo-iudex-in-causa-sua invoked in case (GP) 10003/2025
+INFO:__main__:Case (GP) 10026/2025 transitioned to trial at time 81.45
+INFO:__main__:Hearing conducted for case (GP) 10026/2025
+INFO:__main__:Principle in-dubio-pro-reo invoked in case (GP) 10026/2025
+INFO:__main__:Case (GP) 10095/2025 transitioned to closed at time 81.96
+INFO:__main__:Case closed: (GP) 10095/2025 (duration: 81.87 days)
+INFO:__main__:Case (GP) 10084/2025 transitioned to closed at time 82.01
+INFO:__main__:Case closed: (GP) 10084/2025 (duration: 81.90 days)
+INFO:__main__:Case (GP) 10035/2025 transitioned to closed at time 82.61
+INFO:__main__:Case closed: (GP) 10035/2025 (duration: 81.52 days)
+INFO:__main__:Case (GP) 10023/2025 transitioned to closed at time 82.81
+INFO:__main__:Case closed: (GP) 10023/2025 (duration: 80.09 days)
+INFO:__main__:Case (GP) 10073/2025 transitioned to closed at time 83.05
+INFO:__main__:Case closed: (GP) 10073/2025 (duration: 78.37 days)
+INFO:__main__:Case (GP) 10071/2025 transitioned to ruling at time 83.34
+INFO:__main__:Ruling issued for case (GP) 10071/2025: plaintiff wins
+INFO:__main__:Case (GP) 10089/2025 transitioned to ruling at time 83.58
+INFO:__main__:Ruling issued for case (GP) 10089/2025: defendant wins
+INFO:__main__:Case (GP) 10087/2025 transitioned to ruling at time 83.93
+INFO:__main__:Ruling issued for case (GP) 10087/2025: plaintiff wins
+INFO:__main__:Case (GP) 10040/2025 transitioned to pre_trial at time 84.01
+INFO:__main__:Discovery completed for case (GP) 10040/2025
+INFO:__main__:Case (GP) 10008/2025 transitioned to pre_trial at time 84.11
+INFO:__main__:Discovery completed for case (GP) 10008/2025
+INFO:__main__:Case (GP) 10094/2025 transitioned to closed at time 84.16
+INFO:__main__:Case closed: (GP) 10094/2025 (duration: 83.15 days)
+INFO:__main__:Case (GP) 10061/2025 transitioned to pre_trial at time 84.17
+INFO:__main__:Discovery completed for case (GP) 10061/2025
+INFO:__main__:Case (GP) 10065/2025 transitioned to closed at time 84.24
+INFO:__main__:Case closed: (GP) 10065/2025 (duration: 84.18 days)
+INFO:__main__:Case (GP) 10048/2025 transitioned to closed at time 84.55
+INFO:__main__:Case closed: (GP) 10048/2025 (duration: 78.30 days)
+INFO:__main__:Case (GP) 10057/2025 transitioned to pre_trial at time 84.59
+INFO:__main__:Discovery completed for case (GP) 10057/2025
+INFO:__main__:Case (GP) 10016/2025 transitioned to trial at time 84.74
+INFO:__main__:Hearing conducted for case (GP) 10016/2025
+INFO:__main__:Principle in-dubio-pro-reo invoked in case (GP) 10016/2025
+INFO:__main__:Case (GP) 10062/2025 transitioned to ruling at time 84.75
+INFO:__main__:Ruling issued for case (GP) 10062/2025: plaintiff wins
+INFO:__main__:Case (GP) 10005/2025 transitioned to pre_trial at time 84.82
+INFO:__main__:Discovery completed for case (GP) 10005/2025
+INFO:__main__:Case (GP) 10033/2025 transitioned to ruling at time 84.82
+INFO:__main__:Ruling issued for case (GP) 10033/2025: defendant wins
+INFO:__main__:Case (GP) 10071/2025 transitioned to closed at time 85.04
+INFO:__main__:Case closed: (GP) 10071/2025 (duration: 83.66 days)
+INFO:__main__:Case (GP) 10037/2025 transitioned to ruling at time 85.06
+INFO:__main__:Ruling issued for case (GP) 10037/2025: plaintiff wins
+INFO:__main__:Case (GP) 10068/2025 transitioned to pre_trial at time 85.07
+INFO:__main__:Discovery completed for case (GP) 10068/2025
+INFO:__main__:Case (GP) 10082/2025 transitioned to closed at time 85.18
+INFO:__main__:Case closed: (GP) 10082/2025 (duration: 82.90 days)
+INFO:__main__:Case (GP) 10086/2025 transitioned to trial at time 85.57
+INFO:__main__:Hearing conducted for case (GP) 10086/2025
+INFO:__main__:Principle damnum-injuria-datum invoked in case (GP) 10086/2025
+INFO:__main__:Principle culpa invoked in case (GP) 10086/2025
+INFO:__main__:Case (GP) 10087/2025 transitioned to closed at time 85.72
+INFO:__main__:Case closed: (GP) 10087/2025 (duration: 85.09 days)
+INFO:__main__:Case (GP) 10054/2025 transitioned to ruling at time 85.97
+INFO:__main__:Ruling issued for case (GP) 10054/2025: defendant wins
+INFO:__main__:Hearing scheduled for case (GP) 10014/2025 in courtroom_0
+INFO:__main__:Case (GP) 10080/2025 transitioned to ruling at time 86.37
+INFO:__main__:Ruling issued for case (GP) 10080/2025: plaintiff wins
+INFO:__main__:Hearing scheduled for case (GP) 10067/2025 in courtroom_1
+INFO:__main__:Case (GP) 10090/2025 transitioned to ruling at time 86.62
+INFO:__main__:Ruling issued for case (GP) 10090/2025: defendant wins
+INFO:__main__:Case (GP) 10037/2025 transitioned to closed at time 86.78
+INFO:__main__:Case closed: (GP) 10037/2025 (duration: 86.18 days)
+INFO:__main__:Case (GP) 10083/2025 transitioned to pre_trial at time 86.96
+INFO:__main__:Discovery completed for case (GP) 10083/2025
+INFO:__main__:Case (GP) 10033/2025 transitioned to closed at time 87.18
+INFO:__main__:Case closed: (GP) 10033/2025 (duration: 85.04 days)
+INFO:__main__:Case (GP) 10089/2025 transitioned to closed at time 87.57
+INFO:__main__:Case closed: (GP) 10089/2025 (duration: 87.31 days)
+INFO:__main__:Hearing scheduled for case (GP) 10055/2025 in courtroom_2
+INFO:__main__:Hearing scheduled for case (GP) 10078/2025 in courtroom_3
+INFO:__main__:Hearing scheduled for case (GP) 10043/2025 in courtroom_4
+INFO:__main__:Case (GP) 10042/2025 transitioned to ruling at time 88.11
+INFO:__main__:Ruling issued for case (GP) 10042/2025: plaintiff wins
+INFO:__main__:Case (GP) 10062/2025 transitioned to closed at time 88.18
+INFO:__main__:Case closed: (GP) 10062/2025 (duration: 87.61 days)
+INFO:__main__:Case (GP) 10081/2025 transitioned to ruling at time 88.19
+INFO:__main__:Ruling issued for case (GP) 10081/2025: defendant wins
+INFO:__main__:Case (GP) 10067/2025 transitioned to trial at time 88.24
+INFO:__main__:Hearing conducted for case (GP) 10067/2025
+INFO:__main__:Principle damnum-injuria-datum invoked in case (GP) 10067/2025
+INFO:__main__:Principle culpa invoked in case (GP) 10067/2025
+INFO:__main__:Principle causation invoked in case (GP) 10067/2025
+INFO:__main__:Case (GP) 10054/2025 transitioned to closed at time 88.74
+INFO:__main__:Case closed: (GP) 10054/2025 (duration: 85.69 days)
+INFO:__main__:Case (GP) 10093/2025 transitioned to pre_trial at time 88.75
+INFO:__main__:Discovery completed for case (GP) 10093/2025
+INFO:__main__:Case (GP) 10045/2025 transitioned to ruling at time 88.75
+INFO:__main__:Ruling issued for case (GP) 10045/2025: defendant wins
+INFO:__main__:Case (GP) 10026/2025 transitioned to ruling at time 88.81
+INFO:__main__:Ruling issued for case (GP) 10026/2025: plaintiff wins
+INFO:__main__:Hearing scheduled for case (GP) 10019/2025 in courtroom_1
+INFO:__main__:Case (GP) 10000/2025 transitioned to pre_trial at time 89.20
+INFO:__main__:Discovery completed for case (GP) 10000/2025
+INFO:__main__:Case (GP) 10078/2025 transitioned to trial at time 89.27
+INFO:__main__:Hearing conducted for case (GP) 10078/2025
+INFO:__main__:Principle audi-alteram-partem invoked in case (GP) 10078/2025
+INFO:__main__:Principle nemo-iudex-in-causa-sua invoked in case (GP) 10078/2025
+INFO:__main__:Case (GP) 10043/2025 transitioned to trial at time 89.74
+INFO:__main__:Hearing conducted for case (GP) 10043/2025
+INFO:__main__:Principle pacta-sunt-servanda invoked in case (GP) 10043/2025
+INFO:__main__:Principle consensus-ad-idem invoked in case (GP) 10043/2025
+INFO:__main__:Principle bona-fides invoked in case (GP) 10043/2025
+INFO:__main__:Case (GP) 10045/2025 transitioned to closed at time 89.85
+INFO:__main__:Case closed: (GP) 10045/2025 (duration: 89.60 days)
+INFO:__main__:Case (GP) 10080/2025 transitioned to closed at time 90.04
+INFO:__main__:Case closed: (GP) 10080/2025 (duration: 82.52 days)
+INFO:__main__:Case (GP) 10009/2025 transitioned to pre_trial at time 90.17
+INFO:__main__:Discovery completed for case (GP) 10009/2025
+INFO:__main__:Case (GP) 10014/2025 transitioned to trial at time 90.26
+INFO:__main__:Hearing conducted for case (GP) 10014/2025
+INFO:__main__:Principle nemo-iudex-in-causa-sua invoked in case (GP) 10014/2025
+INFO:__main__:Case (GP) 10041/2025 transitioned to ruling at time 90.75
+INFO:__main__:Ruling issued for case (GP) 10041/2025: plaintiff wins
+INFO:__main__:Hearing scheduled for case (GP) 10012/2025 in courtroom_0
+INFO:__main__:Settlement negotiation failed for case (GP) 10086/2025
+INFO:__main__:Case (GP) 10099/2025 transitioned to pre_trial at time 90.90
+INFO:__main__:Discovery completed for case (GP) 10099/2025
+INFO:__main__:Case (GP) 10026/2025 transitioned to closed at time 91.06
+INFO:__main__:Case closed: (GP) 10026/2025 (duration: 88.41 days)
+INFO:__main__:Case (GP) 10055/2025 transitioned to trial at time 91.26
+INFO:__main__:Hearing conducted for case (GP) 10055/2025
+INFO:__main__:Principle culpa invoked in case (GP) 10055/2025
+INFO:__main__:Principle causation invoked in case (GP) 10055/2025
+INFO:__main__:Case (GP) 10019/2025 transitioned to trial at time 91.27
+INFO:__main__:Hearing conducted for case (GP) 10019/2025
+INFO:__main__:Principle rule-of-law invoked in case (GP) 10019/2025
+INFO:__main__:Case (GP) 10090/2025 transitioned to closed at time 91.47
+INFO:__main__:Case closed: (GP) 10090/2025 (duration: 90.17 days)
+INFO:__main__:Case (GP) 10081/2025 transitioned to closed at time 91.69
+INFO:__main__:Case closed: (GP) 10081/2025 (duration: 87.42 days)
+INFO:__main__:Case (GP) 10042/2025 transitioned to closed at time 91.69
+INFO:__main__:Case closed: (GP) 10042/2025 (duration: 88.58 days)
+INFO:__main__:Case (GP) 10049/2025 transitioned to pre_trial at time 92.09
+INFO:__main__:Discovery completed for case (GP) 10049/2025
+INFO:__main__:Case (GP) 10022/2025 transitioned to ruling at time 92.99
+INFO:__main__:Ruling issued for case (GP) 10022/2025: defendant wins
+INFO:__main__:Case (GP) 10039/2025 transitioned to pre_trial at time 93.14
+INFO:__main__:Discovery completed for case (GP) 10039/2025
+INFO:__main__:Case (GP) 10024/2025 transitioned to ruling at time 93.25
+INFO:__main__:Ruling issued for case (GP) 10024/2025: defendant wins
+INFO:__main__:Case (GP) 10012/2025 transitioned to trial at time 93.38
+INFO:__main__:Hearing conducted for case (GP) 10012/2025
+INFO:__main__:Case (GP) 10086/2025 transitioned to ruling at time 93.64
+INFO:__main__:Ruling issued for case (GP) 10086/2025: defendant wins
+INFO:__main__:Hearing scheduled for case (GP) 10030/2025 in courtroom_0
+INFO:__main__:Case (GP) 10070/2025 transitioned to ruling at time 95.03
+INFO:__main__:Ruling issued for case (GP) 10070/2025: plaintiff wins
+INFO:__main__:Case (GP) 10086/2025 transitioned to closed at time 95.20
+INFO:__main__:Case closed: (GP) 10086/2025 (duration: 89.92 days)
+INFO:__main__:Case (GP) 10007/2025 transitioned to pre_trial at time 95.33
+INFO:__main__:Discovery completed for case (GP) 10007/2025
+INFO:__main__:Case (GP) 10041/2025 transitioned to closed at time 95.35
+INFO:__main__:Case closed: (GP) 10041/2025 (duration: 94.86 days)
+INFO:__main__:Hearing scheduled for case (GP) 10001/2025 in courtroom_1
+INFO:__main__:Hearing scheduled for case (GP) 10057/2025 in courtroom_2
+INFO:__main__:Case (GP) 10003/2025 transitioned to ruling at time 96.10
+INFO:__main__:Ruling issued for case (GP) 10003/2025: plaintiff wins
+INFO:__main__:Case (GP) 10078/2025 transitioned to ruling at time 96.67
+INFO:__main__:Ruling issued for case (GP) 10078/2025: defendant wins
+INFO:__main__:Case (GP) 10015/2025 transitioned to ruling at time 96.79
+INFO:__main__:Ruling issued for case (GP) 10015/2025: defendant wins
+INFO:__main__:Case (GP) 10016/2025 transitioned to ruling at time 96.83
+INFO:__main__:Ruling issued for case (GP) 10016/2025: defendant wins
+INFO:__main__:Case (GP) 10024/2025 transitioned to closed at time 96.93
+INFO:__main__:Case closed: (GP) 10024/2025 (duration: 96.25 days)
+INFO:__main__:Case (GP) 10057/2025 transitioned to trial at time 97.45
+INFO:__main__:Hearing conducted for case (GP) 10057/2025
+INFO:__main__:Principle nemo-dat-quod-non-habet invoked in case (GP) 10057/2025
+INFO:__main__:Case (GP) 10022/2025 transitioned to closed at time 97.67
+INFO:__main__:Case closed: (GP) 10022/2025 (duration: 97.42 days)
+INFO:__main__:Case (GP) 10016/2025 transitioned to closed at time 98.03
+INFO:__main__:Case closed: (GP) 10016/2025 (duration: 97.72 days)
+INFO:__main__:Case (GP) 10067/2025 transitioned to ruling at time 98.15
+INFO:__main__:Ruling issued for case (GP) 10067/2025: plaintiff wins
+INFO:__main__:Hearing scheduled for case (GP) 10077/2025 in courtroom_2
+INFO:__main__:Case (GP) 10030/2025 transitioned to trial at time 98.61
+INFO:__main__:Hearing conducted for case (GP) 10030/2025
+INFO:__main__:Principle nullum-crimen-sine-lege invoked in case (GP) 10030/2025
+INFO:__main__:Case (GP) 10060/2025 transitioned to ruling at time 98.69
+INFO:__main__:Ruling issued for case (GP) 10060/2025: defendant wins
+INFO:__main__:Hearing scheduled for case (GP) 10061/2025 in courtroom_0
+INFO:__main__:Case (GP) 10070/2025 transitioned to closed at time 99.21
+INFO:__main__:Case closed: (GP) 10070/2025 (duration: 96.37 days)
+INFO:__main__:Case (GP) 10015/2025 transitioned to closed at time 99.36
+INFO:__main__:Case closed: (GP) 10015/2025 (duration: 94.87 days)
+INFO:__main__:Hearing scheduled for case (GP) 10013/2025 in courtroom_3
+INFO:__main__:Hearing scheduled for case (GP) 10058/2025 in courtroom_4
+INFO:__main__:Case (GP) 10077/2025 transitioned to trial at time 100.37
+INFO:__main__:Hearing conducted for case (GP) 10077/2025
+INFO:__main__:Principle nullum-crimen-sine-lege invoked in case (GP) 10077/2025
+INFO:__main__:Principle in-dubio-pro-reo invoked in case (GP) 10077/2025
+INFO:__main__:Case (GP) 10001/2025 transitioned to trial at time 100.55
+INFO:__main__:Hearing conducted for case (GP) 10001/2025
+INFO:__main__:Case (GP) 10060/2025 transitioned to closed at time 100.61
+INFO:__main__:Case closed: (GP) 10060/2025 (duration: 100.16 days)
+INFO:__main__:Case (GP) 10014/2025 transitioned to ruling at time 100.65
+INFO:__main__:Ruling issued for case (GP) 10014/2025: defendant wins
+INFO:__main__:Case (GP) 10003/2025 transitioned to closed at time 100.74
+INFO:__main__:Case closed: (GP) 10003/2025 (duration: 99.32 days)
+INFO:__main__:Hearing scheduled for case (GP) 10018/2025 in courtroom_1
+INFO:__main__:Case (GP) 10067/2025 transitioned to closed at time 101.30
+INFO:__main__:Case closed: (GP) 10067/2025 (duration: 100.92 days)
+INFO:__main__:Case (GP) 10032/2025 transitioned to pre_trial at time 101.50
+INFO:__main__:Discovery completed for case (GP) 10032/2025
+INFO:__main__:Case (GP) 10052/2025 transitioned to pre_trial at time 101.57
+INFO:__main__:Discovery completed for case (GP) 10052/2025
+INFO:__main__:Case (GP) 10078/2025 transitioned to closed at time 101.59
+INFO:__main__:Case closed: (GP) 10078/2025 (duration: 99.68 days)
+INFO:__main__:Hearing scheduled for case (GP) 10083/2025 in courtroom_2
+INFO:__main__:Case (GP) 10055/2025 transitioned to ruling at time 102.62
+INFO:__main__:Ruling issued for case (GP) 10055/2025: defendant wins
+INFO:__main__:Case (GP) 10013/2025 transitioned to trial at time 103.08
+INFO:__main__:Hearing conducted for case (GP) 10013/2025
+INFO:__main__:Principle audi-alteram-partem invoked in case (GP) 10013/2025
+INFO:__main__:Principle nemo-iudex-in-causa-sua invoked in case (GP) 10013/2025
+INFO:__main__:Hearing scheduled for case (GP) 10005/2025 in courtroom_3
+INFO:__main__:Case (GP) 10014/2025 transitioned to closed at time 103.31
+INFO:__main__:Case closed: (GP) 10014/2025 (duration: 100.68 days)
+INFO:__main__:Case (GP) 10061/2025 transitioned to trial at time 103.44
+INFO:__main__:Hearing conducted for case (GP) 10061/2025
+INFO:__main__:Hearing scheduled for case (GP) 10020/2025 in courtroom_0
+INFO:__main__:Case (GP) 10030/2025 transitioned to ruling at time 103.65
+INFO:__main__:Ruling issued for case (GP) 10030/2025: plaintiff wins
+INFO:__main__:Case (GP) 10058/2025 transitioned to trial at time 103.71
+INFO:__main__:Hearing conducted for case (GP) 10058/2025
+INFO:__main__:Principle nemo-dat-quod-non-habet invoked in case (GP) 10058/2025
+INFO:__main__:Case (GP) 10018/2025 transitioned to trial at time 104.41
+INFO:__main__:Hearing conducted for case (GP) 10018/2025
+INFO:__main__:Principle damnum-injuria-datum invoked in case (GP) 10018/2025
+INFO:__main__:Principle causation invoked in case (GP) 10018/2025
+INFO:__main__:Case (GP) 10020/2025 transitioned to trial at time 105.33
+INFO:__main__:Hearing conducted for case (GP) 10020/2025
+INFO:__main__:Principle supremacy-of-constitution invoked in case (GP) 10020/2025
+INFO:__main__:Case (GP) 10077/2025 transitioned to ruling at time 106.35
+INFO:__main__:Ruling issued for case (GP) 10077/2025: plaintiff wins
+INFO:__main__:Case (GP) 10083/2025 transitioned to trial at time 106.42
+INFO:__main__:Hearing conducted for case (GP) 10083/2025
+INFO:__main__:Principle nemo-plus-iuris invoked in case (GP) 10083/2025
+INFO:__main__:Principle nemo-dat-quod-non-habet invoked in case (GP) 10083/2025
+INFO:__main__:Case (GP) 10043/2025 transitioned to ruling at time 106.64
+INFO:__main__:Ruling issued for case (GP) 10043/2025: plaintiff wins
+INFO:__main__:Case (GP) 10055/2025 transitioned to closed at time 107.04
+INFO:__main__:Case closed: (GP) 10055/2025 (duration: 104.95 days)
+INFO:__main__:Hearing scheduled for case (GP) 10000/2025 in courtroom_0
+INFO:__main__:Case (GP) 10077/2025 transitioned to closed at time 107.67
+INFO:__main__:Case closed: (GP) 10077/2025 (duration: 106.70 days)
+INFO:__main__:Case (GP) 10005/2025 transitioned to trial at time 108.07
+INFO:__main__:Hearing conducted for case (GP) 10005/2025
+INFO:__main__:Principle supremacy-of-constitution invoked in case (GP) 10005/2025
+INFO:__main__:Principle rule-of-law invoked in case (GP) 10005/2025
+INFO:__main__:Case (GP) 10012/2025 transitioned to ruling at time 108.25
+INFO:__main__:Ruling issued for case (GP) 10012/2025: defendant wins
+INFO:__main__:Case (GP) 10030/2025 transitioned to closed at time 108.41
+INFO:__main__:Case closed: (GP) 10030/2025 (duration: 106.99 days)
+INFO:__main__:Hearing scheduled for case (GP) 10066/2025 in courtroom_1
+INFO:__main__:Case (GP) 10038/2025 transitioned to pre_trial at time 108.45
+INFO:__main__:Discovery completed for case (GP) 10038/2025
+INFO:__main__:Hearing scheduled for case (GP) 10049/2025 in courtroom_2
+INFO:__main__:Case (GP) 10000/2025 transitioned to trial at time 109.40
+INFO:__main__:Hearing conducted for case (GP) 10000/2025
+INFO:__main__:Principle nullum-crimen-sine-lege invoked in case (GP) 10000/2025
+INFO:__main__:Principle in-dubio-pro-reo invoked in case (GP) 10000/2025
+INFO:__main__:Hearing scheduled for case (GP) 10068/2025 in courtroom_0
+INFO:__main__:Case (GP) 10043/2025 transitioned to closed at time 110.14
+INFO:__main__:Case closed: (GP) 10043/2025 (duration: 106.39 days)
+INFO:__main__:Hearing scheduled for case (GP) 10093/2025 in courtroom_3
+INFO:__main__:Case (GP) 10019/2025 transitioned to ruling at time 110.63
+INFO:__main__:Ruling issued for case (GP) 10019/2025: plaintiff wins
+INFO:__main__:Hearing scheduled for case (GP) 10040/2025 in courtroom_4
+INFO:__main__:Case (GP) 10049/2025 transitioned to trial at time 111.44
+INFO:__main__:Hearing conducted for case (GP) 10049/2025
+INFO:__main__:Principle damnum-injuria-datum invoked in case (GP) 10049/2025
+INFO:__main__:Principle culpa invoked in case (GP) 10049/2025
+INFO:__main__:Hearing scheduled for case (GP) 10009/2025 in courtroom_2
+INFO:__main__:Case (GP) 10019/2025 transitioned to closed at time 111.84
+INFO:__main__:Case closed: (GP) 10019/2025 (duration: 109.65 days)
+INFO:__main__:Case (GP) 10093/2025 transitioned to trial at time 111.90
+INFO:__main__:Hearing conducted for case (GP) 10093/2025
+INFO:__main__:Principle audi-alteram-partem invoked in case (GP) 10093/2025
+INFO:__main__:Principle nemo-iudex-in-causa-sua invoked in case (GP) 10093/2025
+INFO:__main__:Case (GP) 10012/2025 transitioned to closed at time 111.97
+INFO:__main__:Case closed: (GP) 10012/2025 (duration: 103.26 days)
+INFO:__main__:Case (GP) 10013/2025 transitioned to ruling at time 112.51
+INFO:__main__:Ruling issued for case (GP) 10013/2025: plaintiff wins
+INFO:__main__:Case (GP) 10066/2025 transitioned to trial at time 112.52
+INFO:__main__:Hearing conducted for case (GP) 10066/2025
+INFO:__main__:Principle nemo-plus-iuris invoked in case (GP) 10066/2025
+INFO:__main__:Principle nemo-dat-quod-non-habet invoked in case (GP) 10066/2025
+INFO:__main__:Case (GP) 10057/2025 transitioned to ruling at time 112.96
+INFO:__main__:Ruling issued for case (GP) 10057/2025: plaintiff wins
+INFO:__main__:Case (GP) 10068/2025 transitioned to trial at time 113.12
+INFO:__main__:Hearing conducted for case (GP) 10068/2025
+INFO:__main__:Principle audi-alteram-partem invoked in case (GP) 10068/2025
+INFO:__main__:Principle nemo-iudex-in-causa-sua invoked in case (GP) 10068/2025
+INFO:__main__:Hearing scheduled for case (GP) 10008/2025 in courtroom_0
+INFO:__main__:Case (GP) 10061/2025 transitioned to ruling at time 113.62
+INFO:__main__:Ruling issued for case (GP) 10061/2025: defendant wins
+INFO:__main__:Case (GP) 10057/2025 transitioned to closed at time 114.16
+INFO:__main__:Case closed: (GP) 10057/2025 (duration: 112.29 days)
+INFO:__main__:Case (GP) 10009/2025 transitioned to trial at time 114.37
+INFO:__main__:Hearing conducted for case (GP) 10009/2025
+INFO:__main__:Principle pacta-sunt-servanda invoked in case (GP) 10009/2025
+INFO:__main__:Principle bona-fides invoked in case (GP) 10009/2025
+INFO:__main__:Case (GP) 10001/2025 transitioned to ruling at time 114.81
+INFO:__main__:Ruling issued for case (GP) 10001/2025: defendant wins
+INFO:__main__:Case (GP) 10013/2025 transitioned to closed at time 114.81
+INFO:__main__:Case closed: (GP) 10013/2025 (duration: 114.54 days)
+INFO:__main__:Case (GP) 10085/2025 transitioned to pre_trial at time 114.94
+INFO:__main__:Discovery completed for case (GP) 10085/2025
+INFO:__main__:Case (GP) 10040/2025 transitioned to trial at time 115.14
+INFO:__main__:Hearing conducted for case (GP) 10040/2025
+INFO:__main__:Principle audi-alteram-partem invoked in case (GP) 10040/2025
+INFO:__main__:Principle nemo-iudex-in-causa-sua invoked in case (GP) 10040/2025
+INFO:__main__:Case (GP) 10008/2025 transitioned to trial at time 115.15
+INFO:__main__:Hearing conducted for case (GP) 10008/2025
+INFO:__main__:Hearing scheduled for case (GP) 10052/2025 in courtroom_0
+INFO:__main__:Case (GP) 10034/2025 transitioned to pre_trial at time 115.75
+INFO:__main__:Discovery completed for case (GP) 10034/2025
+INFO:__main__:Hearing scheduled for case (GP) 10099/2025 in courtroom_1
+INFO:__main__:Case (GP) 10061/2025 transitioned to closed at time 116.98
+INFO:__main__:Case closed: (GP) 10061/2025 (duration: 113.97 days)
+INFO:__main__:Case (GP) 10098/2025 transitioned to pre_trial at time 117.72
+INFO:__main__:Discovery completed for case (GP) 10098/2025
+INFO:__main__:Case (GP) 10001/2025 transitioned to closed at time 118.34
+INFO:__main__:Case closed: (GP) 10001/2025 (duration: 113.31 days)
+INFO:__main__:Case (GP) 10058/2025 transitioned to ruling at time 118.47
+INFO:__main__:Ruling issued for case (GP) 10058/2025: plaintiff wins
+INFO:__main__:Hearing scheduled for case (GP) 10007/2025 in courtroom_2
+INFO:__main__:Case (GP) 10052/2025 transitioned to trial at time 119.34
+INFO:__main__:Hearing conducted for case (GP) 10052/2025
+INFO:__main__:Principle in-dubio-pro-reo invoked in case (GP) 10052/2025
+INFO:__main__:Case (GP) 10099/2025 transitioned to trial at time 120.85
+INFO:__main__:Hearing conducted for case (GP) 10099/2025
+INFO:__main__:Principle pacta-sunt-servanda invoked in case (GP) 10099/2025
+INFO:__main__:Principle bona-fides invoked in case (GP) 10099/2025
+INFO:__main__:Case (GP) 10020/2025 transitioned to ruling at time 121.08
+INFO:__main__:Ruling issued for case (GP) 10020/2025: defendant wins
+INFO:__main__:Hearing scheduled for case (GP) 10039/2025 in courtroom_0
+INFO:__main__:Case (GP) 10058/2025 transitioned to closed at time 121.17
+INFO:__main__:Case closed: (GP) 10058/2025 (duration: 119.56 days)
+INFO:__main__:Case (GP) 10040/2025 transitioned to ruling at time 122.11
+INFO:__main__:Ruling issued for case (GP) 10040/2025: defendant wins
+INFO:__main__:Case (GP) 10018/2025 transitioned to ruling at time 122.19
+INFO:__main__:Ruling issued for case (GP) 10018/2025: plaintiff wins
+INFO:__main__:Case (GP) 10039/2025 transitioned to trial at time 122.60
+INFO:__main__:Hearing conducted for case (GP) 10039/2025
+INFO:__main__:Principle nemo-iudex-in-causa-sua invoked in case (GP) 10039/2025
+INFO:__main__:Case (GP) 10083/2025 transitioned to ruling at time 122.87
+INFO:__main__:Ruling issued for case (GP) 10083/2025: defendant wins
+INFO:__main__:Case (GP) 10007/2025 transitioned to trial at time 123.41
+INFO:__main__:Hearing conducted for case (GP) 10007/2025
+INFO:__main__:Case (GP) 10040/2025 transitioned to closed at time 123.83
+INFO:__main__:Case closed: (GP) 10040/2025 (duration: 123.71 days)
+INFO:__main__:Case (GP) 10083/2025 transitioned to closed at time 123.94
+INFO:__main__:Case closed: (GP) 10083/2025 (duration: 120.55 days)
+INFO:__main__:Case (GP) 10066/2025 transitioned to ruling at time 125.16
+INFO:__main__:Ruling issued for case (GP) 10066/2025: defendant wins
+INFO:__main__:Case (GP) 10020/2025 transitioned to closed at time 125.42
+INFO:__main__:Case closed: (GP) 10020/2025 (duration: 124.80 days)
+INFO:__main__:Case (GP) 10018/2025 transitioned to closed at time 125.51
+INFO:__main__:Case closed: (GP) 10018/2025 (duration: 120.59 days)
+INFO:__main__:Case (GP) 10005/2025 transitioned to ruling at time 126.08
+INFO:__main__:Ruling issued for case (GP) 10005/2025: defendant wins
+INFO:__main__:Case (GP) 10000/2025 transitioned to ruling at time 127.82
+INFO:__main__:Ruling issued for case (GP) 10000/2025: defendant wins
+INFO:__main__:Case (GP) 10093/2025 transitioned to ruling at time 128.24
+INFO:__main__:Ruling issued for case (GP) 10093/2025: defendant wins
+INFO:__main__:Case (GP) 10005/2025 transitioned to closed at time 129.01
+INFO:__main__:Case closed: (GP) 10005/2025 (duration: 126.51 days)
+INFO:__main__:Case (GP) 10000/2025 transitioned to closed at time 129.09
+INFO:__main__:Case closed: (GP) 10000/2025 (duration: 121.70 days)
+INFO:__main__:Case (GP) 10052/2025 transitioned to ruling at time 129.29
+INFO:__main__:Ruling issued for case (GP) 10052/2025: plaintiff wins
+INFO:__main__:Case (GP) 10066/2025 transitioned to closed at time 129.30
+INFO:__main__:Case closed: (GP) 10066/2025 (duration: 128.68 days)
+INFO:__main__:Case (GP) 10009/2025 transitioned to ruling at time 129.84
+INFO:__main__:Ruling issued for case (GP) 10009/2025: plaintiff wins
+INFO:__main__:Case (GP) 10093/2025 transitioned to closed at time 130.39
+INFO:__main__:Case closed: (GP) 10093/2025 (duration: 127.67 days)
+INFO:__main__:Case (GP) 10068/2025 transitioned to ruling at time 130.42
+INFO:__main__:Ruling issued for case (GP) 10068/2025: plaintiff wins
+INFO:__main__:Case (GP) 10049/2025 transitioned to ruling at time 131.08
+INFO:__main__:Ruling issued for case (GP) 10049/2025: plaintiff wins
+INFO:__main__:Hearing scheduled for case (GP) 10085/2025 in courtroom_0
+INFO:__main__:Hearing scheduled for case (GP) 10032/2025 in courtroom_1
+INFO:__main__:Hearing scheduled for case (GP) 10038/2025 in courtroom_2
+INFO:__main__:Case (GP) 10008/2025 transitioned to ruling at time 132.16
+INFO:__main__:Ruling issued for case (GP) 10008/2025: defendant wins
+INFO:__main__:Case (GP) 10009/2025 transitioned to closed at time 132.39
+INFO:__main__:Case closed: (GP) 10009/2025 (duration: 130.90 days)
+INFO:__main__:Case (GP) 10085/2025 transitioned to trial at time 132.94
+INFO:__main__:Hearing conducted for case (GP) 10085/2025
+INFO:__main__:Principle nemo-iudex-in-causa-sua invoked in case (GP) 10085/2025
+INFO:__main__:Case (GP) 10007/2025 transitioned to ruling at time 133.40
+INFO:__main__:Ruling issued for case (GP) 10007/2025: defendant wins
+INFO:__main__:Case (GP) 10052/2025 transitioned to closed at time 133.76
+INFO:__main__:Case closed: (GP) 10052/2025 (duration: 128.73 days)
+INFO:__main__:Case (GP) 10008/2025 transitioned to closed at time 134.06
+INFO:__main__:Case closed: (GP) 10008/2025 (duration: 131.01 days)
+INFO:__main__:Case (GP) 10068/2025 transitioned to closed at time 134.21
+INFO:__main__:Case closed: (GP) 10068/2025 (duration: 131.89 days)
+INFO:__main__:Case (GP) 10049/2025 transitioned to closed at time 134.57
+INFO:__main__:Case closed: (GP) 10049/2025 (duration: 133.86 days)
+INFO:__main__:Case (GP) 10032/2025 transitioned to trial at time 135.58
+INFO:__main__:Hearing conducted for case (GP) 10032/2025
+INFO:__main__:Principle nemo-plus-iuris invoked in case (GP) 10032/2025
+INFO:__main__:Case (GP) 10007/2025 transitioned to closed at time 135.80
+INFO:__main__:Case closed: (GP) 10007/2025 (duration: 134.64 days)
+INFO:__main__:Case (GP) 10038/2025 transitioned to trial at time 136.22
+INFO:__main__:Hearing conducted for case (GP) 10038/2025
+INFO:__main__:Principle audi-alteram-partem invoked in case (GP) 10038/2025
+INFO:__main__:Principle nemo-iudex-in-causa-sua invoked in case (GP) 10038/2025
+INFO:__main__:Hearing scheduled for case (GP) 10098/2025 in courtroom_0
+INFO:__main__:Case (GP) 10099/2025 transitioned to ruling at time 137.49
+INFO:__main__:Ruling issued for case (GP) 10099/2025: plaintiff wins
+INFO:__main__:Case (GP) 10039/2025 transitioned to ruling at time 138.13
+INFO:__main__:Ruling issued for case (GP) 10039/2025: plaintiff wins
+INFO:__main__:Case (GP) 10085/2025 transitioned to ruling at time 138.65
+INFO:__main__:Ruling issued for case (GP) 10085/2025: plaintiff wins
+INFO:__main__:Case (GP) 10098/2025 transitioned to trial at time 138.98
+INFO:__main__:Hearing conducted for case (GP) 10098/2025
+INFO:__main__:Principle audi-alteram-partem invoked in case (GP) 10098/2025
+INFO:__main__:Principle nemo-iudex-in-causa-sua invoked in case (GP) 10098/2025
+INFO:__main__:Hearing scheduled for case (GP) 10034/2025 in courtroom_0
+INFO:__main__:Case (GP) 10099/2025 transitioned to closed at time 139.79
+INFO:__main__:Case closed: (GP) 10099/2025 (duration: 139.75 days)
+INFO:__main__:Case (GP) 10085/2025 transitioned to closed at time 140.46
+INFO:__main__:Case closed: (GP) 10085/2025 (duration: 140.32 days)
+INFO:__main__:Case (GP) 10039/2025 transitioned to closed at time 140.71
+INFO:__main__:Case closed: (GP) 10039/2025 (duration: 139.94 days)
+INFO:__main__:Case (GP) 10034/2025 transitioned to trial at time 143.70
+INFO:__main__:Hearing conducted for case (GP) 10034/2025
+INFO:__main__:Principle pacta-sunt-servanda invoked in case (GP) 10034/2025
+INFO:__main__:Principle consensus-ad-idem invoked in case (GP) 10034/2025
+INFO:__main__:Principle bona-fides invoked in case (GP) 10034/2025
+INFO:__main__:Case (GP) 10032/2025 transitioned to ruling at time 151.96
+INFO:__main__:Ruling issued for case (GP) 10032/2025: plaintiff wins
+INFO:__main__:Case (GP) 10038/2025 transitioned to ruling at time 152.18
+INFO:__main__:Ruling issued for case (GP) 10038/2025: defendant wins
+INFO:__main__:Case (GP) 10038/2025 transitioned to closed at time 155.17
+INFO:__main__:Case closed: (GP) 10038/2025 (duration: 147.40 days)
+INFO:__main__:Case (GP) 10032/2025 transitioned to closed at time 155.27
+INFO:__main__:Case closed: (GP) 10032/2025 (duration: 154.72 days)
+INFO:__main__:Case (GP) 10098/2025 transitioned to ruling at time 158.57
+INFO:__main__:Ruling issued for case (GP) 10098/2025: plaintiff wins
+INFO:__main__:Case (GP) 10034/2025 transitioned to ruling at time 160.85
+INFO:__main__:Ruling issued for case (GP) 10034/2025: defendant wins
+INFO:__main__:Case (GP) 10098/2025 transitioned to closed at time 161.20
+INFO:__main__:Case closed: (GP) 10098/2025 (duration: 161.12 days)
+INFO:__main__:Case (GP) 10034/2025 transitioned to closed at time 162.22
+INFO:__main__:Case closed: (GP) 10034/2025 (duration: 161.75 days)
+INFO:__main__:Simulation completed at time 162.22
+
+=== Simulation Results ===
+Cases Filed: 100
+Cases Closed: 103
+Average Case Duration: 93.33 days
+Settlement Rate: 3.00%
+
+Principles Invoked: {'pacta-sunt-servanda': 10, 'bona-fides': 9, 'nemo-plus-iuris': 9, 'nemo-dat-quod-non-habet': 11, 'audi-alteram-partem': 14, 'nemo-iudex-in-causa-sua': 17, 'consensus-ad-idem': 7, 'in-dubio-pro-reo': 11, 'damnum-injuria-datum': 15, 'supremacy-of-constitution': 13, 'rule-of-law': 8, 'culpa': 13, 'causation': 9, 'nullum-crimen-sine-lege': 5}
+
+Resource Utilization: {'judge': 0.7674418604651164, 'attorney': 0.5444961240310079, 'courtroom': 0.2558139534883721}

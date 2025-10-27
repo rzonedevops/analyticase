@@ -21,6 +21,7 @@ analyticase/
 │   ├── lv2/                  # Inference level 2 - meta-principles (legal foundations/theories)
 │   ├── lv1/                  # Inference level 1 - first-order principles (legal maxims)
 │   └── civ/za/               # South African civil law framework
+├── simulation_results/       # Simulation analysis reports and raw data
 ├── simulations/              # Unified simulation runner and results
 │   ├── simulation_runner.py  # Main script to run all simulations
 │   └── results/              # Directory for simulation output
@@ -37,17 +38,15 @@ analyticase/
 
 ## Key Features
 
-### Simulation & Analysis Models
+### Enhanced Simulation & Analysis Models
 
-- **Agent-Based Model**: Simulates the behavior and interactions of legal case participants (investigators, attorneys, judges) to understand system dynamics from the ground up.
-- **Discrete-Event Model**: Models the legal case lifecycle as a series of discrete events, allowing for analysis of bottlenecks and process optimization.
-- **System Dynamics Model**: Provides a high-level view of case flow through the judicial system using stock-and-flow diagrams to identify systemic issues.
-- **HyperGNN Model**: Utilizes hypergraph neural networks to uncover complex, higher-order relationships between entities in a case that traditional graph models might miss.
-- **Case-LLM**: Leverages large language models for advanced legal document analysis, summarization, entity extraction, and brief generation. Now features a Retrieval-Augmented Generation (RAG) implementation for more context-aware analysis.
+- **Enhanced Agent-Based Model**: Simulates legal actors with principle-aware decision-making, Bayesian belief networks, and game-theoretic strategy selection. Now integrates directly with the `lex/` legal framework.
+- **Enhanced Discrete-Event Model**: Models the case lifecycle with legal principle tracking, resource constraints, and process mining capabilities for bottleneck identification.
+- **Enhanced HyperGNN Model**: Features legal-specific node/hyperedge types, temporal hyperedges, multi-head attention, and hierarchical attention (principle → statute → case) for sophisticated legal relationship analysis.
+- **Enhanced Case-LLM**: Integrates with legal principles from `.scm` files and features Hypergraph-Augmented Generation (HAG) for context-aware analysis, multi-agent collaboration, and principle-aware reasoning.
 - **GGMLEX**: GGML-based ML framework with HypergraphQL integration for querying legal frameworks, featuring:
   - LlamaLex.cpp inference engine optimized for legal text processing
   - **Inference Engine**: Processes lex scheme expressions to derive legal principles at multiple abstraction levels (enumerated laws → first-order principles → meta-principles) using deductive, inductive, abductive, and analogical inference models
-- **Attention-based HyperGNN**: The HyperGNN model now includes an advanced attention mechanism for more accurate hyperedge aggregation.
 
 ### ZA Judiciary Integration
 
@@ -91,36 +90,22 @@ analyticase/
 
 ### Running Simulations
 
-#### Local Execution
-
-To run the full suite of simulations locally:
+To run the enhanced simulations:
 
 ```bash
-python simulations/simulation_runner_v2.py
+# Run Agent-Based Simulation
+python3 models/agent_based/case_agent_model_enhanced.py
+
+# Run Discrete-Event Simulation
+python3 models/discrete_event/case_event_model_enhanced.py
+
+# Run HyperGNN Simulation
+python3 models/hyper_gnn/hypergnn_model_enhanced.py
 ```
 
-For advanced usage with custom configurations:
+### Simulation Analysis
 
-```bash
-# Run with custom configuration
-python simulations/simulation_runner_v2.py --config simulations/example_config.json --name "my_analysis"
-
-# Run with custom output directory
-python simulations/simulation_runner_v2.py --output /path/to/custom/output --name "production_run"
-```
-
-Results will be saved in timestamped directories under `simulations/results/`.
-
-#### GitHub Actions (Recommended)
-
-You can also run simulations directly from GitHub using our manual workflow:
-
-1. Go to the **Actions** tab in this repository
-2. Select **"Run AnalytiCase Simulations"**
-3. Click **"Run workflow"** and configure your simulation parameters
-4. Download results as artifacts when complete
-
-This approach requires no local setup and provides automatic result archiving. See the [GitHub Actions Guide](docs/GITHUB_ACTIONS_GUIDE.md) for detailed instructions.
+A comprehensive analysis of the simulation results is available in the [Simulation Analysis Report](simulation_results/SIMULATION_ANALYSIS_REPORT_2025-10-27.md). This report details the findings from the Agent-Based, Discrete-Event, and HyperGNN models, providing insights into legal system dynamics, resource utilization, and principle application.
 
 ### Docker Deployment
 
