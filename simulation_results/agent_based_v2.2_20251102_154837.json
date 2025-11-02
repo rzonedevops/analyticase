@@ -1,0 +1,14 @@
+{
+  "num_agents": 20,
+  "num_steps": 100,
+  "principle_applications": {
+    "pacta-sunt-servanda": 45,
+    "bona-fides": 38,
+    "audi-alteram-partem": 52
+  },
+  "agent_strategies": {
+    "cooperative": 12,
+    "competitive": 5,
+    "neutral": 3
+  }
+}

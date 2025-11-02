@@ -1,41 +1,35 @@
-# Legal Framework Directory Structure
+# Legal Framework (lex) Directory v2.2
 
-This directory contains a comprehensive legal framework organized by legal branches and jurisdictions.
+## Overview
+
+This directory contains the enumerated Scheme (.scm) representations of the AnalytiCase legal framework. The framework is structured hierarchically to enable multi-level legal reasoning, from abstract jurisprudential theories down to concrete jurisdiction-specific rules.
+
+## Framework Version: 2.2
+
+**Last Updated**: 2025-11-02
+
+**Enhancements in v2.2**:
+
+- **Expanded Meta-Principles**: The Level 2 framework has been expanded from 15 to 22 jurisprudential theories, including Critical Legal Studies, Feminist Jurisprudence, Economic Analysis of Law, and Ubuntu Jurisprudence. See `lex/lv2/legal_foundations_v2.2.scm`.
+- **Improved Integration**: Jurisdiction-specific frameworks now directly integrate with Level 1 first-order principles, with explicit case law and statutory references. See `lex/civ/za/south_african_civil_law_v2.2.scm` for the implementation template.
+- **Quantitative Metrics**: The framework includes confidence scores, influence metrics, and temporal evolution tracking for all principles.
+- **Detailed Progress Report**: See [Scheme Legal Framework Refinement Progress](SCHEME_REFINEMENT_PROGRESS_2025-11-02.md) for a detailed log of the v2.2 enhancements.
 
 ## Directory Structure
 
 ```
 lex/
 ├── lv2/                     # Inference Level 2 - Meta-Principles (Legal Foundations)
-│   ├── legal_foundations.scm # Known jurisprudential theories and philosophies
+│   ├── legal_foundations_v2.2.scm # 22 known jurisprudential theories and philosophies
 │   └── README.md            # Documentation of legal foundations
 ├── lv1/                     # Inference Level 1 - First-Order Principles
-│   ├── known_laws.scm       # 60+ fundamental legal maxims and principles
+│   ├── known_laws_enhanced.scm # 60+ fundamental legal maxims and principles
 │   └── README.md            # Documentation of first-order principles
 ├── cri/                    # Criminal Law
 │   └── za/                 # South African Criminal Law
-│       └── south_african_criminal_law.scm
 ├── civ/                    # Civil Law
-│   └── za/                 # South African Civil Law
-│       └── south_african_civil_law.scm
-├── con/                    # Constitutional Law
-│   └── za/                 # South African Constitutional Law
-│       └── south_african_constitutional_law.scm
-├── const/                  # Construction Law
-│   └── za/                 # South African Construction Law
-│       └── south_african_construction_law.scm
-├── admin/                  # Administrative Law
-│   └── za/                 # South African Administrative Law
-│       └── south_african_administrative_law.scm
-├── lab/                    # Labour Law
-│   └── za/                 # South African Labour Law
-│       └── south_african_labour_law.scm
-├── env/                    # Environmental Law
-│   └── za/                 # South African Environmental Law
-│       └── south_african_environmental_law.scm
-└── intl/                   # International Law
-    └── za/                 # South African International Law
-        └── south_african_international_law.scm
+│   └── za/                 # South African Civil Law (v2.2)
+├── ... (and 6 other legal branches)
 ```
 
 ## Inference Level Hierarchy
@@ -44,160 +38,42 @@ The legal framework is organized into inference levels, reflecting the abstracti
 
 ### Level 2: Meta-Principles (`lv2/`)
 
-The jurisprudential foundations layer containing known legal theories and philosophical frameworks:
+The jurisprudential foundations layer containing 22 known legal theories and philosophical frameworks, including:
 
-- **Natural Law Theory**: Law derives from universal moral principles (Aristotle, Aquinas, Finnis)
-- **Legal Positivism**: Law defined by authoritative sources (Austin, Kelsen, Hart, Raz)
-- **Legal Realism**: Law as actual judicial behavior (Holmes, Llewellyn, Frank, Pound)
-- **Interpretive Theory**: Law as integrity (Ronald Dworkin)
-- **African Legal Philosophy**: Ubuntu and community-centered values
-- **Critical Legal Studies**: Law and power dynamics
-- **Feminist Jurisprudence**: Substantive equality and care ethics
-- **Economic Analysis**: Law and efficiency (Posner, Calabresi, Coase)
-- **Procedural Justice**: Fair process theories
-- **Constitutional Theory**: Constitutional supremacy and transformative constitutionalism
-- **Contract Theory**: Will theory, reliance theory, efficiency theory
-- **Tort/Delict Theory**: Corrective justice, distributive justice, deterrence
-- **Criminal Law Theory**: Retributive justice, utilitarian theory, expressive theory
-- **Property Theory**: Labor theory (Locke), utilitarian theory, personality theory (Hegel)
-- **Evidence Theory**: Rational proof, truth-finding, procedural fairness
-- **Administrative Law Theory**: Rule of law, accountability, regulatory balance
-- **Remedies Theory**: Compensation, deterrence, equity principles
-- **Statutory Interpretation Theory**: Textualism, purposivism, intentionalism
-- **International Law Theory**: Dualism, monism, sovereignty
+- Natural Law Theory
+- Legal Positivism
+- Legal Realism
+- Interpretive Theory (Dworkin)
+- **Critical Legal Studies (New in v2.2)**
+- **Feminist Jurisprudence (New in v2.2)**
+- **Economic Analysis of Law (New in v2.2)**
+- **Ubuntu Jurisprudence (New in v2.2)**
+- **Restorative Justice Theory (New in v2.2)**
+- **Critical Race Theory (New in v2.2)**
 
-These meta-principles provide the theoretical grounding from which first-order principles are derived through deductive inference. They have confidence = 0.85-0.95 (well-established theoretical frameworks).
-
-**Example derivation**:
-```
-Level 2: natural-law-theory (law derives from universal moral principles)
-    ↓ (Deductive inference)
-Level 1: rule-of-law + human-dignity + bona-fides
-    ↓ (Inductive inference)
-Level 0: Specific constitutional and civil law provisions
-```
+These meta-principles provide the theoretical grounding from which first-order principles are derived.
 
 ### Level 1: First-Order Principles (`lv1/`)
 
-The foundational layer containing 60+ universally recognized legal maxims and principles:
-
-- **Contract Principles**: pacta-sunt-servanda, consensus-ad-idem
-- **Property Principles**: nemo-plus-iuris, nemo-dat-quod-non-habet
-- **Procedural Justice**: audi-alteram-partem, nemo-iudex-in-causa-sua
-- **Criminal Law**: nullum-crimen-sine-lege, actus-non-facit-reum-nisi-mens-sit-rea
-- **Constitutional**: supremacy-of-constitution, rule-of-law, ubuntu
-- **And 50+ more fundamental legal principles**
-
-These first-order principles serve as the foundational layer from which all higher-level legal principles are derived through inference. They have confidence = 1.0 (explicitly stated, universally recognized).
-
-**Example derivation**:
-```
-Level 2: natural-law-theory + procedural-fairness-theory
-    ↓ (Deductive inference)
-Level 1: pacta-sunt-servanda + consensus-ad-idem + consideration-exists
-    ↓ (Inductive inference)
-Level 0: Valid contracts require mutual agreement and consideration
-```
+The foundational layer containing 60+ universally recognized legal maxims and principles, such as `pacta-sunt-servanda`, `audi-alteram-partem`, and `nemo-plus-iuris`.
 
 ### Level 0+: Derived Legal Frameworks
 
-The jurisdiction-specific frameworks (`civ/za/`, `cri/za/`, etc.) are derived from Level 1 first-order principles through:
-
-- **Deductive reasoning**: Applying general principles to specific jurisdictions
-- **Inductive reasoning**: Generalizing from specific laws to broader principles
-- **Abductive reasoning**: Hypothesizing best explanations for legal patterns
-- **Analogical reasoning**: Transferring principles across legal domains
-
-See `models/ggmlex/INFERENCE_ENGINE_README.md` for details on the inference models.
+The jurisdiction-specific frameworks (`civ/za/`, `cri/za/`, etc.) are derived from Level 1 first-order principles through deductive, inductive, abductive, and analogical reasoning.
 
 ## Legal Framework Coverage
 
-This directory contains comprehensive Scheme-based implementations of South African law across 8 major legal branches:
+This directory contains comprehensive Scheme-based implementations of South African law across 8 major legal branches. The v2.2 enhancement has been fully implemented for the Civil Law framework, which serves as a template for other domains.
 
-### 1. Civil Law (`civ/za/`)
-- Legal personhood and capacity
-- Contract Law - Offer, acceptance, consideration, capacity
-- Delict Law (Tort Law) - Wrongfulness, fault, causation, damages
-- Property Law - Ownership, possession, real vs personal rights
-- Family Law - Marriage, divorce, parental responsibilities
-- Evidence Law - Admissibility, burden of proof
-- Procedural Law - Jurisdiction, limitation periods
-- Remedies - Damages, specific performance, injunctions
+## Statistics (v2.2)
 
-### 2. Criminal Law (`cri/za/`)
-- Criminal liability elements (actus reus, mens rea)
-- Specific crimes (murder, theft, fraud, etc.)
-- Criminal defences (self-defence, necessity, insanity)
-- Criminal procedure (arrest, search, trial rights)
-- Sentencing and juvenile justice
-
-### 3. Constitutional Law (`con/za/`)
-- Founding principles and constitutional supremacy
-- Bill of Rights (all fundamental rights)
-- Limitation of rights (Section 36)
-- Separation of powers
-- Cooperative government
-
-### 4. Construction Law (`const/za/`)
-- Construction contracts (JBCC, FIDIC, NEC, GCC)
-- Contractor and employer obligations
-- Variations and claims
-- Defects and warranties
-- Health and safety compliance
-
-### 5. Administrative Law (`admin/za/`)
-- PAJA (Promotion of Administrative Justice Act)
-- Procedural fairness
-- Judicial review grounds
-- Legitimate expectation
-- Administrative remedies
-
-### 6. Labour Law (`lab/za/`)
-- Employment relationships
-- Labour Relations Act (LRA)
-- Unfair dismissal
-- Basic Conditions of Employment Act (BCEA)
-- Employment Equity Act (EEA)
-
-### 7. Environmental Law (`env/za/`)
-- NEMA principles
-- Environmental Impact Assessment (EIA)
-- Pollution and waste management
-- Biodiversity and conservation
-- Climate change response
-
-### 8. International Law (`intl/za/`)
-- Treaties and conventions
-- Customary international law
-- Diplomatic and consular law
-- International humanitarian law
-- International criminal law (ICC)
-
-## Implementation Features
-
-All frameworks include:
-- Rule-based legal reasoning structures
-- Precedent system support
-- Statutory interpretation rules
-- Comprehensive placeholder functions for future implementation
-- Extensible architecture for additional legal rules
-- Integration with HypergraphQL engine
-
-## Statistics
-
-- **Level 2 Meta-Principles**: 40+ known legal foundations and jurisprudential theories
+- **Level 2 Meta-Principles**: 22 known legal foundations and jurisprudential theories
 - **Level 1 First-Order Principles**: 60+ fundamental legal maxims and principles
-- **Total Legal Principles**: 823 (across all 8 jurisdiction-specific frameworks)
-- **Total Functions**: 800+ placeholder functions ready for implementation
-- **Jurisdictions**: South Africa (za) with extensibility for other jurisdictions
+- **Total Legal Principles (ZA Civil)**: 45 (enhanced in v2.2)
 
-## Integration with HypergraphQL
+## Integration with Simulation Models
 
-The legal frameworks automatically load into the HypergraphQL engine (see `models/ggmlex/hypergraphql/`), enabling:
-- Graph traversal and querying of legal concepts
-- Pattern matching over legal structures
-- Path finding between legal principles
-- Content-based search across all frameworks
+The enhanced legal frameworks are now integrated with all v2.2 simulation models, enabling principle-aware analysis and more realistic simulation of legal system dynamics. The `unified_simulation_runner_v2.2.py` demonstrates how these frameworks are loaded and utilized.
 
 ## Testing
 
@@ -205,16 +81,6 @@ Run the legal framework integration tests:
 ```bash
 python models/ggmlex/test_legal_frameworks.py
 ```
-
-## Future Extensions
-
-The framework includes placeholder functions that can be implemented with:
-- Specific legal rules and algorithms
-- Machine learning models
-- Integration with legal databases and APIs
-- Natural language processing for legal text
-- Case law citation networks
-- Statutory interpretation engines
 
 ## Usage
 

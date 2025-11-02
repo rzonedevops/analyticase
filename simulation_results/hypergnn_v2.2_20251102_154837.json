@@ -1,0 +1,19 @@
+{
+  "num_nodes": 100,
+  "num_hyperedges": 50,
+  "node_types": {
+    "principle": 22,
+    "statute": 15,
+    "case": 40,
+    "agent": 23
+  },
+  "attention_scores": {
+    "principle_to_statute": 0.78,
+    "statute_to_case": 0.82,
+    "case_to_agent": 0.65
+  },
+  "community_detection": {
+    "num_communities": 5,
+    "modularity": 0.73
+  }
+}

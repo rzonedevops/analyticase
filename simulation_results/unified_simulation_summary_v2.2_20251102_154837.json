@@ -1,0 +1,130 @@
+{
+  "timestamp": "20251102_154837",
+  "total_models": 5,
+  "successful_models": 4,
+  "failed_models": 1,
+  "success_rate": 0.8,
+  "models": {
+    "successful": [
+      "agent_based",
+      "discrete_event",
+      "hypergnn",
+      "case_llm"
+    ],
+    "failed": [
+      "system_dynamics"
+    ]
+  },
+  "results": {
+    "system_dynamics": {
+      "status": "failed",
+      "model": "system_dynamics",
+      "error": "No module named 'system_dynamics.case_dynamics_model_enhanced_v2_2'"
+    },
+    "agent_based": {
+      "status": "success",
+      "model": "agent_based",
+      "version": "2.2",
+      "results": {
+        "num_agents": 20,
+        "num_steps": 100,
+        "principle_applications": {
+          "pacta-sunt-servanda": 45,
+          "bona-fides": 38,
+          "audi-alteram-partem": 52
+        },
+        "agent_strategies": {
+          "cooperative": 12,
+          "competitive": 5,
+          "neutral": 3
+        }
+      },
+      "output_file": "/home/ubuntu/analyticase/simulation_results/agent_based_v2.2_20251102_154837.json",
+      "metrics": {
+        "total_principle_applications": 135,
+        "cooperation_rate": 0.6
+      }
+    },
+    "discrete_event": {
+      "status": "success",
+      "model": "discrete_event",
+      "version": "2.2",
+      "results": {
+        "num_cases": 50,
+        "simulation_time": 365.0,
+        "events_processed": 487,
+        "avg_case_duration": 156.3,
+        "principle_tracking": {
+          "procedural_fairness_violations": 3,
+          "natural_justice_applications": 45
+        },
+        "resource_utilization": {
+          "judges": 0.78,
+          "courtrooms": 0.65,
+          "clerks": 0.82
+        }
+      },
+      "output_file": "/home/ubuntu/analyticase/simulation_results/discrete_event_v2.2_20251102_154837.json",
+      "metrics": {
+        "throughput": 0.136986301369863,
+        "avg_duration": 156.3,
+        "avg_resource_utilization": 0.75
+      }
+    },
+    "hypergnn": {
+      "status": "success",
+      "model": "hypergnn",
+      "version": "2.2",
+      "results": {
+        "num_nodes": 100,
+        "num_hyperedges": 50,
+        "node_types": {
+          "principle": 22,
+          "statute": 15,
+          "case": 40,
+          "agent": 23
+        },
+        "attention_scores": {
+          "principle_to_statute": 0.78,
+          "statute_to_case": 0.82,
+          "case_to_agent": 0.65
+        },
+        "community_detection": {
+          "num_communities": 5,
+          "modularity": 0.73
+        }
+      },
+      "output_file": "/home/ubuntu/analyticase/simulation_results/hypergnn_v2.2_20251102_154837.json",
+      "metrics": {
+        "avg_attention": 0.75,
+        "modularity": 0.73
+      }
+    },
+    "case_llm": {
+      "status": "success",
+      "model": "case_llm",
+      "version": "2.2",
+      "results": {
+        "num_documents": 20,
+        "principle_extraction": {
+          "extracted_principles": 45,
+          "confidence_avg": 0.82
+        },
+        "hypergraph_augmented_generation": {
+          "queries": 30,
+          "avg_relevance": 0.88
+        },
+        "multi_agent_collaboration": {
+          "agents": 3,
+          "consensus_rate": 0.75
+        }
+      },
+      "output_file": "/home/ubuntu/analyticase/simulation_results/case_llm_v2.2_20251102_154837.json",
+      "metrics": {
+        "extraction_rate": 2.25,
+        "avg_confidence": 0.82,
+        "avg_relevance": 0.88
+      }
+    }
+  }
+}
